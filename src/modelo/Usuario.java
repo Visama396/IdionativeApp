@@ -1,26 +1,27 @@
 package modelo;
 
+import java.util.ArrayList;
+
 public class Usuario {
 
     private String email;
     private String username;
     private String password;
+    private String nativeLang;
+    private String gender;
+    private String tipo;
+    private ArrayList<Idioma> spokenLangs;
+    private ArrayList<Idioma> learnLangs;
 
-    private enum Gender {
-        MALE, FEMALE, NONE
-    }
-    private enum UserType {
-        ADMIN, PROFESOR, ESTUDIANTE
-    }
-    private Gender gender;
-    private UserType userType;
-
-    public Usuario(String email, String username, String password, Gender gender, UserType ut) {
+    public Usuario(String email, String username, String password, String nativeLang, String gender, String tipo, ArrayList<Idioma> spokenLangs, ArrayList<Idioma> learnLangs) {
         this.email = email;
         this.username = username;
         this.password = password;
+        this.nativeLang = nativeLang;
         this.gender = gender;
-        this.userType = ut;
+        this.tipo = tipo;
+        this.spokenLangs = spokenLangs;
+        this.learnLangs = learnLangs;
     }
 
     public String getEmail() {
@@ -47,23 +48,43 @@ public class Usuario {
         this.password = password;
     }
 
-    public Gender getGender() {
+    public String getNativeLang() {
+        return nativeLang;
+    }
+
+    public void setNativeLang(String nativeLang) {
+        this.nativeLang = nativeLang;
+    }
+
+    public String getGender() {
         return gender;
     }
 
-    public void setGender(Gender g) {
-        this.gender = g;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public UserType getUserType() {
-        return userType;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setUserType(UserType userType) {
-        this.userType = userType;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
-    public String getGenderChar() {
-        return "";
+    public ArrayList<Idioma> getSpokenLangs() {
+        return spokenLangs;
+    }
+
+    public void setSpokenLangs(ArrayList<Idioma> spokenLangs) {
+        this.spokenLangs = spokenLangs;
+    }
+
+    public ArrayList<Idioma> getLearnLangs() {
+        return learnLangs;
+    }
+
+    public void setLearnLangs(ArrayList<Idioma> learnLangs) {
+        this.learnLangs = learnLangs;
     }
 }

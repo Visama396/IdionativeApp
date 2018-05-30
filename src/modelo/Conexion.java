@@ -16,7 +16,7 @@ public class Conexion {
 
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.1.128:1521:xe", "hr", "oracle");
+            con = DriverManager.getConnection("jdbc:oracle:thin:@192.168.1.72:1521:xe", "hr", "oracle");
         } catch (ClassNotFoundException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "Conexion: ClassNotFoundException", JOptionPane.ERROR_MESSAGE);
         } catch (SQLException e) {
