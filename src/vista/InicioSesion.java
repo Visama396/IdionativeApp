@@ -15,6 +15,26 @@ public class InicioSesion extends JFrame {
 
     public InicioSesion(String title) {
 
+        menuBar = new JMenuBar();
+
+        mainMenu = new JMenu();
+        languagesMenu = new JMenu();
+        spanishItem = new JMenuItem();
+        englishItem = new JMenuItem();
+        japaneseItem = new JMenuItem();
+        germanItem = new JMenuItem();
+        closeItem = new JMenuItem();
+
+        languagesMenu.add(spanishItem);
+        languagesMenu.add(englishItem);
+        languagesMenu.add(japaneseItem);
+        languagesMenu.add(germanItem);
+
+        mainMenu.add(languagesMenu);
+        mainMenu.add(closeItem);
+
+        menuBar.add(mainMenu);
+
         emailLabel = new JLabel();
         emailField = new JTextField(15);
         passwordLabel = new JLabel();
@@ -23,7 +43,6 @@ public class InicioSesion extends JFrame {
         signupButton = new JButton();
         noAccountButton = new JButton();
         goBackButton = new JButton();
-        closeButton = new JButton();
 
         mainPane = new JPanel();
         layout = new GroupLayout(mainPane);
@@ -42,8 +61,7 @@ public class InicioSesion extends JFrame {
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                 .addComponent(emailField)
                                 .addComponent(passwordField)
-                                .addComponent(noAccountButton)
-                                .addComponent(closeButton))
+                                .addComponent(noAccountButton))
         );
 
         layout.setVerticalGroup(
@@ -57,13 +75,22 @@ public class InicioSesion extends JFrame {
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                 .addComponent(signinButton)
                                 .addComponent(noAccountButton))
-                        .addComponent(closeButton)
         );
 
+        this.setJMenuBar(menuBar);
         this.add(mainPane);
         this.setTitle(title);
 
     }
+
+    public JMenu mainMenu;
+    private JMenuBar menuBar;
+    public JMenu languagesMenu;
+    public JMenuItem spanishItem;
+    public JMenuItem englishItem;
+    public JMenuItem japaneseItem;
+    public JMenuItem germanItem;
+    public JMenuItem closeItem;
 
     public JLabel emailLabel;
     public JTextField emailField;
@@ -74,7 +101,6 @@ public class InicioSesion extends JFrame {
     public JButton signupButton;
     public JButton noAccountButton;
     public JButton goBackButton;
-    public JButton closeButton;
     private JPanel mainPane;
     private GroupLayout layout;
 

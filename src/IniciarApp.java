@@ -3,7 +3,6 @@ import modelo.UsuarioDAO;
 import vista.InicioSesion;
 
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * <h1>Aplicación de Idionative</h1>
@@ -53,7 +52,7 @@ public class IniciarApp {
 
         InicioSesion view = new InicioSesion("Iniciar Sesion");
         UsuarioDAO model = new UsuarioDAO();
-        ControladorLogin controlador = new ControladorLogin(view, model, "esp", "");
+        ControladorLogin controlador = new ControladorLogin(view, model, "es", "");
         view.setVisible(true);
     }
 
