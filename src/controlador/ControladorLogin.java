@@ -9,6 +9,7 @@ import vista.InicioSesion;
 import vista.Registro;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ResourceBundle;
@@ -30,32 +31,45 @@ public class ControladorLogin implements ActionListener {
         this.loc = new Locale(this.lang);
         this.rb = ResourceBundle.getBundle("locales.iniciosesion.locale", this.loc);
 
+        Font fuente = new Font("Arial Unicode MS", Font.PLAIN, 14);
+
         this.vista.mainMenu.setText(rb.getString("options"));
+        this.vista.mainMenu.setFont(fuente);
         this.vista.languagesMenu.setText(rb.getString("langs"));
+        this.vista.languagesMenu.setFont(fuente);
         this.vista.spanishItem.setText(rb.getString("spanish"));
+        this.vista.spanishItem.setFont(fuente);
         this.vista.spanishItem.addActionListener(this);
         this.vista.spanishItem.setActionCommand("ESP");
         this.vista.englishItem.setText(rb.getString("english"));
+        this.vista.englishItem.setFont(fuente);
         this.vista.englishItem.addActionListener(this);
         this.vista.englishItem.setActionCommand("ENG");
         this.vista.japaneseItem.setText(rb.getString("japanese"));
+        this.vista.japaneseItem.setFont(fuente);
         this.vista.japaneseItem.addActionListener(this);
         this.vista.japaneseItem.setActionCommand("JPN");
         this.vista.germanItem.setText(rb.getString("german"));
+        this.vista.germanItem.setFont(fuente);
         this.vista.germanItem.addActionListener(this);
         this.vista.germanItem.setActionCommand("DEU");
+        this.vista.germanItem.setFont(fuente);
         this.vista.closeItem.setText(rb.getString("close"));
         this.vista.closeItem.addActionListener(this);
         this.vista.closeItem.setActionCommand("CLOSE");
 
         this.vista.emailLabel.setText(rb.getString("email"));
+        this.vista.emailLabel.setFont(fuente);
         this.vista.emailField.setText(email);
         this.vista.passwordLabel.setText(rb.getString("password"));
+        this.vista.passwordLabel.setFont(fuente);
         this.vista.passwordField.setText("");
         this.vista.signinButton.setText(rb.getString("login"));
+        this.vista.signinButton.setFont(fuente);
         this.vista.signinButton.addActionListener(this);
         this.vista.signinButton.setActionCommand("SIGNIN");
         this.vista.noAccountButton.setText(rb.getString("noaccount"));
+        this.vista.noAccountButton.setFont(fuente);
         this.vista.noAccountButton.addActionListener(this);
         this.vista.noAccountButton.setActionCommand("CREATEACCOUNT");
 
@@ -76,13 +90,13 @@ public class ControladorLogin implements ActionListener {
                 case "SIGNIN":
                     boolean correcto = this.modelo.comprobarUsuario(this.vista.emailField.getText(), new String(this.vista.passwordField.getPassword()));
                     if (correcto) {
-                        Diccionario view = new Diccionario("Diccionario");
+                        Diccionario view = new Diccionario(rb.getString("dict"));
                         PalabraDAO model = new PalabraDAO();
                         ControladorDiccionario controller = new ControladorDiccionario(view, model);
                         this.vista.dispose();
                         view.setVisible(true);
                     } else {
-                        JOptionPane.showMessageDialog(null, "Usuario incorrecto o no existente.\nCompruebe email y contraseña, o cree un usuario nuevo.", "Error al iniciar sesión", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, rb.getString("badlogin1") + "\n" + rb.getString("badlogin2"), "Error al iniciar sesión", JOptionPane.ERROR_MESSAGE);
                     }
                     break;
                 case "CREATEACCOUNT":
@@ -99,14 +113,20 @@ public class ControladorLogin implements ActionListener {
 
             switch (item.getActionCommand()) {
                 case "ESP":
+                    this.loc = new Locale("es");
+                    InicioSesion viewes = new InicioSesion("Iniciar sesión");
+                    UsuarioDAO modeles = new UsuarioDAO();
+                    ControladorLogin controlleres = new ControladorLogin(viewes, modeles,"es", this.vista.emailField.getText());
+                    this.vista.dispose();
+                    viewes.setVisible(true);
                     break;
                 case "ENG":
                     this.loc = new Locale("en");
-                    InicioSesion view = new InicioSesion("Log in");
-                    UsuarioDAO model = new UsuarioDAO();
-                    ControladorLogin controller = new ControladorLogin(view, model, "en", this.vista.emailField.getText());
+                    InicioSesion viewen = new InicioSesion("Log in");
+                    UsuarioDAO modelen = new UsuarioDAO();
+                    ControladorLogin controlleren = new ControladorLogin(viewen, modelen, "en", this.vista.emailField.getText());
                     this.vista.dispose();
-                    view.setVisible(true);
+                    viewen.setVisible(true);
                     break;
                 case "JPN":
                     break;
