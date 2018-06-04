@@ -8,11 +8,23 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 
 public class ControladorDiccionario implements ActionListener, FocusListener, WindowListener {
 
     private Diccionario vista;
     private PalabraDAO modelo;
+    private Palabra p;
+    private DefaultTableModel defaultTableModel = new DefaultTableModel(
+            new String[] {
+                    "ID",
+                    "Inglés",
+                    "Español",
+                    "Japonés",
+                    "Kana",
+                    "Alemán",
+                    "Portugués"},
+            0);
 
     public ControladorDiccionario(Diccionario vista, PalabraDAO modelo) {
         this.vista = vista;
@@ -42,9 +54,6 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         this.vista.updateButton.setText("Actualizar");
         this.vista.removeButton.setText("Eliminar");
         this.vista.acceptButton.setText("Aceptar");
-        this.vista.closeButton.setText("Cerrar");
-        this.vista.closeButton.addActionListener(this);
-        this.vista.closeButton.setActionCommand("HIDEMOREACTIONS");
         this.vista.addWindowListener(this);
 
         this.vista.jsDicc.setVisible(false);
@@ -61,17 +70,13 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
 
             switch (boton.getActionCommand()) {
                 case "SEARCHWORD":
-                    Palabra p = modelo.buscarPalabra(Integer.parseInt(this.vista.idWordField.getText()));
-                    DefaultTableModel defaultTableModel = new DefaultTableModel(
-                            new String[] {
-                                    "ID",
-                                    "Inglés",
-                                    "Español",
-                                    "Japonés",
-                                    "Kana",
-                                    "Alemán",
-                                    "Portugués"},
-                            0);
+                    if (this.vista.jsDicc.isVisible()) {
+                        this.vista.jsDicc.setVisible(false);
+                    }
+                    if (defaultTableModel.getRowCount() > 0) {
+                        defaultTableModel.setRowCount(0);
+                    }
+                    p = modelo.buscarPalabra(Integer.parseInt(this.vista.idWordField.getText()));
                     defaultTableModel.addRow(
                             new String[] {
                                     p.getId_word()+"",
@@ -90,14 +95,41 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                     this.vista.setVisible(true);
                     break;
                 case "LOADDICT":
+                    if (this.vista.jsDicc.isVisible()) {
+                        this.vista.jsDicc.setVisible(false);
+                    }
+                    if (defaultTableModel.getRowCount() > 0) {
+                        defaultTableModel.setRowCount(0);
+                    }
+                    ArrayList<Palabra> dict = modelo.cargarDiccionario();
+                    for (Palabra pal:dict) {
+                        defaultTableModel.addRow(new String[] {
+                                pal.getId_word()+"",
+                                pal.getEsp(),
+                                pal.getJpn(),
+                                pal.getKana(),
+                                pal.getDeu(),
+                                pal.getPtr()
+                        });
+                    }
+                    this.vista.dictionaryTable.setModel(defaultTableModel);
+                    this.vista.setVisible(false);
+                    this.vista.jsDicc.setVisible(true);
+                    this.vista.pack();
+                    this.vista.setLocationRelativeTo(null);
+                    this.vista.setVisible(true);
                     break;
                 case "MOREACTIONS":
                     this.vista.bottomPane.setVisible(true);
+                    this.vista.moreActionsButton.setText("- Menos");
+                    this.vista.moreActionsButton.setActionCommand("HIDEMOREACTIONS");
                     this.vista.pack();
                     this.vista.setLocationRelativeTo(null);
                     break;
                 case "HIDEMOREACTIONS":
                     this.vista.bottomPane.setVisible(false);
+                    this.vista.moreActionsButton.setText("+ Más");
+                    this.vista.moreActionsButton.setActionCommand("MOREACTIONS");
                     this.vista.pack();
                     this.vista.setLocationRelativeTo(null);
                     break;

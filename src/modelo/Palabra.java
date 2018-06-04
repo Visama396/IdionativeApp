@@ -15,7 +15,7 @@ public class Palabra {
         NOUN, ADJECTIVE, NAADJECTIVE, IADJECTIVE, VERB, REGULARADVERB, IRREGULARVERB, GODANVERB, ICHIDANVERB, SPECIALVERB, PRONOUN, PARTICLE, PREPOSITION
     }
 
-    public Palabra(int id_word, String eng, String esp, String jpn, String kana, String deu, String ptr, String kor, Word_types wordType) {
+    public Palabra(int id_word, String eng, String esp, String jpn, String kana, String deu, String ptr) {
         this.id_word = id_word;
         this.eng = eng;
         this.esp = esp;
@@ -23,8 +23,6 @@ public class Palabra {
         this.kana = kana;
         this.deu = deu;
         this.ptr = ptr;
-        this.kor = kor;
-        this.wordType = wordType;
     }
 
     public int getId_word() {
@@ -81,21 +79,5 @@ public class Palabra {
 
     public void setPtr(String ptr) {
         this.ptr = ptr;
-    }
-
-    public String getKor() {
-        return kor;
-    }
-
-    public void setKor(String kor) {
-        this.kor = kor;
-    }
-
-    public Word_types getWord_type() {
-        return wordType;
-    }
-
-    public void setWord_type(Word_types wordType) {
-        this.wordType = wordType;
     }
 }

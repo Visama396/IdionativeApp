@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 public class PalabraDAO {
 
@@ -11,6 +12,30 @@ public class PalabraDAO {
 
     public PalabraDAO() {
         con = new Conexion();
+    }
+
+    public ArrayList<Palabra> cargarDiccionario() {
+        ArrayList<Palabra> dict = new ArrayList<>();
+        Connection conn = con.createConnection();
+
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM PALABRAS");
+            ResultSet rs = ps.executeQuery();
+            while(rs.next()) {
+                Palabra p = new Palabra(rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7));
+                dict.add(p);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return dict;
     }
 
     public Palabra buscarPalabra(int idword) {
@@ -30,9 +55,7 @@ public class PalabraDAO {
                     rs.getString(4),
                     rs.getString(5),
                     rs.getString(6),
-                    rs.getString(7),
-                    rs.getString(8),
-                    Palabra.Word_types.NOUN
+                    rs.getString(7)
             );
         } catch (SQLException e) {
             System.out.println(e);

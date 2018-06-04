@@ -43,7 +43,6 @@ public class Diccionario extends JFrame {
         germanField = new JTextField(10);
         wordTypeField = new JTextField(10);
         acceptButton = new JButton();
-        closeButton = new JButton();
 
         botLayout.setHorizontalGroup(
                 botLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -89,8 +88,6 @@ public class Diccionario extends JFrame {
                         .addContainerGap(23, Short.MAX_VALUE))
                 .addGroup(botLayout.createSequentialGroup()
                         .addComponent(acceptButton)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(closeButton)
                         .addContainerGap())
         );
 
@@ -123,8 +120,7 @@ public class Diccionario extends JFrame {
                                 .addComponent(wordTypeField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(botLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(acceptButton)
-                                .addComponent(closeButton)))
+                                .addComponent(acceptButton)))
         );
 
         // Layout de arriba
@@ -186,6 +182,15 @@ public class Diccionario extends JFrame {
 
     }
 
+    public JMenu mainMenu;
+    private JMenuBar menuBar;
+    public JMenu languagesMenu;
+    public JMenuItem spanishItem;
+    public JMenuItem englishItem;
+    public JMenuItem japaneseItem;
+    public JMenuItem germanItem;
+    public JMenuItem closeItem;
+
     private ButtonGroup actionsGroup;
     private JPanel topPane;
     private GroupLayout topLayout;
@@ -217,7 +222,6 @@ public class Diccionario extends JFrame {
     private JTextField germanField;
     private JTextField wordTypeField;
     public JButton acceptButton;
-    public JButton closeButton;
     private JPanel mainPane;
     private GroupLayout mainLayout;
 

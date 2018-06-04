@@ -113,7 +113,6 @@ public class ControladorLogin implements ActionListener {
 
             switch (item.getActionCommand()) {
                 case "ESP":
-                    this.loc = new Locale("es");
                     InicioSesion viewes = new InicioSesion("Iniciar sesión");
                     UsuarioDAO modeles = new UsuarioDAO();
                     ControladorLogin controlleres = new ControladorLogin(viewes, modeles,"es", this.vista.emailField.getText());
@@ -121,7 +120,6 @@ public class ControladorLogin implements ActionListener {
                     viewes.setVisible(true);
                     break;
                 case "ENG":
-                    this.loc = new Locale("en");
                     InicioSesion viewen = new InicioSesion("Log in");
                     UsuarioDAO modelen = new UsuarioDAO();
                     ControladorLogin controlleren = new ControladorLogin(viewen, modelen, "en", this.vista.emailField.getText());
@@ -129,11 +127,21 @@ public class ControladorLogin implements ActionListener {
                     viewen.setVisible(true);
                     break;
                 case "JPN":
+                    InicioSesion viewjp = new InicioSesion("ログイン");
+                    UsuarioDAO modeljp = new UsuarioDAO();
+                    ControladorLogin controllerjp = new ControladorLogin(viewjp, modeljp, "ja", this.vista.emailField.getText());
+                    this.vista.dispose();
+                    viewjp.setVisible(true);
                     break;
                 case "DEU":
+                    InicioSesion viewde = new InicioSesion("Anmelden");
+                    UsuarioDAO modelde = new UsuarioDAO();
+                    ControladorLogin controllerde = new ControladorLogin(viewde, modelde, "de", this.vista.emailField.getText());
+                    this.vista.dispose();
+                    viewde.setVisible(true);
                     break;
                 case "CLOSE":
-                    int opcion = JOptionPane.showConfirmDialog(null, "¿Quieres cerrar?", "Confirmar", JOptionPane.YES_NO_OPTION);
+                    int opcion = JOptionPane.showConfirmDialog(null, rb.getString("closequest2"), rb.getString("closequest"), JOptionPane.YES_NO_OPTION);
                     if (opcion == 0) {
                         System.exit(0);
                     }
