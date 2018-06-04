@@ -1,9 +1,12 @@
 package controlador;
 
+import modelo.Palabra;
 import modelo.PalabraDAO;
 import vista.Diccionario;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
 import java.awt.event.*;
 
 public class ControladorDiccionario implements ActionListener, FocusListener, WindowListener {
@@ -28,14 +31,12 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         this.vista.moreActionsButton.setContentAreaFilled(false);
         this.vista.moreActionsButton.addActionListener(this);
         this.vista.moreActionsLabel.setText("Acciones:");
-        this.vista.idwordLabel2.setText("ID");
+        this.vista.idWordLabel2.setText("ID");
         this.vista.englishLabel.setText("Inglés");
         this.vista.spanishLabel.setText("Español");
         this.vista.japaneseLabel.setText("Japonés");
         this.vista.kanaLabel.setText("Kana");
         this.vista.germanLabel.setText("Alemán");
-        this.vista.portugueseLabel.setText("Portugués");
-        this.vista.koreanLabel.setText("Coreano");
         this.vista.wordTypeLabel.setText("Tipo de palabra");
         this.vista.insertButton.setText("Insertar");
         this.vista.updateButton.setText("Actualizar");
@@ -44,8 +45,10 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         this.vista.closeButton.setText("Cerrar");
         this.vista.closeButton.addActionListener(this);
         this.vista.closeButton.setActionCommand("HIDEMOREACTIONS");
-
         this.vista.addWindowListener(this);
+
+        this.vista.jsDicc.setVisible(false);
+        this.vista.bottomPane.setVisible(false);
 
         this.vista.pack();
         this.vista.setLocationRelativeTo(null);
@@ -58,16 +61,43 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
 
             switch (boton.getActionCommand()) {
                 case "SEARCHWORD":
+                    Palabra p = modelo.buscarPalabra(Integer.parseInt(this.vista.idWordField.getText()));
+                    DefaultTableModel defaultTableModel = new DefaultTableModel(
+                            new String[] {
+                                    "ID",
+                                    "Inglés",
+                                    "Español",
+                                    "Japonés",
+                                    "Kana",
+                                    "Alemán",
+                                    "Portugués"},
+                            0);
+                    defaultTableModel.addRow(
+                            new String[] {
+                                    p.getId_word()+"",
+                                    p.getEng(),
+                                    p.getEsp(),
+                                    p.getJpn(),
+                                    p.getKana(),
+                                    p.getDeu(),
+                                    p.getPtr()}
+                    );
+                    this.vista.dictionaryTable.setModel(defaultTableModel);
+                    this.vista.setVisible(false);
+                    this.vista.jsDicc.setVisible(true);
+                    this.vista.pack();
+                    this.vista.setLocationRelativeTo(null);
+                    this.vista.setVisible(true);
                     break;
                 case "LOADDICT":
                     break;
                 case "MOREACTIONS":
-                    this.vista.moreActionsPane.setVisible(true);
+                    this.vista.bottomPane.setVisible(true);
                     this.vista.pack();
                     this.vista.setLocationRelativeTo(null);
                     break;
                 case "HIDEMOREACTIONS":
-                    this.vista.moreActionsPane.setVisible(false);
+                    this.vista.bottomPane.setVisible(false);
                     this.vista.pack();
                     this.vista.setLocationRelativeTo(null);
                     break;

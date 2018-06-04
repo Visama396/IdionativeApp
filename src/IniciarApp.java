@@ -52,7 +52,7 @@ public class IniciarApp {
 
         InicioSesion view = new InicioSesion("Iniciar Sesion");
         UsuarioDAO model = new UsuarioDAO();
-        ControladorLogin controlador = new ControladorLogin(view, model, "ja", "");
+        ControladorLogin controlador = new ControladorLogin(view, model, "es", "visama396@gmail.com");
         view.setVisible(true);
     }
 

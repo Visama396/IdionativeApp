@@ -103,14 +103,31 @@ public class ControladorRegistro implements ActionListener {
             switch (boton.getActionCommand()) {
                 case "SIGNUP":
                     String email = this.vista.emailField.getText();
+                    boolean emailbool = false;
                     String user = this.vista.userField.getText();
+                    boolean userbool = false;
                     String pass = new String(this.vista.passwordField.getPassword());
+                    boolean passbool = false;
                     String nativeLang = (String) this.vista.nativeLangBox.getSelectedItem();
+                    boolean nativebool = false;
                     int gend = this.vista.genderBox.getSelectedIndex();
-                    String gender;
+                    boolean genderbool = false;
                     List<String> spokenLangs = this.vista.spokenLangList.getSelectedValuesList();
                     List<String> learnLangs = this.vista.learnLangList.getSelectedValuesList();
-                    //this.modelo.registrarUsuario(email, user, pass, gender, nativeLang, spokenLangs, learnLangs);
+
+                    if (email.length() > 5 && email.length() <=35) {
+                        emailbool = true;
+                    }
+
+                    if (user.length() > 5 && user.length() <=25) {
+                        userbool = true;
+                    }
+
+                    if (pass.length() > 5 && pass.length() <=25) {
+                        passbool = true;
+                    }
+
+                    this.modelo.registrarUsuario(email, user, pass, null, nativeLang, spokenLangs, learnLangs);
                     break;
                 case "RETURN":
                     InicioSesion view = new InicioSesion("Inicio sesión");

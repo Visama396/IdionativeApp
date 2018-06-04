@@ -11,7 +11,7 @@ public class Palabra {
     private String ptr;
     private String kor;
     private Word_types wordType;
-    private enum Word_types {
+    public enum Word_types {
         NOUN, ADJECTIVE, NAADJECTIVE, IADJECTIVE, VERB, REGULARADVERB, IRREGULARVERB, GODANVERB, ICHIDANVERB, SPECIALVERB, PRONOUN, PARTICLE, PREPOSITION
     }
 

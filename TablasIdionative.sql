@@ -135,7 +135,6 @@ CREATE TABLE palabras (
     kana VARCHAR2(70),
     deu VARCHAR2(70),
     ptr VARCHAR2(70),
-    kor VARCHAR2(70),
     CONSTRAINT palabras_PK PRIMARY KEY (id_palabra)
 );
 /*
