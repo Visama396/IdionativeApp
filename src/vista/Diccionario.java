@@ -170,7 +170,7 @@ public class Diccionario extends JFrame {
                                 .addComponent(searchWordButton)
                                 .addComponent(loadDictionaryButton))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jsDicc, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jsDicc, GroupLayout.PREFERRED_SIZE, 140, Short.MAX_VALUE)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(moreActionsButton)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)

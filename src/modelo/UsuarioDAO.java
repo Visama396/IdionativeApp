@@ -15,7 +15,7 @@ public class UsuarioDAO {
         con = new Conexion();
     }
 
-    public void registrarUsuario(String email, String username, String password, String gender, String nativeLang, List<String> spokenLangs, List<String> learnLangs) {
+    public int registrarUsuario(String email, String username, String password, String gender, String nativeLang, List<String> spokenLangs, List<String> learnLangs) {
 
         int resultado = 0;
 
@@ -28,11 +28,17 @@ public class UsuarioDAO {
             ps.setString(3, password);
             ps.setString(4, gender);
             ps.setString(5, nativeLang);
+
+            resultado = ps.executeUpdate();
+
+            PreparedStatement spokenps = conn.prepareStatement("INSERT INTO APRENDE_IDIOMAS VALUES (?, ?)");
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage(), "IdiomaDAO: SQLException", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, e.getMessage(), "UsuarioDAO: SQLException", JOptionPane.ERROR_MESSAGE);
         } finally {
             con.closeConnection(conn);
         }
+
+        return resultado;
 
     }
 

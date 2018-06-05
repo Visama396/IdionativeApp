@@ -1,12 +1,7 @@
 package modelo;
 
-import oracle.jdbc.proxy.annotation.Pre;
-
 import javax.swing.*;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class IdiomaDAO {
@@ -17,28 +12,36 @@ public class IdiomaDAO {
         con = new Conexion();
     }
 
-    public ArrayList<Idioma> obtenerIdiomas() {
-        ArrayList<Idioma> idiomas = new ArrayList<>();
-
+    public ArrayList<String> obtenerIdiomas(String lang) {
+        ArrayList<String> idiomas = new ArrayList<>();
         Connection conn = con.createConnection();
-        PreparedStatement ps=null;
+
+        PreparedStatement ps = null;
         ResultSet rs=null;
 
         try {
-            ps = conn.prepareStatement("SELECT * FROM idiomas");
+            switch (lang) {
+                case "en":
+                    ps = conn.prepareStatement("SELECT ENG FROM PALABRAS WHERE ID_PALABRA IN (SELECT PALABRA_REFERENCIA FROM IDIOMAS)");
+                    break;
+                case "es":
+                    ps = conn.prepareStatement("SELECT ESP FROM PALABRAS WHERE ID_PALABRA IN (SELECT PALABRA_REFERENCIA FROM IDIOMAS)");
+                    break;
+                case "ja":
+                    ps = conn.prepareStatement("SELECT JPN FROM PALABRAS WHERE ID_PALABRA IN (SELECT PALABRA_REFERENCIA FROM IDIOMAS)");
+                    break;
+                case "de":
+                    ps = conn.prepareStatement("SELECT DEU FROM PALABRAS WHERE ID_PALABRA IN (SELECT PALABRA_REFERENCIA FROM IDIOMAS)");
+                default:
+                    conn.prepareStatement("SELECT ESP FROM PALABRAS WHERE ID_PALABRA IN (SELECT PALABRA_REFERENCIA FROM IDIOMAS)");
+                    break;
+            }
             rs = ps.executeQuery();
             while (rs.next()) {
-                idiomas.add(new Idioma(rs.getString(1), rs.getString(2), rs.getString(3)));
+                idiomas.add(rs.getString(1));
             }
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage(), "UsuarioDAO: SQLException", JOptionPane.ERROR_MESSAGE);
-        } finally {
-            try {
-                rs.close();
-            } catch (SQLException e) {
-                JOptionPane.showMessageDialog(null, e.getMessage(), "UsuarioDAO: SQLException", JOptionPane.ERROR_MESSAGE);
-            }
-            con.closeConnection(conn);
+            JOptionPane.showMessageDialog(null, e.getMessage(), "IdiomaDAO: SQLException", JOptionPane.ERROR_MESSAGE);
         }
 
         return idiomas;

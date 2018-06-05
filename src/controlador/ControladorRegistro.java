@@ -10,56 +10,90 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
-public class ControladorRegistro implements ActionListener {
+public class ControladorRegistro implements ActionListener, WindowListener {
 
     private Registro vista;
     private UsuarioDAO modelo;
-    String lang;
+    private String lang;
+    private Locale loc;
+    private ResourceBundle rb;
 
     public ControladorRegistro(Registro vista, UsuarioDAO modelo, String lang, String email) {
         this.vista = vista;
         this.modelo = modelo;
         this.lang = lang;
 
-        // Fuente en Linux "Noto Serif CJK JP"
-        Font fuente = new Font("Arial Unicode MS", Font.PLAIN, 12);
+        this.loc = new Locale(this.lang);
+        this.rb = ResourceBundle.getBundle("locales.registro.locale", this.loc);
 
-        this.vista.emailLabel.setText("Email");
+        // Fuente en Linux "Noto Serif CJK JP"
+        Font fuente = new Font("Arial Unicode MS", Font.PLAIN, 15);
+
+        this.vista.mainMenu.setText(rb.getString("options"));
+        this.vista.mainMenu.setFont(fuente);
+        this.vista.languagesMenu.setText(rb.getString("langs"));
+        this.vista.languagesMenu.setFont(fuente);
+        this.vista.spanishItem.setText(rb.getString("spanish"));
+        this.vista.spanishItem.setFont(fuente);
+        this.vista.spanishItem.addActionListener(this);
+        this.vista.spanishItem.setActionCommand("ESP");
+        this.vista.englishItem.setText(rb.getString("english"));
+        this.vista.englishItem.setFont(fuente);
+        this.vista.englishItem.addActionListener(this);
+        this.vista.englishItem.setActionCommand("ENG");
+        this.vista.japaneseItem.setText(rb.getString("japanese"));
+        this.vista.japaneseItem.setFont(fuente);
+        this.vista.japaneseItem.addActionListener(this);
+        this.vista.japaneseItem.setActionCommand("JPN");
+        this.vista.germanItem.setText(rb.getString("german"));
+        this.vista.germanItem.setFont(fuente);
+        this.vista.germanItem.addActionListener(this);
+        this.vista.germanItem.setActionCommand("DEU");
+        this.vista.germanItem.setFont(fuente);
+        this.vista.closeItem.setText(rb.getString("close"));
+        this.vista.closeItem.setFont(fuente);
+        this.vista.closeItem.addActionListener(this);
+        this.vista.closeItem.setActionCommand("CLOSE");
+
+        this.vista.emailLabel.setText(rb.getString("email"));
         this.vista.emailLabel.setFont(fuente);
         this.vista.emailField.setText(email);
         this.vista.emailField.setFont(fuente);
-        this.vista.userLabel.setText("Nombre de usuario");
+        this.vista.emailField.setToolTipText("<html>- Máximo 35 carácteres.<br>- Ejemplos: example@gmail.com, maria@live.com, juan1234@yahoo.com, etc.</html>");
+        this.vista.userLabel.setText(rb.getString("user"));
         this.vista.userLabel.setFont(fuente);
         this.vista.userField.setText("");
         this.vista.userField.setFont(fuente);
-        this.vista.passwordLabel.setText("Contraseña");
+        this.vista.userField.setToolTipText("- Máximo 25 carácteres.");
+        this.vista.passwordLabel.setText(rb.getString("passwd"));
         this.vista.passwordLabel.setFont(fuente);
         this.vista.passwordField.setText("");
         this.vista.passwordField.setFont(fuente);
-        this.vista.nativeLangLabel.setText("Lengua materna");
+        this.vista.nativeLangLabel.setText(rb.getString("mothertongue"));
         this.vista.nativeLangLabel.setFont(fuente);
-        this.vista.genderLabel.setText("Sexo");
+        this.vista.genderLabel.setText(rb.getString("sex"));
         this.vista.genderLabel.setFont(fuente);
-        this.vista.spokenLangLabel.setText("Idioma(s) que hablas:");
+        this.vista.spokenLangLabel.setText(rb.getString("speaklangs"));
         this.vista.spokenLangLabel.setFont(fuente);
-        this.vista.learnLangLabel.setText("Idioma(s) que quieres aprender:");
+        this.vista.learnLangLabel.setText(rb.getString("learnlangs"));
         this.vista.learnLangLabel.setFont(fuente);
-        this.vista.signupButton.setText("Registrarse");
+        this.vista.signupButton.setText(rb.getString("signup"));
         this.vista.signupButton.setFont(fuente);
         this.vista.signupButton.addActionListener(this);
         this.vista.signupButton.setActionCommand("SIGNUP");
-        this.vista.returnButton.setText("Volver");
+        this.vista.returnButton.setText(rb.getString("return"));
         this.vista.returnButton.setFont(fuente);
         this.vista.returnButton.addActionListener(this);
         this.vista.returnButton.setActionCommand("RETURN");
-        this.vista.closeButton.setText("Cerrar");
-        this.vista.closeButton.setFont(fuente);
-        this.vista.closeButton.addActionListener(this);
-        this.vista.closeButton.setActionCommand("CLOSE");
         this.vista.nativeLangBox.setFont(fuente);
+        this.vista.genderBox.setFont(fuente);
         this.vista.spokenLangList.setFont(fuente);
         this.vista.spokenLangList.setLayoutOrientation(JList.VERTICAL_WRAP);
         this.vista.spokenLangList.setVisibleRowCount(3);
@@ -67,7 +101,8 @@ public class ControladorRegistro implements ActionListener {
         this.vista.learnLangList.setLayoutOrientation(JList.VERTICAL_WRAP);
         this.vista.learnLangList.setVisibleRowCount(3);
         completarOpciones();
-        this.vista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        this.vista.addWindowListener(this);
         this.vista.pack();
         this.vista.setLocationRelativeTo(null);
         this.vista.setResizable(false);
@@ -76,18 +111,19 @@ public class ControladorRegistro implements ActionListener {
 
     private void completarOpciones() {
 
-        ArrayList<Idioma> idiomas = new IdiomaDAO().obtenerIdiomas();
+        ArrayList<String> idiomas = new IdiomaDAO().obtenerIdiomas(lang);
         DefaultListModel<String> listModel = new DefaultListModel<>();
         DefaultComboBoxModel<String> comboBoxModel = new DefaultComboBoxModel<>();
-        for (Idioma idioma: idiomas) {
-            listModel.addElement(idioma.getIdioma());
-            comboBoxModel.addElement(idioma.getIdioma());
+
+        for (String idioma:idiomas) {
+            listModel.addElement(idioma);
+            comboBoxModel.addElement(idioma);
         }
 
         DefaultComboBoxModel<String> comboBoxModelGender = new DefaultComboBoxModel<>();
-        comboBoxModelGender.addElement("Hombre");
-        comboBoxModelGender.addElement("Mujer");
-        comboBoxModelGender.addElement("No especificar");
+        comboBoxModelGender.addElement(rb.getString("man"));
+        comboBoxModelGender.addElement(rb.getString("woman"));
+        comboBoxModelGender.addElement(rb.getString("none"));
 
         this.vista.genderBox.setModel(comboBoxModelGender);
         this.vista.nativeLangBox.setModel(comboBoxModel);
@@ -102,16 +138,15 @@ public class ControladorRegistro implements ActionListener {
 
             switch (boton.getActionCommand()) {
                 case "SIGNUP":
-                    String email = this.vista.emailField.getText();
-                    boolean emailbool = false;
                     String user = this.vista.userField.getText();
                     boolean userbool = false;
+                    String email = this.vista.emailField.getText();
+                    boolean emailbool = false;
                     String pass = new String(this.vista.passwordField.getPassword());
                     boolean passbool = false;
-                    String nativeLang = (String) this.vista.nativeLangBox.getSelectedItem();
-                    boolean nativebool = false;
                     int gend = this.vista.genderBox.getSelectedIndex();
-                    boolean genderbool = false;
+                    String gender;
+                    String nativeLang = (String) this.vista.nativeLangBox.getSelectedItem();
                     List<String> spokenLangs = this.vista.spokenLangList.getSelectedValuesList();
                     List<String> learnLangs = this.vista.learnLangList.getSelectedValuesList();
 
@@ -127,23 +162,118 @@ public class ControladorRegistro implements ActionListener {
                         passbool = true;
                     }
 
-                    this.modelo.registrarUsuario(email, user, pass, null, nativeLang, spokenLangs, learnLangs);
+                    if (gend == 0) {
+                        gender = "M";
+                    } else if (gend == 1) {
+                        gender = "H";
+                    } else {
+                        gender = "N";
+                    }
+
+                    if (emailbool && userbool && passbool) {
+                        this.modelo.registrarUsuario(email, user, pass, gender, nativeLang, spokenLangs, learnLangs);
+                    } else {
+                        String error="<html>";
+                        if(!userbool) {
+                            error+="- Usuario no válido<br>";
+                        }
+                        if(!emailbool) {
+                            error+="- Email no válido<br>";
+                        }
+                        if(!passbool) {
+                            error+="- Contraseña no válida<br>";
+                        }
+                        error+="</html>";
+                        JOptionPane.showMessageDialog(null, error, "Datos no válidos", JOptionPane.ERROR_MESSAGE);
+                    }
+
                     break;
                 case "RETURN":
                     InicioSesion view = new InicioSesion("Inicio sesión");
                     UsuarioDAO model = new UsuarioDAO();
                     ControladorLogin controller = new ControladorLogin(view, model, this.lang, this.vista.emailField.getText());
-                    this.vista.setVisible(false);
+                    this.vista.dispose();
                     view.setVisible(true);
                     break;
+            }
+            
+        } else if (e.getSource() instanceof JMenuItem) {
+            JMenuItem item = (JMenuItem) e.getSource();
+
+            switch (item.getActionCommand()) {
+                case "ESP":
+                    Registro viewes = new Registro("Registro");
+                    UsuarioDAO modeles = new UsuarioDAO();
+                    ControladorRegistro controlleres = new ControladorRegistro(viewes, modeles,"es", this.vista.emailField.getText());
+                    this.vista.dispose();
+                    viewes.setVisible(true);
+                    break;
+                case "ENG":
+                    Registro viewen = new Registro("Sign up");
+                    UsuarioDAO modelen = new UsuarioDAO();
+                    ControladorRegistro controlleren = new ControladorRegistro(viewen, modelen, "en", this.vista.emailField.getText());
+                    this.vista.dispose();
+                    viewen.setVisible(true);
+                    break;
+                case "JPN":
+                    Registro viewjp = new Registro("サインアップ");
+                    UsuarioDAO modeljp = new UsuarioDAO();
+                    ControladorRegistro controllerjp = new ControladorRegistro(viewjp, modeljp, "ja", this.vista.emailField.getText());
+                    this.vista.dispose();
+                    viewjp.setVisible(true);
+                    break;
+                case "DEU":
+                    Registro viewde = new Registro("Registrieren");
+                    UsuarioDAO modelde = new UsuarioDAO();
+                    ControladorRegistro controllerde = new ControladorRegistro(viewde, modelde, "de", this.vista.emailField.getText());
+                    this.vista.dispose();
+                    viewde.setVisible(true);
+                    break;
                 case "CLOSE":
-                    int opcion = JOptionPane.showConfirmDialog(null, "¿Quieres cerrar?", "Confirmar", JOptionPane.YES_NO_OPTION);
+                    int opcion = JOptionPane.showConfirmDialog(null, rb.getString("closequest2"), rb.getString("closequest"), JOptionPane.YES_NO_OPTION);
                     if (opcion == 0) {
                         System.exit(0);
                     }
                     break;
             }
-            
         }
+    }
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        int option = JOptionPane.showConfirmDialog(null, rb.getString("closequest2"), rb.getString("closequest"), JOptionPane.YES_NO_OPTION);
+        if (option == 0) {
+            System.exit(0);
+        }
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+
     }
 }

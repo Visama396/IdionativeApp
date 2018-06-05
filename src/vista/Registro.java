@@ -8,6 +8,26 @@ public class Registro extends JFrame {
 
     public Registro(String title) {
 
+        menuBar = new JMenuBar();
+
+        mainMenu = new JMenu();
+        languagesMenu = new JMenu();
+        spanishItem = new JMenuItem();
+        englishItem = new JMenuItem();
+        japaneseItem = new JMenuItem();
+        germanItem = new JMenuItem();
+        closeItem = new JMenuItem();
+
+        languagesMenu.add(spanishItem);
+        languagesMenu.add(englishItem);
+        languagesMenu.add(japaneseItem);
+        languagesMenu.add(germanItem);
+
+        mainMenu.add(languagesMenu);
+        mainMenu.add(closeItem);
+
+        menuBar.add(mainMenu);
+
         emailLabel = new JLabel();
         emailField = new JTextField(15);
         userLabel = new JLabel();
@@ -52,15 +72,14 @@ public class Registro extends JFrame {
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                 .addComponent(jspSpoken)
                                 .addComponent(jspLearn)
-                                .addComponent(returnButton))
+                                )
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                 .addComponent(userField)
                                 .addComponent(emailField)
                                 .addComponent(passwordField)
                                 .addComponent(genderBox)
                                 .addComponent(nativeLangBox)
-
-                                .addComponent(closeButton))
+                                .addComponent(returnButton))
         );
 
         layout.setVerticalGroup(
@@ -89,13 +108,23 @@ public class Registro extends JFrame {
                                 .addComponent(jspLearn))
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                 .addComponent(signupButton)
-                                .addComponent(returnButton)
-                                .addComponent(closeButton))
+                                .addComponent(returnButton))
         );
 
+        this.setJMenuBar(menuBar);
         this.add(mainPane);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setTitle(title);
     }
+
+    private JMenuBar menuBar;
+    public JMenu mainMenu;
+    public JMenu languagesMenu;
+    public JMenuItem spanishItem;
+    public JMenuItem englishItem;
+    public JMenuItem japaneseItem;
+    public JMenuItem germanItem;
+    public JMenuItem closeItem;
 
     public JLabel emailLabel;
     public JTextField emailField;

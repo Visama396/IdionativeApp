@@ -19,11 +19,11 @@ import java.util.Locale;
 
 public class ControladorLogin implements ActionListener, WindowListener {
 
-    UsuarioDAO modelo;
-    InicioSesion vista;
-    String lang;
-    Locale loc;
-    ResourceBundle rb;
+    private UsuarioDAO modelo;
+    private InicioSesion vista;
+    private String lang;
+    private Locale loc;
+    private ResourceBundle rb;
 
     public ControladorLogin(InicioSesion vista, UsuarioDAO modelo, String lang, String email) {
         this.vista = vista;
@@ -33,7 +33,7 @@ public class ControladorLogin implements ActionListener, WindowListener {
         this.loc = new Locale(this.lang);
         this.rb = ResourceBundle.getBundle("locales.iniciosesion.locale", this.loc);
 
-        Font fuente = new Font("Arial Unicode MS", Font.PLAIN, 14);
+        Font fuente = new Font("Arial Unicode MS", Font.PLAIN, 15);
 
         this.vista.mainMenu.setText(rb.getString("options"));
         this.vista.mainMenu.setFont(fuente);
@@ -57,15 +57,18 @@ public class ControladorLogin implements ActionListener, WindowListener {
         this.vista.germanItem.setActionCommand("DEU");
         this.vista.germanItem.setFont(fuente);
         this.vista.closeItem.setText(rb.getString("close"));
+        this.vista.closeItem.setFont(fuente);
         this.vista.closeItem.addActionListener(this);
         this.vista.closeItem.setActionCommand("CLOSE");
 
         this.vista.emailLabel.setText(rb.getString("email"));
         this.vista.emailLabel.setFont(fuente);
         this.vista.emailField.setText(email);
+        this.vista.emailField.setFont(fuente);
         this.vista.passwordLabel.setText(rb.getString("password"));
         this.vista.passwordLabel.setFont(fuente);
         this.vista.passwordField.setText("");
+        this.vista.passwordField.setFont(fuente);
         this.vista.signinButton.setText(rb.getString("login"));
         this.vista.signinButton.setFont(fuente);
         this.vista.signinButton.addActionListener(this);

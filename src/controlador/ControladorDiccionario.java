@@ -30,35 +30,56 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         this.vista = vista;
         this.modelo = modelo;
 
+        Font fuente = new Font("Arial Unicode MS", Font.PLAIN, 15);
+
         this.vista.idWordLabel.setText("ID Palabra:");
+        this.vista.idWordLabel.setFont(fuente);
         this.vista.idWordField.setToolTipText("Valor numérico");
         this.vista.searchWordButton.setText("Buscar palabra");
+        this.vista.searchWordButton.setFont(fuente);
         this.vista.searchWordButton.addActionListener(this);
         this.vista.searchWordButton.setActionCommand("SEARCHWORD");
         this.vista.loadDictionaryButton.setText("Cargar diccionario");
+        this.vista.loadDictionaryButton.setFont(fuente);
         this.vista.loadDictionaryButton.addActionListener(this);
         this.vista.loadDictionaryButton.setActionCommand("LOADDICT");
         this.vista.moreActionsButton.setText("+ Más");
+        this.vista.moreActionsButton.setFont(fuente);
         this.vista.moreActionsButton.setActionCommand("MOREACTIONS");
         this.vista.moreActionsButton.setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
         this.vista.moreActionsButton.setContentAreaFilled(false);
         this.vista.moreActionsButton.addActionListener(this);
         this.vista.moreActionsLabel.setText("Acciones:");
+        this.vista.moreActionsLabel.setFont(fuente);
         this.vista.idWordLabel2.setText("ID");
+        this.vista.idWordLabel2.setFont(fuente);
         this.vista.englishLabel.setText("Inglés");
+        this.vista.englishLabel.setFont(fuente);
         this.vista.spanishLabel.setText("Español");
+        this.vista.spanishLabel.setFont(fuente);
         this.vista.japaneseLabel.setText("Japonés");
+        this.vista.japaneseLabel.setFont(fuente);
         this.vista.kanaLabel.setText("Kana");
+        this.vista.kanaLabel.setFont(fuente);
         this.vista.germanLabel.setText("Alemán");
+        this.vista.germanLabel.setFont(fuente);
         this.vista.portugueseLabel.setText("Portugués");
+        this.vista.portugueseLabel.setFont(fuente);
         this.vista.wordTypeLabel.setText("Tipo de palabra");
+        this.vista.wordTypeLabel.setFont(fuente);
         this.vista.insertButton.setText("Insertar");
+        this.vista.insertButton.setFont(fuente);
         this.vista.updateButton.setText("Actualizar");
+        this.vista.updateButton.setFont(fuente);
         this.vista.removeButton.setText("Eliminar");
+        this.vista.removeButton.setFont(fuente);
         this.vista.confirmButton.setText("Continuar");
+        this.vista.confirmButton.setFont(fuente);
         this.vista.confirmButton.setActionCommand("QUERY");
         this.vista.confirmButton.addActionListener(this);
+        this.vista.confirmLabel.setFont(fuente);
         this.vista.idWordField2.addFocusListener(this);
+        this.vista.dictionaryTable.setFont(new Font("Arial Unicode MS", Font.PLAIN, 13));
         this.vista.addWindowListener(this);
 
         this.vista.jsDicc.setVisible(false);
@@ -101,7 +122,7 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                         this.vista.setVisible(true);
 
                     } catch (NumberFormatException nfe) {
-                        JOptionPane.showMessageDialog(null, "Por favor, introduzca un id numérico válido.", "Diccionario: NumberFormatException", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Por favor, introduzca un ID numérico válido.", "Diccionario: NumberFormatException", JOptionPane.ERROR_MESSAGE);
                     } catch (NullPointerException npe) {
                         JOptionPane.showMessageDialog(null, "No se ha podido encontrar esa palabra.", "Diccionario: NullPointerException", JOptionPane.ERROR_MESSAGE);
                     }

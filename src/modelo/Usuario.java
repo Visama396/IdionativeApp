@@ -8,8 +8,8 @@ public class Usuario {
     private String username;
     private String password;
     private String nativeLang;
-    private String gender;
-    private String tipo;
+    private String gender; // M mujer, H hombre, N no especificado/nulo
+    private String tipo; // A adming, P profesor, E estudiante
     private ArrayList<Idioma> spokenLangs;
     private ArrayList<Idioma> learnLangs;
 
