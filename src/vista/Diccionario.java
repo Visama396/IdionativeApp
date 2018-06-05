@@ -24,6 +24,7 @@ public class Diccionario extends JFrame {
         moreActionsLabel = new JLabel();
         insertButton = new JRadioButton();
         actionsGroup.add(insertButton);
+        insertButton.setSelected(true);
         updateButton = new JRadioButton();
         actionsGroup.add(updateButton);
         removeButton = new JRadioButton();
@@ -34,6 +35,7 @@ public class Diccionario extends JFrame {
         japaneseLabel = new JLabel();
         kanaLabel = new JLabel();
         germanLabel = new JLabel();
+        portugueseLabel = new JLabel();
         wordTypeLabel = new JLabel();
         idWordField2 = new JTextField(10);
         englishField = new JTextField(10);
@@ -41,8 +43,10 @@ public class Diccionario extends JFrame {
         japaneseField = new JTextField(10);
         kanaField = new JTextField(10);
         germanField = new JTextField(10);
+        portugueseField = new JTextField(10);
         wordTypeField = new JTextField(10);
-        acceptButton = new JButton();
+        confirmButton = new JButton();
+        confirmLabel = new JLabel();
 
         botLayout.setHorizontalGroup(
                 botLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
@@ -83,11 +87,18 @@ public class Diccionario extends JFrame {
                                                 .addComponent(germanField, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(botLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(portugueseLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(portugueseField, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        )
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addGroup(botLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                                                 .addComponent(wordTypeLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(wordTypeField, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addContainerGap(23, Short.MAX_VALUE))
                 .addGroup(botLayout.createSequentialGroup()
-                        .addComponent(acceptButton)
+                        .addComponent(confirmButton)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(confirmLabel)
                         .addContainerGap())
         );
 
@@ -108,6 +119,7 @@ public class Diccionario extends JFrame {
                                 .addComponent(japaneseLabel)
                                 .addComponent(kanaLabel)
                                 .addComponent(germanLabel)
+                                .addComponent(portugueseLabel)
                                 .addComponent(wordTypeLabel))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(botLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
@@ -117,10 +129,12 @@ public class Diccionario extends JFrame {
                                 .addComponent(japaneseField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE)
                                 .addComponent(kanaField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE)
                                 .addComponent(germanField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE)
+                                .addComponent(portugueseField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE)
                                 .addComponent(wordTypeField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(botLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(acceptButton)))
+                                .addComponent(confirmButton)
+                                .addComponent(confirmLabel)))
         );
 
         // Layout de arriba
@@ -156,7 +170,7 @@ public class Diccionario extends JFrame {
                                 .addComponent(searchWordButton)
                                 .addComponent(loadDictionaryButton))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jsDicc, GroupLayout.PREFERRED_SIZE, 138, GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jsDicc, GroupLayout.PREFERRED_SIZE, 140, GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(moreActionsButton)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
@@ -213,15 +227,18 @@ public class Diccionario extends JFrame {
     public JLabel japaneseLabel;
     public JLabel kanaLabel;
     public JLabel germanLabel;
+    public JLabel portugueseLabel;
     public JLabel wordTypeLabel;
-    private JTextField idWordField2;
-    private JTextField englishField;
-    private JTextField spanishField;
-    private JTextField japaneseField;
-    private JTextField kanaField;
-    private JTextField germanField;
+    public JTextField idWordField2;
+    public JTextField englishField;
+    public JTextField spanishField;
+    public JTextField japaneseField;
+    public JTextField kanaField;
+    public JTextField germanField;
+    public JTextField portugueseField;
     private JTextField wordTypeField;
-    public JButton acceptButton;
+    public JButton confirmButton;
+    public JLabel confirmLabel;
     private JPanel mainPane;
     private GroupLayout mainLayout;
 

@@ -30,6 +30,8 @@ public class UsuarioDAO {
             ps.setString(5, nativeLang);
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "IdiomaDAO: SQLException", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            con.closeConnection(conn);
         }
 
     }
@@ -39,10 +41,11 @@ public class UsuarioDAO {
         boolean valido = false;
 
         Connection conn = con.createConnection();
+        ResultSet rs=null;
         try {
             PreparedStatement ps = conn.prepareStatement("SELECT passwd FROM usuarios WHERE email = ?");
             ps.setString(1, email);
-            ResultSet rs = ps.executeQuery();
+            rs = ps.executeQuery();
             if (rs.next()) {
                 if (rs.getString(1).equals(password)) {
                     valido = true;
@@ -54,9 +57,16 @@ public class UsuarioDAO {
             JOptionPane.showMessageDialog(null, e.getMessage(), "UsuarioDAO: SQLException", JOptionPane.ERROR_MESSAGE);
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.getClass(), "UsuarioDAO", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                JOptionPane.showMessageDialog(null, e.getMessage(), "UsuarioDAO: SQLException", JOptionPane.ERROR_MESSAGE);
+            }
+            con.closeConnection(conn);
         }
 
-        con.closeConnection(conn);
+
         return valido;
     }
 

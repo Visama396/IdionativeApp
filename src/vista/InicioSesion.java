@@ -79,6 +79,7 @@ public class InicioSesion extends JFrame {
 
         this.setJMenuBar(menuBar);
         this.add(mainPane);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setTitle(title);
 
     }

@@ -12,10 +12,12 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.util.ResourceBundle;
 import java.util.Locale;
 
-public class ControladorLogin implements ActionListener {
+public class ControladorLogin implements ActionListener, WindowListener {
 
     UsuarioDAO modelo;
     InicioSesion vista;
@@ -73,7 +75,7 @@ public class ControladorLogin implements ActionListener {
         this.vista.noAccountButton.addActionListener(this);
         this.vista.noAccountButton.setActionCommand("CREATEACCOUNT");
 
-        this.vista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.vista.addWindowListener(this);
         this.vista.pack();
         this.vista.setLocationRelativeTo(null);
         this.vista.setResizable(false);
@@ -148,5 +150,43 @@ public class ControladorLogin implements ActionListener {
                     break;
             }
         }
+    }
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        int option = JOptionPane.showConfirmDialog(null, "¿Quieres cerrar la aplicación?", "Confirmar", JOptionPane.YES_NO_OPTION);
+        if (option == 0) {
+            System.exit(0);
+        }
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+
     }
 }
