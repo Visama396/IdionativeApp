@@ -9,12 +9,19 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 public class ControladorDiccionario implements ActionListener, FocusListener, WindowListener {
 
     private Diccionario vista;
     private PalabraDAO modelo;
     private Palabra p;
+    private String lang;
+    private Locale loc;
+    private ResourceBundle rb;
+    private String email;
+
     private DefaultTableModel defaultTableModel = new DefaultTableModel(
             new String[] {
                     "ID",
@@ -26,9 +33,13 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                     "Portugués"},
             0);
 
-    public ControladorDiccionario(Diccionario vista, PalabraDAO modelo) {
+    public ControladorDiccionario(Diccionario vista, PalabraDAO modelo, String lang, String email) {
         this.vista = vista;
         this.modelo = modelo;
+        this.email = email;
+        this.lang = lang;
+        this.loc = new Locale(this.lang);
+        this.rb = ResourceBundle.getBundle("locales.iniciosesion.locale", this.loc);
 
         Font fuente = new Font("Arial Unicode MS", Font.PLAIN, 15);
 

@@ -17,7 +17,6 @@ import javax.swing.*;
  * </p>
  *
  * @author Víctor Sánchez Martínez
- * @version 0.0.1
  * @since 2018-05-27
  */
 
@@ -52,7 +51,7 @@ public class IniciarApp {
 
         InicioSesion view = new InicioSesion("Iniciar Sesion");
         UsuarioDAO model = new UsuarioDAO();
-        ControladorLogin controlador = new ControladorLogin(view, model, "es", "visama396@gmail.com");
+        ControladorLogin controlador = new ControladorLogin(view, model, "es", "");
         view.setVisible(true);
     }
 

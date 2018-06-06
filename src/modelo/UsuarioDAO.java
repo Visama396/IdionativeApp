@@ -5,7 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.List;
+import java.util.ArrayList;
 
 public class UsuarioDAO {
 
@@ -15,7 +15,32 @@ public class UsuarioDAO {
         con = new Conexion();
     }
 
-    public int registrarUsuario(String email, String username, String password, String gender, String nativeLang, List<String> spokenLangs, List<String> learnLangs) {
+    private String indexToCode(int index) {
+
+        String lang="";
+
+        switch (index) {
+            case 0:
+                lang = "eng";
+                break;
+            case 1:
+                lang = "esp";
+                break;
+            case 2:
+                lang = "jpn";
+                break;
+            case 3:
+                lang = "deu";
+                break;
+            case 4:
+                lang = "ptr";
+        }
+
+        return lang;
+
+    }
+
+    public int registrarUsuario(String email, String username, String password, String gender, int nativeL, int[] spokenLangs, int[] learnLangs) {
 
         int resultado = 0;
 
@@ -27,11 +52,25 @@ public class UsuarioDAO {
             ps.setString(2, username);
             ps.setString(3, password);
             ps.setString(4, gender);
-            ps.setString(5, nativeLang);
+            ps.setString(5, indexToCode(nativeL));
+            resultado += ps.executeUpdate();
 
-            resultado = ps.executeUpdate();
+            PreparedStatement spokenps = conn.prepareStatement("INSERT INTO HABLA_IDIOMAS VALUES(?, ?)");
+            for (int index:spokenLangs) {
+                spokenps.clearParameters();
+                spokenps.setString(1, email);
+                spokenps.setString(2, indexToCode(index));
+                resultado += spokenps.executeUpdate();
+            }
 
-            PreparedStatement spokenps = conn.prepareStatement("INSERT INTO APRENDE_IDIOMAS VALUES (?, ?)");
+            PreparedStatement learnps = conn.prepareStatement("INSERT INTO APRENDE_IDIOMAS VALUES(?, ?)");
+            for (int index:learnLangs) {
+                learnps.clearParameters();
+                learnps.setString(1, email);
+                learnps.setString(2, indexToCode(index));
+                resultado += learnps.executeUpdate();
+            }
+
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "UsuarioDAO: SQLException", JOptionPane.ERROR_MESSAGE);
         } finally {

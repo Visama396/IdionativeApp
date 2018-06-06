@@ -2,7 +2,9 @@ package controlador;
 
 import modelo.Idioma;
 import modelo.IdiomaDAO;
+import modelo.PalabraDAO;
 import modelo.UsuarioDAO;
+import vista.Diccionario;
 import vista.InicioSesion;
 import vista.Registro;
 
@@ -13,7 +15,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -22,6 +23,7 @@ public class ControladorRegistro implements ActionListener, WindowListener {
     private Registro vista;
     private UsuarioDAO modelo;
     private String lang;
+    private String email;
     private Locale loc;
     private ResourceBundle rb;
 
@@ -29,6 +31,7 @@ public class ControladorRegistro implements ActionListener, WindowListener {
         this.vista = vista;
         this.modelo = modelo;
         this.lang = lang;
+        this.email = email;
 
         this.loc = new Locale(this.lang);
         this.rb = ResourceBundle.getBundle("locales.registro.locale", this.loc);
@@ -138,6 +141,7 @@ public class ControladorRegistro implements ActionListener, WindowListener {
 
             switch (boton.getActionCommand()) {
                 case "SIGNUP":
+                    int resultado = 0;
                     String user = this.vista.userField.getText();
                     boolean userbool = false;
                     String email = this.vista.emailField.getText();
@@ -146,9 +150,9 @@ public class ControladorRegistro implements ActionListener, WindowListener {
                     boolean passbool = false;
                     int gend = this.vista.genderBox.getSelectedIndex();
                     String gender;
-                    String nativeLang = (String) this.vista.nativeLangBox.getSelectedItem();
-                    List<String> spokenLangs = this.vista.spokenLangList.getSelectedValuesList();
-                    List<String> learnLangs = this.vista.learnLangList.getSelectedValuesList();
+                    int nativeLang = this.vista.nativeLangBox.getSelectedIndex();
+                    int[] spokenLangs = this.vista.spokenLangList.getSelectedIndices();
+                    int[] learnLangs = this.vista.learnLangList.getSelectedIndices();
 
                     if (email.length() > 5 && email.length() <=35) {
                         emailbool = true;
@@ -163,15 +167,20 @@ public class ControladorRegistro implements ActionListener, WindowListener {
                     }
 
                     if (gend == 0) {
-                        gender = "M";
-                    } else if (gend == 1) {
                         gender = "H";
+                    } else if (gend == 1) {
+                        gender = "M";
                     } else {
                         gender = "N";
                     }
 
                     if (emailbool && userbool && passbool) {
-                        this.modelo.registrarUsuario(email, user, pass, gender, nativeLang, spokenLangs, learnLangs);
+                        resultado = this.modelo.registrarUsuario(email, user, pass, gender, nativeLang, spokenLangs, learnLangs);
+                        Diccionario view = new Diccionario("Diccionario");
+                        PalabraDAO model = new PalabraDAO();
+                        ControladorDiccionario controller = new ControladorDiccionario(view, model, email, this.lang);
+                        this.vista.dispose();
+                        view.setVisible(true);
                     } else {
                         String error="<html>";
                         if(!userbool) {
@@ -186,7 +195,6 @@ public class ControladorRegistro implements ActionListener, WindowListener {
                         error+="</html>";
                         JOptionPane.showMessageDialog(null, error, "Datos no válidos", JOptionPane.ERROR_MESSAGE);
                     }
-
                     break;
                 case "RETURN":
                     InicioSesion view = new InicioSesion("Inicio sesión");

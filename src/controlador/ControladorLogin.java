@@ -24,11 +24,13 @@ public class ControladorLogin implements ActionListener, WindowListener {
     private String lang;
     private Locale loc;
     private ResourceBundle rb;
+    private String email;
 
     public ControladorLogin(InicioSesion vista, UsuarioDAO modelo, String lang, String email) {
         this.vista = vista;
         this.modelo = modelo;
         this.lang = lang;
+        this.email = email;
 
         this.loc = new Locale(this.lang);
         this.rb = ResourceBundle.getBundle("locales.iniciosesion.locale", this.loc);
@@ -63,7 +65,7 @@ public class ControladorLogin implements ActionListener, WindowListener {
 
         this.vista.emailLabel.setText(rb.getString("email"));
         this.vista.emailLabel.setFont(fuente);
-        this.vista.emailField.setText(email);
+        this.vista.emailField.setText(this.email);
         this.vista.emailField.setFont(fuente);
         this.vista.passwordLabel.setText(rb.getString("password"));
         this.vista.passwordLabel.setFont(fuente);
@@ -97,7 +99,7 @@ public class ControladorLogin implements ActionListener, WindowListener {
                     if (correcto) {
                         Diccionario view = new Diccionario(rb.getString("dict"));
                         PalabraDAO model = new PalabraDAO();
-                        ControladorDiccionario controller = new ControladorDiccionario(view, model);
+                        ControladorDiccionario controller = new ControladorDiccionario(view, model, this.email, this.lang);
                         this.vista.dispose();
                         view.setVisible(true);
                     } else {
