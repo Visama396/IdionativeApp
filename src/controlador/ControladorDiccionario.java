@@ -228,24 +228,30 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
 
     @Override
     public void focusLost(FocusEvent e) {
-        try {
-            p = this.modelo.buscarPalabra(Integer.parseInt(this.vista.idWordField2.getText()));
-            if (p != null) {
-                this.vista.englishField.setText(p.getEng());
-                this.vista.spanishField.setText(p.getEsp());
-                this.vista.japaneseField.setText(p.getJpn());
-                this.vista.kanaField.setText(p.getKana());
-                this.vista.germanField.setText(p.getDeu());
-                this.vista.portugueseField.setText(p.getPtr());
-                this.vista.confirmLabel.setForeground(Color.GREEN);
-                this.vista.confirmLabel.setText("Palabra encontrada");
-            } else {
+        if (this.vista.insertButton.isSelected()) {
+
+        } else if (this.vista.updateButton.isSelected()) {
+            try {
+                p = this.modelo.buscarPalabra(Integer.parseInt(this.vista.idWordField2.getText()));
+                if (p != null) {
+                    this.vista.englishField.setText(p.getEng());
+                    this.vista.spanishField.setText(p.getEsp());
+                    this.vista.japaneseField.setText(p.getJpn());
+                    this.vista.kanaField.setText(p.getKana());
+                    this.vista.germanField.setText(p.getDeu());
+                    this.vista.portugueseField.setText(p.getPtr());
+                    this.vista.confirmLabel.setForeground(Color.GREEN);
+                    this.vista.confirmLabel.setText("Palabra encontrada");
+                } else {
+                    this.vista.confirmLabel.setForeground(Color.RED);
+                    this.vista.confirmLabel.setText("Palabra no encontrada");
+                }
+            } catch (NumberFormatException nfe) {
                 this.vista.confirmLabel.setForeground(Color.RED);
-                this.vista.confirmLabel.setText("Palabra no encontrada");
+                this.vista.confirmLabel.setText("Id no válido");
             }
-        } catch (NumberFormatException nfe) {
-            this.vista.confirmLabel.setForeground(Color.RED);
-            this.vista.confirmLabel.setText("Id no válido");
+        } else {
+
         }
     }
 
