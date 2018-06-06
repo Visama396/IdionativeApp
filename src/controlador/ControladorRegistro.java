@@ -141,59 +141,64 @@ public class ControladorRegistro implements ActionListener, WindowListener {
 
             switch (boton.getActionCommand()) {
                 case "SIGNUP":
-                    int resultado = 0;
-                    String user = this.vista.userField.getText();
-                    boolean userbool = false;
-                    String email = this.vista.emailField.getText();
-                    boolean emailbool = false;
-                    String pass = new String(this.vista.passwordField.getPassword());
-                    boolean passbool = false;
-                    int gend = this.vista.genderBox.getSelectedIndex();
-                    String gender;
-                    int nativeLang = this.vista.nativeLangBox.getSelectedIndex();
-                    int[] spokenLangs = this.vista.spokenLangList.getSelectedIndices();
-                    int[] learnLangs = this.vista.learnLangList.getSelectedIndices();
-
-                    if (email.length() > 5 && email.length() <=35) {
-                        emailbool = true;
-                    }
-
-                    if (user.length() > 5 && user.length() <=25) {
-                        userbool = true;
-                    }
-
-                    if (pass.length() > 5 && pass.length() <=25) {
-                        passbool = true;
-                    }
-
-                    if (gend == 0) {
-                        gender = "H";
-                    } else if (gend == 1) {
-                        gender = "M";
+                    if (modelo.comprobarUsuario(this.vista.emailField.getText(), null)) {
+                        JOptionPane.showMessageDialog(null, "Esta cuenta ya existe", "Correo encontrado", JOptionPane.ERROR_MESSAGE);
                     } else {
-                        gender = "N";
-                    }
+                        int resultado = 0;
+                        String user = this.vista.userField.getText();
+                        boolean userbool = false;
+                        String email = this.vista.emailField.getText();
+                        boolean emailbool = false;
+                        String pass = new String(this.vista.passwordField.getPassword());
+                        boolean passbool = false;
+                        int gend = this.vista.genderBox.getSelectedIndex();
+                        String gender;
+                        int nativeLang = this.vista.nativeLangBox.getSelectedIndex();
+                        int[] spokenLangs = this.vista.spokenLangList.getSelectedIndices();
+                        int[] learnLangs = this.vista.learnLangList.getSelectedIndices();
 
-                    if (emailbool && userbool && passbool) {
-                        resultado = this.modelo.registrarUsuario(email, user, pass, gender, nativeLang, spokenLangs, learnLangs);
-                        Diccionario view = new Diccionario("Diccionario");
-                        PalabraDAO model = new PalabraDAO();
-                        ControladorDiccionario controller = new ControladorDiccionario(view, model, email, this.lang);
-                        this.vista.dispose();
-                        view.setVisible(true);
-                    } else {
-                        String error="<html>";
-                        if(!userbool) {
-                            error+="- Usuario no válido<br>";
+                        if (email.length() >= 5 && email.length() <=35) {
+                            emailbool = true;
                         }
-                        if(!emailbool) {
-                            error+="- Email no válido<br>";
+
+                        if (user.length() >= 5 && user.length() <=25) {
+                            userbool = true;
                         }
-                        if(!passbool) {
-                            error+="- Contraseña no válida<br>";
+
+                        if (pass.length() >= 5 && pass.length() <=25) {
+                            passbool = true;
                         }
-                        error+="</html>";
-                        JOptionPane.showMessageDialog(null, error, "Datos no válidos", JOptionPane.ERROR_MESSAGE);
+
+                        if (gend == 0) {
+                            gender = "H";
+                        } else if (gend == 1) {
+                            gender = "M";
+                        } else {
+                            gender = "N";
+                        }
+
+                        if (emailbool && userbool && passbool) {
+                            resultado = this.modelo.registrarUsuario(email, user, pass, gender, nativeLang, spokenLangs, learnLangs);
+                            JOptionPane.showMessageDialog(null, "Usuario creado", "Correcto", JOptionPane.INFORMATION_MESSAGE);
+                            Diccionario view = new Diccionario("Diccionario");
+                            PalabraDAO model = new PalabraDAO();
+                            ControladorDiccionario controller = new ControladorDiccionario(view, model, email, this.lang);
+                            this.vista.dispose();
+                            view.setVisible(true);
+                        } else {
+                            String error="<html>";
+                            if(!userbool) {
+                                error+="- Usuario no válido<br>";
+                            }
+                            if(!emailbool) {
+                                error+="- Email no válido<br>";
+                            }
+                            if(!passbool) {
+                                error+="- Contraseña no válida<br>";
+                            }
+                            error+="</html>";
+                            JOptionPane.showMessageDialog(null, error, "Datos no válidos", JOptionPane.ERROR_MESSAGE);
+                        }
                     }
                     break;
                 case "RETURN":

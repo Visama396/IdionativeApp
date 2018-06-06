@@ -84,31 +84,50 @@ public class UsuarioDAO {
     public boolean comprobarUsuario(String email, String password) {
 
         boolean valido = false;
+        int existe=0;
 
-        Connection conn = con.createConnection();
-        ResultSet rs=null;
-        try {
-            PreparedStatement ps = conn.prepareStatement("SELECT passwd FROM usuarios WHERE email = ?");
-            ps.setString(1, email);
-            rs = ps.executeQuery();
-            if (rs.next()) {
-                if (rs.getString(1).equals(password)) {
-                    valido = true;
-                } else {
-                    valido = false;
-                }
-            }
-        } catch (SQLException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage(), "UsuarioDAO: SQLException", JOptionPane.ERROR_MESSAGE);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e.getClass(), "UsuarioDAO", JOptionPane.ERROR_MESSAGE);
-        } finally {
+        if (password == null) {
+            Connection conn = con.createConnection();
+            ResultSet rs = null;
             try {
-                rs.close();
+                PreparedStatement ps = conn.prepareStatement("SELECT * FROM usuarios WHERE email = ?");
+                ps.setString(1, email);
+                rs = ps.executeQuery();
+                while(rs.next()) {
+                    existe++;
+                }
+                if (existe == 1) {
+                    valido = true;
+                }
+            } catch (SQLException e) {
+
+            }
+        } else {
+            Connection conn = con.createConnection();
+            ResultSet rs=null;
+            try {
+                PreparedStatement ps = conn.prepareStatement("SELECT passwd FROM usuarios WHERE email = ?");
+                ps.setString(1, email);
+                rs = ps.executeQuery();
+                if (rs.next()) {
+                    if (rs.getString(1).equals(password)) {
+                        valido = true;
+                    } else {
+                        valido = false;
+                    }
+                }
             } catch (SQLException e) {
                 JOptionPane.showMessageDialog(null, e.getMessage(), "UsuarioDAO: SQLException", JOptionPane.ERROR_MESSAGE);
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e.getClass(), "UsuarioDAO", JOptionPane.ERROR_MESSAGE);
+            } finally {
+                try {
+                    rs.close();
+                } catch (SQLException e) {
+                    JOptionPane.showMessageDialog(null, e.getMessage(), "UsuarioDAO: SQLException", JOptionPane.ERROR_MESSAGE);
+                }
+                con.closeConnection(conn);
             }
-            con.closeConnection(conn);
         }
 
 

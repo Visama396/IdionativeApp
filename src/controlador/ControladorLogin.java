@@ -84,7 +84,6 @@ public class ControladorLogin implements ActionListener, WindowListener {
         this.vista.pack();
         this.vista.setLocationRelativeTo(null);
         this.vista.setResizable(false);
-
     }
 
 

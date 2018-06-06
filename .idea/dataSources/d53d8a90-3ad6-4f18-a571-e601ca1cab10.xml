@@ -6,10 +6,9 @@
     </root>
     <schema id="2" parent="1" name="HR">
       <ObjectId>43</ObjectId>
-      <IntrospectionTimestamp>2018-06-04.23:53:20</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-06-06.22:26:09</IntrospectionTimestamp>
       <CreatedTimestamp>2011-08-27.10:55:20</CreatedTimestamp>
-      <ModifiedTimestamp>2018-06-04.23:51:50</ModifiedTimestamp>
-      <CommentsHash>212605363307689</CommentsHash>
+      <ModifiedTimestamp>2018-06-06.22:05:12</ModifiedTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -49,49 +48,46 @@
     <schema id="14" parent="1" name="XS$NULL">
       <ObjectId>2147483638</ObjectId>
     </schema>
-    <sequence id="15" parent="2" name="DEPARTMENTS_SEQ">
-      <ObjectId>16408</ObjectId>
-      <CreatedTimestamp>2014-05-29.15:21:53</CreatedTimestamp>
-      <ModifiedTimestamp>2014-05-29.15:21:53</ModifiedTimestamp>
-      <SequenceIdentity>1+10..9990</SequenceIdentity>
-      <CacheSize>-2147483648</CacheSize>
-    </sequence>
-    <sequence id="16" parent="2" name="EMPLOYEES_SEQ">
-      <ObjectId>16414</ObjectId>
-      <CreatedTimestamp>2014-05-29.15:21:53</CreatedTimestamp>
-      <ModifiedTimestamp>2014-05-29.15:21:53</ModifiedTimestamp>
-      <SequenceIdentity>1</SequenceIdentity>
-      <CacheSize>-2147483648</CacheSize>
-    </sequence>
-    <sequence id="17" parent="2" name="LOCATIONS_SEQ">
-      <ObjectId>16405</ObjectId>
-      <CreatedTimestamp>2014-05-29.15:21:53</CreatedTimestamp>
-      <ModifiedTimestamp>2014-05-29.15:21:53</ModifiedTimestamp>
-      <SequenceIdentity>1+100..9900</SequenceIdentity>
-      <CacheSize>-2147483648</CacheSize>
-    </sequence>
-    <table id="18" parent="2" name="ACTUALIZACIONES">
-      <ObjectId>20080</ObjectId>
-      <CreatedTimestamp>2018-05-30.22:05:20</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-30.22:05:20</ModifiedTimestamp>
+    <table id="15" parent="2" name="ACTUALIZACIONES">
+      <ObjectId>20068</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="19" parent="2" name="APRENDE_IDIOMAS">
+    <table id="16" parent="2" name="APRENDE_IDIOMAS">
       <ObjectId>20071</ObjectId>
       <CreatedTimestamp>2018-05-30.22:04:06</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="20" parent="2" name="CURSOS">
+    <table id="17" parent="2" name="APRENDE_IDIOMAS">
+      <ObjectId>20072</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="18" parent="2" name="CURSOS">
       <ObjectId>20073</ObjectId>
       <CreatedTimestamp>2018-05-30.22:04:06</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="21" parent="2" name="HABLA_IDIOMAS">
+    <table id="19" parent="2" name="CURSOS">
+      <ObjectId>20074</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:57</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.22:05:12</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="20" parent="2" name="HABLA_IDIOMAS">
       <ObjectId>20069</ObjectId>
       <CreatedTimestamp>2018-05-30.22:04:06</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="21" parent="2" name="HABLA_IDIOMAS">
+      <ObjectId>20070</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="22" parent="2" name="IDIOMAS">
@@ -100,113 +96,146 @@
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="23" parent="2" name="LECCIONES">
+    <table id="23" parent="2" name="IDIOMAS">
+      <ObjectId>20066</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="24" parent="2" name="LECCIONES">
       <ObjectId>20075</ObjectId>
       <CreatedTimestamp>2018-05-30.22:04:06</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="24" parent="2" name="PALABRAS">
-      <ObjectId>20056</ObjectId>
-      <CreatedTimestamp>2018-05-30.22:02:05</CreatedTimestamp>
-      <ModifiedTimestamp>2018-06-04.23:51:50</ModifiedTimestamp>
+    <table id="25" parent="2" name="LECCIONES">
+      <ObjectId>20076</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:57</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="25" parent="2" name="SIGNIFICADO_EJEMPLOS">
+    <table id="26" parent="2" name="PALABRAS">
+      <ObjectId>20064</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="27" parent="2" name="SIGNIFICADO_EJEMPLOS">
       <ObjectId>20077</ObjectId>
       <CreatedTimestamp>2018-05-30.22:04:06</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="26" parent="2" name="TIPOS_PALABRAS">
+    <table id="28" parent="2" name="SIGNIFICADO_EJEMPLOS">
+      <ObjectId>20078</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:57</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="29" parent="2" name="TIPOS_PALABRAS">
+      <ObjectId>20080</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:57</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
+      <TemporaryPreserve>1</TemporaryPreserve>
+    </table>
+    <table id="30" parent="2" name="TIPOS_PALABRAS">
       <ObjectId>20079</ObjectId>
       <CreatedTimestamp>2018-05-30.22:04:06</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <table id="27" parent="2" name="USUARIOS">
-      <ObjectId>20048</ObjectId>
-      <CreatedTimestamp>2018-05-30.22:02:05</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-30.22:08:10</ModifiedTimestamp>
+    <table id="31" parent="2" name="USUARIOS">
+      <ObjectId>20062</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
-    <view id="28" parent="2" name="EMP_DETAILS_VIEW">
-      <ObjectId>16417</ObjectId>
-      <CreatedTimestamp>2014-05-29.15:21:53</CreatedTimestamp>
-      <ModifiedTimestamp>2014-05-29.15:21:53</ModifiedTimestamp>
-    </view>
-    <column id="29" parent="18" name="ID_ACT">
+    <routine id="32" parent="2" name="ADD_JOB_HISTORY">
+      <ObjectId>16423</ObjectId>
+      <RoutineKind>procedure</RoutineKind>
+      <Invalid>1</Invalid>
+      <CreatedTimestamp>2011-08-27.10:55:21</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:28:26</ModifiedTimestamp>
+    </routine>
+    <routine id="33" parent="2" name="SECURE_DML">
+      <ObjectId>16421</ObjectId>
+      <RoutineKind>procedure</RoutineKind>
+      <DependsOnIds>1255</DependsOnIds>
+      <CreatedTimestamp>2011-08-27.10:55:21</CreatedTimestamp>
+      <ModifiedTimestamp>2011-08-27.10:55:21</ModifiedTimestamp>
+    </routine>
+    <column id="34" parent="15" name="ID_ACT">
       <Position>1</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="30" parent="18" name="TITULO_ACT">
+    <column id="35" parent="15" name="TITULO_ACT">
       <Position>2</Position>
       <DataType>VARCHAR2(25 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="31" parent="18" name="CONTENIDO_ACT">
+    <column id="36" parent="15" name="CONTENIDO_ACT">
       <Position>3</Position>
       <DataType>VARCHAR2(600 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="32" parent="18" name="FECHA_ACT">
+    <column id="37" parent="15" name="FECHA_ACT">
       <Position>4</Position>
       <DataType>DATE|0s</DataType>
       <DefaultExpression>SYSDATE</DefaultExpression>
     </column>
-    <column id="33" parent="18" name="IDIOMA_ACT">
+    <column id="38" parent="15" name="IDIOMA_ACT">
       <Position>5</Position>
       <DataType>VARCHAR2(3 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="34" parent="18" name="AUTOR_ACT">
+    <column id="39" parent="15" name="AUTOR_ACT">
       <Position>6</Position>
       <DataType>VARCHAR2(35 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="35" parent="18" name="ACTUALIZACIONES_PK">
-      <ObjectId>20081</ObjectId>
-      <CreatedTimestamp>2018-05-30.22:05:20</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-30.22:05:20</ModifiedTimestamp>
+    <index id="40" parent="15" name="ACTUALIZACIONES_PK">
+      <ObjectId>20069</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
       <TablespaceName>USERS</TablespaceName>
       <ColNames>ID_ACT</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="36" parent="18" name="ACTUALIZACIONES_PK">
-      <ModifiedTimestamp>2018-05-30.22:05:20</ModifiedTimestamp>
+    <key id="41" parent="15" name="ACTUALIZACIONES_PK">
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
       <ColNames>ID_ACT</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>ACTUALIZACIONES_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="37" parent="18" name="IDIOMA_ACTUALI_FK">
-      <ModifiedTimestamp>2018-05-30.22:05:20</ModifiedTimestamp>
+    <foreign-key id="42" parent="15" name="IDIOMA_ACTUALI_FK">
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
       <ColNames>IDIOMA_ACT</ColNames>
       <RefSchemaName>HR</RefSchemaName>
       <RefTableName>IDIOMAS</RefTableName>
       <RefKeyName>IDIOMAS_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="38" parent="18" name="AUTOR_ACTUALI_FK">
-      <ModifiedTimestamp>2018-05-30.22:05:20</ModifiedTimestamp>
+    <foreign-key id="43" parent="15" name="AUTOR_ACTUALI_FK">
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
       <ColNames>AUTOR_ACT</ColNames>
       <RefSchemaName>HR</RefSchemaName>
       <RefTableName>USUARIOS</RefTableName>
       <RefKeyName>USUARIOS_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="39" parent="19" name="USUARIO_AI">
+    <column id="44" parent="16" name="USUARIO_AI">
       <Position>1</Position>
       <DataType>VARCHAR2(35 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="40" parent="19" name="IDIOMA_AI">
+    <column id="45" parent="16" name="IDIOMA_AI">
       <Position>2</Position>
       <DataType>VARCHAR2(3 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="41" parent="19" name="APRENDE_IDIOMAS_PK">
+    <index id="46" parent="16" name="APRENDE_IDIOMAS_PK">
       <ObjectId>20072</ObjectId>
       <CreatedTimestamp>2018-05-30.22:04:06</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
@@ -215,15 +244,22 @@
 IDIOMA_AI</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="42" parent="19" name="APRENDE_IDIOMAS_PK">
-      <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
+    <index id="47" parent="16" name="APRENDE_IDIOMAS_PK">
+      <ObjectId>20073</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <Unique>1</Unique>
+    </index>
+    <key id="48" parent="16" name="APRENDE_IDIOMAS_PK">
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
       <ColNames>USUARIO_AI
 IDIOMA_AI</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>APRENDE_IDIOMAS_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="43" parent="19" name="USUARIO_APRENDE_FK">
+    <foreign-key id="49" parent="16" name="USUARIO_APRENDE_FK">
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <ColNames>USUARIO_AI</ColNames>
       <RefSchemaName>HR</RefSchemaName>
@@ -231,7 +267,7 @@ IDIOMA_AI</ColNames>
       <RefKeyName>USUARIOS_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="44" parent="19" name="IDIOMA_APRENDE_FK">
+    <foreign-key id="50" parent="16" name="IDIOMA_APRENDE_FK">
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <ColNames>IDIOMA_AI</ColNames>
       <RefSchemaName>HR</RefSchemaName>
@@ -239,32 +275,56 @@ IDIOMA_AI</ColNames>
       <RefKeyName>IDIOMAS_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="45" parent="20" name="ID_CURSO">
+    <column id="51" parent="17" name="USUARIO_AI">
+      <Position>1</Position>
+      <DataType>VARCHAR2(35 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="17" name="IDIOMA_AI">
+      <Position>2</Position>
+      <DataType>VARCHAR2(3 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <foreign-key id="53" parent="17" name="USUARIO_APRENDE_FK">
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
+      <RefSchemaName>HR</RefSchemaName>
+      <RefTableName>USUARIOS</RefTableName>
+      <RefKeyName>USUARIOS_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="54" parent="17" name="IDIOMA_APRENDE_FK">
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
+      <RefSchemaName>HR</RefSchemaName>
+      <RefTableName>IDIOMAS</RefTableName>
+      <RefKeyName>IDIOMAS_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="55" parent="18" name="ID_CURSO">
       <Position>1</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="46" parent="20" name="TITULO_CURSO">
+    <column id="56" parent="18" name="TITULO_CURSO">
       <Position>2</Position>
       <DataType>VARCHAR2(25 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="47" parent="20" name="CONTENIDO_CURSO">
+    <column id="57" parent="18" name="CONTENIDO_CURSO">
       <Position>3</Position>
       <DataType>VARCHAR2(200 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="48" parent="20" name="AUTOR_CURSO">
+    <column id="58" parent="18" name="AUTOR_CURSO">
       <Position>4</Position>
       <DataType>VARCHAR2(35 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="49" parent="20" name="IDIOMA_CURSO">
+    <column id="59" parent="18" name="IDIOMA_CURSO">
       <Position>5</Position>
       <DataType>VARCHAR2(3 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="50" parent="20" name="CURSOS_PK">
+    <index id="60" parent="18" name="CURSOS_PK">
       <ObjectId>20074</ObjectId>
       <CreatedTimestamp>2018-05-30.22:04:06</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
@@ -274,8 +334,15 @@ IDIOMA_CURSO
 AUTOR_CURSO</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="51" parent="20" name="CURSOS_PK">
-      <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
+    <index id="61" parent="18" name="CURSOS_PK">
+      <ObjectId>20075</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:57</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <Unique>1</Unique>
+    </index>
+    <key id="62" parent="18" name="CURSOS_PK">
+      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
       <ColNames>ID_CURSO
 IDIOMA_CURSO
 AUTOR_CURSO</ColNames>
@@ -283,7 +350,7 @@ AUTOR_CURSO</ColNames>
       <UnderlyingIndexName>CURSOS_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="52" parent="20" name="AUTOR_CURSO_FK">
+    <foreign-key id="63" parent="18" name="AUTOR_CURSO_FK">
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <ColNames>AUTOR_CURSO</ColNames>
       <RefSchemaName>HR</RefSchemaName>
@@ -291,7 +358,7 @@ AUTOR_CURSO</ColNames>
       <RefKeyName>USUARIOS_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="53" parent="20" name="IDIOMA_CURSO_FK">
+    <foreign-key id="64" parent="18" name="IDIOMA_CURSO_FK">
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <ColNames>IDIOMA_CURSO</ColNames>
       <RefSchemaName>HR</RefSchemaName>
@@ -299,17 +366,67 @@ AUTOR_CURSO</ColNames>
       <RefKeyName>IDIOMAS_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="54" parent="21" name="USUARIO_HI">
+    <column id="65" parent="19" name="ID_CURSO">
+      <Position>1</Position>
+      <DataType>NUMBER(10 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="66" parent="19" name="TITULO_CURSO">
+      <Position>2</Position>
+      <DataType>VARCHAR2(25 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="19" name="CONTENIDO_CURSO">
+      <Position>3</Position>
+      <DataType>VARCHAR2(200 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="19" name="AUTOR_CURSO">
+      <Position>4</Position>
+      <DataType>VARCHAR2(35 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="19" name="IDIOMA_CURSO">
+      <Position>5</Position>
+      <DataType>VARCHAR2(3 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="19" name="IDIOMA_APRENDER">
+      <Position>6</Position>
+      <DataType>VARCHAR2(3 byte)|0s</DataType>
+    </column>
+    <foreign-key id="71" parent="19" name="AUTOR_CURSO_FK">
+      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
+      <RefSchemaName>HR</RefSchemaName>
+      <RefTableName>USUARIOS</RefTableName>
+      <RefKeyName>USUARIOS_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="72" parent="19" name="IDIOMA_CURSO_FK">
+      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
+      <RefSchemaName>HR</RefSchemaName>
+      <RefTableName>IDIOMAS</RefTableName>
+      <RefKeyName>IDIOMAS_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="73" parent="19" name="IDIOMA_APRENDER_FK">
+      <ModifiedTimestamp>2018-06-06.22:05:12</ModifiedTimestamp>
+      <RefSchemaName>HR</RefSchemaName>
+      <RefTableName>IDIOMAS</RefTableName>
+      <RefKeyName>IDIOMAS_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="74" parent="20" name="USUARIO_HI">
       <Position>1</Position>
       <DataType>VARCHAR2(35 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="55" parent="21" name="IDIOMA_HI">
+    <column id="75" parent="20" name="IDIOMA_HI">
       <Position>2</Position>
       <DataType>VARCHAR2(3 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="56" parent="21" name="HABLA_IDIOMAS_PK">
+    <index id="76" parent="20" name="HABLA_IDIOMAS_PK">
       <ObjectId>20070</ObjectId>
       <CreatedTimestamp>2018-05-30.22:04:06</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
@@ -318,15 +435,22 @@ AUTOR_CURSO</ColNames>
 IDIOMA_HI</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="57" parent="21" name="HABLA_IDIOMAS_PK">
-      <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
+    <index id="77" parent="20" name="HABLA_IDIOMAS_PK">
+      <ObjectId>20071</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <Unique>1</Unique>
+    </index>
+    <key id="78" parent="20" name="HABLA_IDIOMAS_PK">
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
       <ColNames>USUARIO_HI
 IDIOMA_HI</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>HABLA_IDIOMAS_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="58" parent="21" name="USUARIO_HABLA_FK">
+    <foreign-key id="79" parent="20" name="USUARIO_HABLA_FK">
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <ColNames>USUARIO_HI</ColNames>
       <RefSchemaName>HR</RefSchemaName>
@@ -334,7 +458,7 @@ IDIOMA_HI</ColNames>
       <RefKeyName>USUARIOS_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="59" parent="21" name="IDIOMA_HABLA_FK">
+    <foreign-key id="80" parent="20" name="IDIOMA_HABLA_FK">
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <ColNames>IDIOMA_HI</ColNames>
       <RefSchemaName>HR</RefSchemaName>
@@ -342,26 +466,50 @@ IDIOMA_HI</ColNames>
       <RefKeyName>IDIOMAS_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="60" parent="22" name="CODIGO">
+    <column id="81" parent="21" name="USUARIO_HI">
+      <Position>1</Position>
+      <DataType>VARCHAR2(35 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="82" parent="21" name="IDIOMA_HI">
+      <Position>2</Position>
+      <DataType>VARCHAR2(3 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <foreign-key id="83" parent="21" name="USUARIO_HABLA_FK">
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
+      <RefSchemaName>HR</RefSchemaName>
+      <RefTableName>USUARIOS</RefTableName>
+      <RefKeyName>USUARIOS_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="84" parent="21" name="IDIOMA_HABLA_FK">
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
+      <RefSchemaName>HR</RefSchemaName>
+      <RefTableName>IDIOMAS</RefTableName>
+      <RefKeyName>IDIOMAS_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="85" parent="22" name="CODIGO">
       <Position>1</Position>
       <DataType>VARCHAR2(3 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="61" parent="22" name="NOMBRE">
+    <column id="86" parent="22" name="NOMBRE">
       <Position>2</Position>
       <DataType>VARCHAR2(25 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="62" parent="22" name="PAIS">
+    <column id="87" parent="22" name="PAIS">
       <Position>3</Position>
       <DataType>VARCHAR2(20 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="63" parent="22" name="PALABRA_REFERENCIA">
+    <column id="88" parent="22" name="PALABRA_REFERENCIA">
       <Position>4</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
     </column>
-    <index id="64" parent="22" name="IDIOMAS_PK">
+    <index id="89" parent="22" name="IDIOMAS_PK">
       <ObjectId>20068</ObjectId>
       <CreatedTimestamp>2018-05-30.22:04:06</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
@@ -369,14 +517,21 @@ IDIOMA_HI</ColNames>
       <ColNames>CODIGO</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="65" parent="22" name="IDIOMAS_PK">
-      <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
+    <index id="90" parent="22" name="IDIOMAS_PK">
+      <ObjectId>20067</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <Unique>1</Unique>
+    </index>
+    <key id="91" parent="22" name="IDIOMAS_PK">
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
       <ColNames>CODIGO</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>IDIOMAS_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="66" parent="22" name="PALABRA_REFERENCIA_FK">
+    <foreign-key id="92" parent="22" name="PALABRA_REFERENCIA_FK">
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <ColNames>PALABRA_REFERENCIA</ColNames>
       <RefSchemaName>HR</RefSchemaName>
@@ -384,37 +539,63 @@ IDIOMA_HI</ColNames>
       <RefKeyName>PALABRAS_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="67" parent="23" name="ID_LECC">
+    <column id="93" parent="23" name="CODIGO">
+      <Position>1</Position>
+      <DataType>VARCHAR2(3 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="94" parent="23" name="NOMBRE">
+      <Position>2</Position>
+      <DataType>VARCHAR2(25 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="95" parent="23" name="PAIS">
+      <Position>3</Position>
+      <DataType>VARCHAR2(20 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="96" parent="23" name="PALABRA_REFERENCIA">
+      <Position>4</Position>
+      <DataType>NUMBER(10 digit)|0s</DataType>
+    </column>
+    <foreign-key id="97" parent="23" name="PALABRA_REFERENCIA_FK">
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
+      <RefSchemaName>HR</RefSchemaName>
+      <RefTableName>PALABRAS</RefTableName>
+      <RefKeyName>PALABRAS_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="98" parent="24" name="ID_LECC">
       <Position>1</Position>
       <DataType>NUMBER(20 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="68" parent="23" name="ID_CURSO_LECC">
+    <column id="99" parent="24" name="ID_CURSO_LECC">
       <Position>2</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="69" parent="23" name="TITULO_LECC">
+    <column id="100" parent="24" name="TITULO_LECC">
       <Position>3</Position>
       <DataType>VARCHAR2(25 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="70" parent="23" name="CONTENT_LECC">
+    <column id="101" parent="24" name="CONTENT_LECC">
       <Position>4</Position>
       <DataType>VARCHAR2(4000 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="71" parent="23" name="IDIOMA_LECC">
+    <column id="102" parent="24" name="IDIOMA_LECC">
       <Position>5</Position>
       <DataType>VARCHAR2(3 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="72" parent="23" name="AUTOR_LECC">
+    <column id="103" parent="24" name="AUTOR_LECC">
       <Position>6</Position>
       <DataType>VARCHAR2(35 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="73" parent="23" name="LECCION_PK">
+    <index id="104" parent="24" name="LECCION_PK">
       <ObjectId>20076</ObjectId>
       <CreatedTimestamp>2018-05-30.22:04:06</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
@@ -425,8 +606,15 @@ IDIOMA_LECC
 AUTOR_LECC</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="74" parent="23" name="LECCION_PK">
-      <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
+    <index id="105" parent="24" name="LECCION_PK">
+      <ObjectId>20077</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:57</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <Unique>1</Unique>
+    </index>
+    <key id="106" parent="24" name="LECCION_PK">
+      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
       <ColNames>ID_LECC
 ID_CURSO_LECC
 IDIOMA_LECC
@@ -435,7 +623,7 @@ AUTOR_LECC</ColNames>
       <UnderlyingIndexName>LECCION_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="75" parent="23" name="CURSO_FK">
+    <foreign-key id="107" parent="24" name="CURSO_FK">
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <ColNames>ID_CURSO_LECC
 IDIOMA_LECC
@@ -445,71 +633,108 @@ AUTOR_LECC</ColNames>
       <RefKeyName>CURSOS_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="76" parent="24" name="ID_PALABRA">
+    <column id="108" parent="25" name="ID_LECC">
+      <Position>1</Position>
+      <DataType>NUMBER(20 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="109" parent="25" name="ID_CURSO_LECC">
+      <Position>2</Position>
+      <DataType>NUMBER(10 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="110" parent="25" name="TITULO_LECC">
+      <Position>3</Position>
+      <DataType>VARCHAR2(25 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="111" parent="25" name="CONTENT_LECC">
+      <Position>4</Position>
+      <DataType>VARCHAR2(4000 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="112" parent="25" name="IDIOMA_LECC">
+      <Position>5</Position>
+      <DataType>VARCHAR2(3 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="113" parent="25" name="AUTOR_LECC">
+      <Position>6</Position>
+      <DataType>VARCHAR2(35 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <foreign-key id="114" parent="25" name="CURSO_FK">
+      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
+      <RefSchemaName>HR</RefSchemaName>
+      <RefTableName>CURSOS</RefTableName>
+      <RefKeyName>CURSOS_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="115" parent="26" name="ID_PALABRA">
       <Position>1</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="77" parent="24" name="ENG">
+    <column id="116" parent="26" name="ENG">
       <Position>2</Position>
       <DataType>VARCHAR2(70 byte)|0s</DataType>
     </column>
-    <column id="78" parent="24" name="ESP">
+    <column id="117" parent="26" name="ESP">
       <Position>3</Position>
       <DataType>VARCHAR2(70 byte)|0s</DataType>
     </column>
-    <column id="79" parent="24" name="JPN">
+    <column id="118" parent="26" name="JPN">
       <Position>4</Position>
       <DataType>VARCHAR2(70 byte)|0s</DataType>
     </column>
-    <column id="80" parent="24" name="KANA">
+    <column id="119" parent="26" name="KANA">
       <Position>5</Position>
       <DataType>VARCHAR2(70 byte)|0s</DataType>
     </column>
-    <column id="81" parent="24" name="DEU">
+    <column id="120" parent="26" name="DEU">
       <Position>6</Position>
       <DataType>VARCHAR2(70 byte)|0s</DataType>
     </column>
-    <column id="82" parent="24" name="PTR">
+    <column id="121" parent="26" name="PTR">
       <Position>7</Position>
       <DataType>VARCHAR2(70 byte)|0s</DataType>
     </column>
-    <index id="83" parent="24" name="PALABRAS_PK">
-      <ObjectId>20057</ObjectId>
-      <CreatedTimestamp>2018-05-30.22:02:05</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-30.22:02:05</ModifiedTimestamp>
+    <index id="122" parent="26" name="PALABRAS_PK">
+      <ObjectId>20065</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
       <TablespaceName>USERS</TablespaceName>
       <ColNames>ID_PALABRA</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="84" parent="24" name="PALABRAS_PK">
-      <ModifiedTimestamp>2018-05-30.22:02:05</ModifiedTimestamp>
+    <key id="123" parent="26" name="PALABRAS_PK">
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
       <ColNames>ID_PALABRA</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>PALABRAS_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="85" parent="25" name="ID_SIG">
+    <column id="124" parent="27" name="ID_SIG">
       <Position>1</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="86" parent="25" name="SIGNIFICADO">
+    <column id="125" parent="27" name="SIGNIFICADO">
       <Position>2</Position>
       <DataType>VARCHAR2(100 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="87" parent="25" name="EJEMPLO">
+    <column id="126" parent="27" name="EJEMPLO">
       <Position>3</Position>
       <DataType>VARCHAR2(100 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="88" parent="25" name="IDIOMA_SIG">
+    <column id="127" parent="27" name="IDIOMA_SIG">
       <Position>4</Position>
       <DataType>VARCHAR2(3 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="89" parent="25" name="SIGNIFICADO_PK">
+    <index id="128" parent="27" name="SIGNIFICADO_PK">
       <ObjectId>20078</ObjectId>
       <CreatedTimestamp>2018-05-30.22:04:06</CreatedTimestamp>
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
@@ -517,14 +742,21 @@ AUTOR_LECC</ColNames>
       <ColNames>ID_SIG</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="90" parent="25" name="SIGNIFICADO_PK">
-      <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
+    <index id="129" parent="27" name="SIGNIFICADO_PK">
+      <ObjectId>20079</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:57</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
+      <TablespaceName>USERS</TablespaceName>
+      <Unique>1</Unique>
+    </index>
+    <key id="130" parent="27" name="SIGNIFICADO_PK">
+      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
       <ColNames>ID_SIG</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>SIGNIFICADO_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="91" parent="25" name="PALABRA_FK">
+    <foreign-key id="131" parent="27" name="PALABRA_FK">
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <ColNames>ID_SIG</ColNames>
       <RefSchemaName>HR</RefSchemaName>
@@ -532,7 +764,7 @@ AUTOR_LECC</ColNames>
       <RefKeyName>PALABRAS_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <foreign-key id="92" parent="25" name="IDIOMA_SIGNIFICADO_FK">
+    <foreign-key id="132" parent="27" name="IDIOMA_SIGNIFICADO_FK">
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <ColNames>IDIOMA_SIG</ColNames>
       <RefSchemaName>HR</RefSchemaName>
@@ -540,17 +772,74 @@ AUTOR_LECC</ColNames>
       <RefKeyName>IDIOMAS_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <column id="93" parent="26" name="IDTIPO_PALABRA">
+    <column id="133" parent="28" name="ID_SIG">
       <Position>1</Position>
       <DataType>NUMBER(10 digit)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="94" parent="26" name="TIPO">
+    <column id="134" parent="28" name="SIGNIFICADO">
+      <Position>2</Position>
+      <DataType>VARCHAR2(100 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="135" parent="28" name="EJEMPLO">
+      <Position>3</Position>
+      <DataType>VARCHAR2(100 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="136" parent="28" name="IDIOMA_SIG">
+      <Position>4</Position>
+      <DataType>VARCHAR2(3 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <foreign-key id="137" parent="28" name="PALABRA_FK">
+      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
+      <RefSchemaName>HR</RefSchemaName>
+      <RefTableName>PALABRAS</RefTableName>
+      <RefKeyName>PALABRAS_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <foreign-key id="138" parent="28" name="IDIOMA_SIGNIFICADO_FK">
+      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
+      <RefSchemaName>HR</RefSchemaName>
+      <RefTableName>IDIOMAS</RefTableName>
+      <RefKeyName>IDIOMAS_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <column id="139" parent="29" name="IDTIPO_PALABRA">
+      <Position>1</Position>
+      <DataType>NUMBER(10 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="140" parent="29" name="TIPO">
       <Position>2</Position>
       <DataType>VARCHAR2(10 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <foreign-key id="95" parent="26" name="ID_PALABRA_FK">
+    <foreign-key id="141" parent="29" name="ID_PALABRA_FK">
+      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
+      <ColNames>IDTIPO_PALABRA</ColNames>
+      <RefSchemaName>HR</RefSchemaName>
+      <RefTableName>PALABRAS</RefTableName>
+      <RefKeyName>PALABRAS_PK</RefKeyName>
+      <OnDelete>restrict</OnDelete>
+    </foreign-key>
+    <check id="142" parent="29" name="TIPO_CK">
+      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
+      <ColNames>TIPO</ColNames>
+      <Predicate>tipo IN (&apos;N&apos;, &apos;A&apos;, &apos;Adv&apos; ,&apos;V&apos; ,&apos;Pron&apos;, &apos;Prep&apos;, &apos;Art&apos;, &apos;Conj&apos;, &apos;Interj&apos; , &apos;NaAdj&apos;, &apos;IAdj&apos;, &apos;RV&apos;, &apos;IV&apos;, &apos;VT&apos;, &apos;VI&apos;, &apos;GV&apos; ,&apos;IcV&apos;, &apos;SpV&apos;, &apos;Part&apos;, &apos;Det&apos;)</Predicate>
+    </check>
+    <column id="143" parent="30" name="IDTIPO_PALABRA">
+      <Position>1</Position>
+      <DataType>NUMBER(10 digit)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="144" parent="30" name="TIPO">
+      <Position>2</Position>
+      <DataType>VARCHAR2(10 byte)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <foreign-key id="145" parent="30" name="ID_PALABRA_FK">
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <ColNames>IDTIPO_PALABRA</ColNames>
       <RefSchemaName>HR</RefSchemaName>
@@ -558,142 +847,65 @@ AUTOR_LECC</ColNames>
       <RefKeyName>PALABRAS_PK</RefKeyName>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
-    <check id="96" parent="26" name="TIPO_CK">
+    <check id="146" parent="30" name="TIPO_CK">
       <ModifiedTimestamp>2018-05-30.22:04:06</ModifiedTimestamp>
       <ColNames>TIPO</ColNames>
       <Predicate>tipo IN (&apos;N&apos;, &apos;A&apos;, &apos;Adv&apos; ,&apos;V&apos; ,&apos;Pron&apos;, &apos;Prep&apos;, &apos;Art&apos;, &apos;Conj&apos;, &apos;Interj&apos; , &apos;NaAdj&apos;, &apos;IAdj&apos;, &apos;RV&apos;, &apos;IV&apos;, &apos;VT&apos;, &apos;VI&apos;, &apos;GV&apos; ,&apos;IcV&apos;, &apos;SpV&apos;, &apos;Part&apos;, &apos;Det&apos;)</Predicate>
     </check>
-    <column id="97" parent="27" name="EMAIL">
+    <column id="147" parent="31" name="EMAIL">
       <Position>1</Position>
       <DataType>VARCHAR2(35 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="98" parent="27" name="USUARIO">
+    <column id="148" parent="31" name="USUARIO">
       <Position>2</Position>
       <DataType>VARCHAR2(25 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="99" parent="27" name="PASSWD">
+    <column id="149" parent="31" name="PASSWD">
       <Position>3</Position>
       <DataType>VARCHAR2(25 byte)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="100" parent="27" name="TIPO">
+    <column id="150" parent="31" name="TIPO">
       <Position>4</Position>
       <DataType>VARCHAR2(1 byte)|0s</DataType>
       <DefaultExpression>&apos;E&apos;</DefaultExpression>
     </column>
-    <column id="101" parent="27" name="GENERO">
+    <column id="151" parent="31" name="GENERO">
       <Position>5</Position>
       <DataType>VARCHAR2(1 byte)|0s</DataType>
       <DefaultExpression>&apos;N&apos;</DefaultExpression>
     </column>
-    <column id="102" parent="27" name="NATIVO">
+    <column id="152" parent="31" name="NATIVO">
       <Position>6</Position>
       <DataType>VARCHAR2(3 byte)|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <index id="103" parent="27" name="USUARIOS_PK">
-      <ObjectId>20049</ObjectId>
-      <CreatedTimestamp>2018-05-30.22:02:05</CreatedTimestamp>
-      <ModifiedTimestamp>2018-05-30.22:02:05</ModifiedTimestamp>
+    <index id="153" parent="31" name="USUARIOS_PK">
+      <ObjectId>20063</ObjectId>
+      <CreatedTimestamp>2018-06-06.21:53:56</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
       <TablespaceName>USERS</TablespaceName>
       <ColNames>EMAIL</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="104" parent="27" name="USUARIOS_PK">
-      <ModifiedTimestamp>2018-05-30.22:02:05</ModifiedTimestamp>
+    <key id="154" parent="31" name="USUARIOS_PK">
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
       <ColNames>EMAIL</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>USUARIOS_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="105" parent="27" name="NATIVO_IDIOMA_FK">
-      <ModifiedTimestamp>2018-05-30.22:08:11</ModifiedTimestamp>
-      <ColNames>NATIVO</ColNames>
-      <RefSchemaName>HR</RefSchemaName>
-      <RefTableName>IDIOMAS</RefTableName>
-      <RefKeyName>IDIOMAS_PK</RefKeyName>
-      <OnDelete>restrict</OnDelete>
-    </foreign-key>
-    <check id="106" parent="27" name="TIPO_USUARIO_PK">
-      <ModifiedTimestamp>2018-05-30.22:02:05</ModifiedTimestamp>
+    <check id="155" parent="31" name="TIPO_USUARIO_PK">
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
       <ColNames>TIPO</ColNames>
       <Predicate>tipo IN (&apos;A&apos;, &apos;P&apos;, &apos;E&apos;)</Predicate>
     </check>
-    <check id="107" parent="27" name="GENERO_CK">
-      <ModifiedTimestamp>2018-05-30.22:02:05</ModifiedTimestamp>
+    <check id="156" parent="31" name="GENERO_CK">
+      <ModifiedTimestamp>2018-06-06.21:53:56</ModifiedTimestamp>
       <ColNames>GENERO</ColNames>
       <Predicate>genero IN (&apos;M&apos;, &apos;H&apos;, &apos;N&apos;)</Predicate>
     </check>
-    <column id="108" parent="28" name="EMPLOYEE_ID">
-      <Position>1</Position>
-      <DataType>NUMBER(6 digit)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="109" parent="28" name="JOB_ID">
-      <Position>2</Position>
-      <DataType>VARCHAR2(10 byte)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="110" parent="28" name="MANAGER_ID">
-      <Position>3</Position>
-      <DataType>NUMBER(6 digit)|0s</DataType>
-    </column>
-    <column id="111" parent="28" name="DEPARTMENT_ID">
-      <Position>4</Position>
-      <DataType>NUMBER(4 digit)|0s</DataType>
-    </column>
-    <column id="112" parent="28" name="LOCATION_ID">
-      <Position>5</Position>
-      <DataType>NUMBER(4 digit)|0s</DataType>
-    </column>
-    <column id="113" parent="28" name="COUNTRY_ID">
-      <Position>6</Position>
-      <DataType>CHAR(2 byte)|0s</DataType>
-    </column>
-    <column id="114" parent="28" name="FIRST_NAME">
-      <Position>7</Position>
-      <DataType>VARCHAR2(20 byte)|0s</DataType>
-    </column>
-    <column id="115" parent="28" name="LAST_NAME">
-      <Position>8</Position>
-      <DataType>VARCHAR2(25 byte)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="116" parent="28" name="SALARY">
-      <Position>9</Position>
-      <DataType>NUMBER(8,2 digit)|0s</DataType>
-    </column>
-    <column id="117" parent="28" name="COMMISSION_PCT">
-      <Position>10</Position>
-      <DataType>NUMBER(2,2 digit)|0s</DataType>
-    </column>
-    <column id="118" parent="28" name="DEPARTMENT_NAME">
-      <Position>11</Position>
-      <DataType>VARCHAR2(30 byte)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="119" parent="28" name="JOB_TITLE">
-      <Position>12</Position>
-      <DataType>VARCHAR2(35 byte)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="120" parent="28" name="CITY">
-      <Position>13</Position>
-      <DataType>VARCHAR2(30 byte)|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="121" parent="28" name="STATE_PROVINCE">
-      <Position>14</Position>
-      <DataType>VARCHAR2(25 byte)|0s</DataType>
-    </column>
-    <column id="122" parent="28" name="COUNTRY_NAME">
-      <Position>15</Position>
-      <DataType>VARCHAR2(40 byte)|0s</DataType>
-    </column>
-    <column id="123" parent="28" name="REGION_NAME">
-      <Position>16</Position>
-      <DataType>VARCHAR2(25 byte)|0s</DataType>
-    </column>
   </database-model>
 </dataSource>
