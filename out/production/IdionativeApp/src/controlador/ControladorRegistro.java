@@ -74,12 +74,12 @@ public class ControladorRegistro implements ActionListener, WindowListener {
         this.vista.userLabel.setFont(fuente);
         this.vista.userField.setText("");
         this.vista.userField.setFont(fuente);
-        this.vista.userField.setToolTipText("<html>- Máximo 25 carácteres.<br>- Mínimo 5 carácteres</html>");
+        this.vista.userField.setToolTipText("<html>- "+rb.getString("usertooltip1")+"<br>- "+rb.getString("usertooltip2")+"</html>");
         this.vista.passwordLabel.setText(rb.getString("passwd"));
         this.vista.passwordLabel.setFont(fuente);
         this.vista.passwordField.setText("");
         this.vista.passwordField.setFont(fuente);
-        this.vista.passwordField.setToolTipText("<html>- Máximo 25 carácteres.<br>- Mínimo 5 carácteres</html>");
+        this.vista.passwordField.setToolTipText("<html>- "+rb.getString("passtooltip1")+"<br>- "+rb.getString("passtooltip2")+"</html>");
         this.vista.nativeLangLabel.setText(rb.getString("mothertongue"));
         this.vista.nativeLangLabel.setFont(fuente);
         this.vista.genderLabel.setText(rb.getString("sex"));
@@ -143,7 +143,7 @@ public class ControladorRegistro implements ActionListener, WindowListener {
             switch (boton.getActionCommand()) {
                 case "SIGNUP":
                     if (modelo.comprobarUsuario(this.vista.emailField.getText(), null)) {
-                        JOptionPane.showMessageDialog(null, "Esta cuenta ya existe", "Correo encontrado", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, rb.getString("accountexist"), rb.getString("emailfound"), JOptionPane.ERROR_MESSAGE);
                     } else {
                         int resultado = 0;
                         String user = this.vista.userField.getText();
@@ -180,8 +180,8 @@ public class ControladorRegistro implements ActionListener, WindowListener {
 
                         if (emailbool && userbool && passbool) {
                             resultado = this.modelo.registrarUsuario(email, user, pass, gender, nativeLang, spokenLangs, learnLangs);
-                            JOptionPane.showMessageDialog(null, "Usuario creado", "Correcto", JOptionPane.INFORMATION_MESSAGE);
-                            Diccionario view = new Diccionario("Diccionario");
+                            JOptionPane.showMessageDialog(null, rb.getString("usercreated"));
+                            Diccionario view = new Diccionario(rb.getString("dictionary"));
                             PalabraDAO model = new PalabraDAO();
                             ControladorDiccionario controller = new ControladorDiccionario(view, model, email, this.lang);
                             this.vista.dispose();
@@ -189,16 +189,16 @@ public class ControladorRegistro implements ActionListener, WindowListener {
                         } else {
                             String error="<html>";
                             if(!userbool) {
-                                error+="- Usuario no válido<br>";
+                                error+="- "+rb.getString("usernovalid")+"<br>";
                             }
                             if(!emailbool) {
-                                error+="- Email no válido<br>";
+                                error+="- "+rb.getString("emailnovalid")+"<br>";
                             }
                             if(!passbool) {
-                                error+="- Contraseña no válida<br>";
+                                error+="- "+rb.getString("passnovalid")+"<br>";
                             }
                             error+="</html>";
-                            JOptionPane.showMessageDialog(null, error, "Datos no válidos", JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(null, error, rb.getString("invaliddata"), JOptionPane.ERROR_MESSAGE);
                         }
                     }
                     break;
