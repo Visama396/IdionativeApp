@@ -1,4 +1,3 @@
 Manifest-Version: 1.0
-Class-Path: ..\resources\ojdbc6.jar
 Main-Class: IniciarApp
 
