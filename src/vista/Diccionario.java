@@ -46,6 +46,7 @@ public class Diccionario extends JFrame {
         portugueseField = new JTextField(10);
         wordTypeField = new JTextField(10);
         confirmButton = new JButton();
+        cleanButton = new JButton();
         confirmLabel = new JLabel();
 
         botLayout.setHorizontalGroup(
@@ -98,6 +99,8 @@ public class Diccionario extends JFrame {
                 .addGroup(botLayout.createSequentialGroup()
                         .addComponent(confirmButton)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cleanButton)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(confirmLabel)
                         .addContainerGap())
         );
@@ -134,6 +137,7 @@ public class Diccionario extends JFrame {
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(botLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                 .addComponent(confirmButton)
+                                .addComponent(cleanButton)
                                 .addComponent(confirmLabel)))
         );
 
@@ -238,6 +242,7 @@ public class Diccionario extends JFrame {
     public JTextField portugueseField;
     private JTextField wordTypeField;
     public JButton confirmButton;
+    public JButton cleanButton;
     public JLabel confirmLabel;
     private JPanel mainPane;
     private GroupLayout mainLayout;

@@ -15,7 +15,28 @@ public class PalabraDAO {
         con = new Conexion();
     }
 
-    public int insertarPalabra(int id, String eng, String esp, String jpn, String kana, String deu, String ptr) {
+    public void eliminarPalabra(int id) {
+        Connection conn = con.createConnection();
+        PreparedStatement ps = null;
+        int result = 0;
+
+        try {
+            ps = conn.prepareStatement("DELETE FROM PALABRAS WHERE ID_PALABRA = ?");
+            ps.setInt(1, id);
+
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage(), "PalabraDAO: SQLException", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            con.closeConnection(conn);
+        }
+    }
+
+    public void actualizarPalabra(int id, String eng, String esp, String jpn, String kana, String deu, String ptr) {
+
+    }
+
+    public int insertarPalabra(String eng, String esp, String jpn, String kana, String deu, String ptr) {
         Connection conn = con.createConnection();
         PreparedStatement ps=null;
         int result = 0;
@@ -23,7 +44,7 @@ public class PalabraDAO {
         try {
 
             ps = conn.prepareStatement("INSERT INTO palabras (id_palabra, eng, esp, jpn, kana, deu, ptr) VALUES(?, ?, ?, ?, ?, ?, ?)");
-            ps.setInt(1, id);
+            ps.setInt(1, cargarDiccionario().size()+1);
             ps.setString(2, eng);
             ps.setString(3, esp);
             ps.setString(4, jpn);
@@ -49,7 +70,7 @@ public class PalabraDAO {
         ResultSet rs=null;
 
         try {
-            ps = conn.prepareStatement("SELECT * FROM PALABRAS");
+            ps = conn.prepareStatement("SELECT * FROM PALABRAS ORDER BY ID_PALABRA");
             rs = ps.executeQuery();
             while(rs.next()) {
                 Palabra p = new Palabra(rs.getInt(1),

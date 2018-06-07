@@ -69,16 +69,17 @@ public class ControladorRegistro implements ActionListener, WindowListener {
         this.vista.emailLabel.setFont(fuente);
         this.vista.emailField.setText(email);
         this.vista.emailField.setFont(fuente);
-        this.vista.emailField.setToolTipText("<html>- Máximo 35 carácteres.<br>- Ejemplos: example@gmail.com, maria@live.com, juan1234@yahoo.com, etc.</html>");
+        this.vista.emailField.setToolTipText("<html>- "+rb.getString("emailtooltip1")+"<br>- "+rb.getString("emailtooltip2")+"<br>- "+rb.getString("emailtooltip3")+"</html>");
         this.vista.userLabel.setText(rb.getString("user"));
         this.vista.userLabel.setFont(fuente);
         this.vista.userField.setText("");
         this.vista.userField.setFont(fuente);
-        this.vista.userField.setToolTipText("- Máximo 25 carácteres.");
+        this.vista.userField.setToolTipText("<html>- Máximo 25 carácteres.<br>- Mínimo 5 carácteres</html>");
         this.vista.passwordLabel.setText(rb.getString("passwd"));
         this.vista.passwordLabel.setFont(fuente);
         this.vista.passwordField.setText("");
         this.vista.passwordField.setFont(fuente);
+        this.vista.passwordField.setToolTipText("<html>- Máximo 25 carácteres.<br>- Mínimo 5 carácteres</html>");
         this.vista.nativeLangLabel.setText(rb.getString("mothertongue"));
         this.vista.nativeLangLabel.setFont(fuente);
         this.vista.genderLabel.setText(rb.getString("sex"));
@@ -202,7 +203,7 @@ public class ControladorRegistro implements ActionListener, WindowListener {
                     }
                     break;
                 case "RETURN":
-                    InicioSesion view = new InicioSesion("Inicio sesión");
+                    InicioSesion view = new InicioSesion(rb.getString("login"));
                     UsuarioDAO model = new UsuarioDAO();
                     ControladorLogin controller = new ControladorLogin(view, model, this.lang, this.vista.emailField.getText());
                     this.vista.dispose();

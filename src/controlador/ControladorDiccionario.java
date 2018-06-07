@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-public class ControladorDiccionario implements ActionListener, FocusListener, WindowListener {
+public class ControladorDiccionario implements ActionListener, FocusListener, WindowListener, MouseListener {
 
     private Diccionario vista;
     private PalabraDAO modelo;
@@ -79,18 +79,30 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         this.vista.wordTypeLabel.setText("Tipo de palabra");
         this.vista.wordTypeLabel.setFont(fuente);
         this.vista.insertButton.setText("Insertar");
+        this.vista.insertButton.setActionCommand("INS");
         this.vista.insertButton.setFont(fuente);
+        this.vista.insertButton.addFocusListener(this);
         this.vista.updateButton.setText("Actualizar");
+        this.vista.updateButton.setActionCommand("UPD");
         this.vista.updateButton.setFont(fuente);
+        this.vista.updateButton.addFocusListener(this);
         this.vista.removeButton.setText("Eliminar");
+        this.vista.removeButton.setActionCommand("REM");
         this.vista.removeButton.setFont(fuente);
+        this.vista.removeButton.addFocusListener(this);
         this.vista.confirmButton.setText("Continuar");
         this.vista.confirmButton.setFont(fuente);
         this.vista.confirmButton.setActionCommand("QUERY");
         this.vista.confirmButton.addActionListener(this);
+        this.vista.cleanButton.setText("Limpiar");
+        this.vista.cleanButton.setFont(fuente);
+        this.vista.cleanButton.setActionCommand("CLEAN");
+        this.vista.cleanButton.addActionListener(this);
         this.vista.confirmLabel.setFont(fuente);
+        this.vista.idWordField2.setEditable(false);
         this.vista.idWordField2.addFocusListener(this);
         this.vista.dictionaryTable.setFont(new Font("Arial Unicode MS", Font.PLAIN, 13));
+        this.vista.dictionaryTable.setAutoCreateRowSorter(true);
         this.vista.addWindowListener(this);
 
         this.vista.jsDicc.setVisible(false);
@@ -182,7 +194,6 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                 case "QUERY":
                     if(this.vista.insertButton.isSelected()) {
                         int result = this.modelo.insertarPalabra(
-                                Integer.parseInt(this.vista.idWordField2.getText()),
                                 this.vista.englishField.getText(),
                                 this.vista.spanishField.getText(),
                                 this.vista.japaneseField.getText(),
@@ -210,20 +221,39 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                         // Si es un delete
                     }
                     break;
+                case "CLEAN":
+                    this.vista.idWordField2.setText("");
+                    this.vista.englishField.setText("");
+                    this.vista.spanishField.setText("");
+                    this.vista.japaneseField.setText("");
+                    this.vista.kanaField.setText("");
+                    this.vista.germanField.setText("");
+                    this.vista.portugueseField.setText("");
+                    this.vista.confirmLabel.setText("");
+                    this.vista.confirmLabel.setForeground(Color.BLACK);
+                    break;
             }
         }
     }
 
     @Override
     public void focusGained(FocusEvent e) {
-        this.vista.englishField.setText("");
-        this.vista.spanishField.setText("");
-        this.vista.japaneseField.setText("");
-        this.vista.kanaField.setText("");
-        this.vista.germanField.setText("");
-        this.vista.portugueseField.setText("");
-        this.vista.confirmLabel.setText("");
-        this.vista.confirmLabel.setForeground(Color.BLACK);
+        if (e.getSource() instanceof JRadioButton) {
+            JRadioButton buton = (JRadioButton) e.getSource();
+            switch (buton.getActionCommand()) {
+                case "INS":
+                    this.vista.idWordField2.setEditable(false);
+                    break;
+                case "UPD":
+                    this.vista.idWordField2.setEditable(true);
+                    break;
+                case "REM":
+                    this.vista.idWordField2.setEditable(true);
+                    break;
+            }
+        } else if (e.getSource() instanceof JTextField) {
+            JTextField field = (JTextField) e.getSource();
+        }
     }
 
     @Override
@@ -289,6 +319,31 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
 
     @Override
     public void windowDeactivated(WindowEvent e) {
+
+    }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
 
     }
 }

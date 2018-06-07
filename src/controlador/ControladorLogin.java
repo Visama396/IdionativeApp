@@ -106,7 +106,7 @@ public class ControladorLogin implements ActionListener, WindowListener {
                     }
                     break;
                 case "CREATEACCOUNT":
-                    Registro view = new Registro("Registro");
+                    Registro view = new Registro(rb.getString("signup"));
                     UsuarioDAO model = new UsuarioDAO();
                     ControladorRegistro controller = new ControladorRegistro(view, model, this.lang, this.vista.emailField.getText());
                     this.vista.dispose();
@@ -126,14 +126,14 @@ public class ControladorLogin implements ActionListener, WindowListener {
                     viewes.setVisible(true);
                     break;
                 case "ENG":
-                    InicioSesion viewen = new InicioSesion("Log in");
+                    InicioSesion viewen = new InicioSesion("Sign in");
                     UsuarioDAO modelen = new UsuarioDAO();
                     ControladorLogin controlleren = new ControladorLogin(viewen, modelen, "en", this.vista.emailField.getText());
                     this.vista.dispose();
                     viewen.setVisible(true);
                     break;
                 case "JPN":
-                    InicioSesion viewjp = new InicioSesion("ログイン");
+                    InicioSesion viewjp = new InicioSesion("サインイン");
                     UsuarioDAO modeljp = new UsuarioDAO();
                     ControladorLogin controllerjp = new ControladorLogin(viewjp, modeljp, "ja", this.vista.emailField.getText());
                     this.vista.dispose();
@@ -163,7 +163,7 @@ public class ControladorLogin implements ActionListener, WindowListener {
 
     @Override
     public void windowClosing(WindowEvent e) {
-        int option = JOptionPane.showConfirmDialog(null, "¿Quieres cerrar la aplicación?", "Confirmar", JOptionPane.YES_NO_OPTION);
+        int option = JOptionPane.showConfirmDialog(null, rb.getString("closequest2"), rb.getString("closequest"), JOptionPane.YES_NO_OPTION);
         if (option == 0) {
             System.exit(0);
         }
