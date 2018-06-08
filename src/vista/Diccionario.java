@@ -12,6 +12,8 @@ public class Diccionario extends JFrame {
         topPane.setLayout(topLayout);
         idWordLabel = new JLabel();
         idWordField = new JTextField(10);
+        wordLabel = new JLabel();
+        wordTextField = new JTextField(10);
         searchWordButton = new JButton();
         loadDictionaryButton = new JButton();
         jsDicc = new JScrollPane();
@@ -23,8 +25,8 @@ public class Diccionario extends JFrame {
         bottomPane.setLayout(botLayout);
         moreActionsLabel = new JLabel();
         insertButton = new JRadioButton();
-        actionsGroup.add(insertButton);
         insertButton.setSelected(true);
+        actionsGroup.add(insertButton);
         updateButton = new JRadioButton();
         actionsGroup.add(updateButton);
         removeButton = new JRadioButton();
@@ -159,6 +161,10 @@ public class Diccionario extends JFrame {
                                                         .addComponent(searchWordButton)
                                                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                                         .addComponent(loadDictionaryButton))
+                                                .addGroup(topLayout.createSequentialGroup()
+                                                        .addComponent(wordLabel)
+                                                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(wordTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                                 .addComponent(moreActionsButton))
                                         .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
@@ -173,6 +179,10 @@ public class Diccionario extends JFrame {
                                 .addComponent(idWordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(searchWordButton)
                                 .addComponent(loadDictionaryButton))
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(topLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(wordLabel)
+                                .addComponent(wordTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jsDicc, GroupLayout.PREFERRED_SIZE, 140, Short.MAX_VALUE)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
@@ -214,6 +224,8 @@ public class Diccionario extends JFrame {
     private GroupLayout topLayout;
     public JLabel idWordLabel;
     public JTextField idWordField;
+    public JLabel wordLabel;
+    public JTextField wordTextField;
     public JButton searchWordButton;
     public JButton loadDictionaryButton;
     public JScrollPane jsDicc;

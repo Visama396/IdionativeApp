@@ -46,6 +46,10 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         this.vista.idWordLabel.setText("ID Palabra:");
         this.vista.idWordLabel.setFont(fuente);
         this.vista.idWordField.setToolTipText("Valor numérico");
+        this.vista.idWordField.setFont(fuente);
+        this.vista.wordLabel.setText("Palabra: ");
+        this.vista.wordLabel.setFont(fuente);
+        this.vista.wordTextField.setFont(fuente);
         this.vista.searchWordButton.setText("Buscar palabra");
         this.vista.searchWordButton.setFont(fuente);
         this.vista.searchWordButton.addActionListener(this);
@@ -94,12 +98,12 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         this.vista.confirmButton.setFont(fuente);
         this.vista.confirmButton.setActionCommand("QUERY");
         this.vista.confirmButton.addActionListener(this);
+        this.vista.confirmButton.setEnabled(false);
         this.vista.cleanButton.setText("Limpiar");
         this.vista.cleanButton.setFont(fuente);
         this.vista.cleanButton.setActionCommand("CLEAN");
         this.vista.cleanButton.addActionListener(this);
         this.vista.confirmLabel.setFont(fuente);
-        this.vista.idWordField2.setEditable(false);
         this.vista.idWordField2.addFocusListener(this);
         this.vista.dictionaryTable.setFont(new Font("Arial Unicode MS", Font.PLAIN, 13));
         this.vista.dictionaryTable.setAutoCreateRowSorter(true);
@@ -107,6 +111,19 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
 
         this.vista.jsDicc.setVisible(false);
         this.vista.bottomPane.setVisible(false);
+
+        this.vista.englishField.addFocusListener(this);
+        this.vista.englishField.setFont(fuente);
+        this.vista.spanishField.addFocusListener(this);
+        this.vista.spanishField.setFont(fuente);
+        this.vista.japaneseField.addFocusListener(this);
+        this.vista.japaneseField.setFont(fuente);
+        this.vista.kanaField.addFocusListener(this);
+        this.vista.kanaField.setFont(fuente);
+        this.vista.germanField.addFocusListener(this);
+        this.vista.germanField.setFont(fuente);
+        this.vista.portugueseField.addFocusListener(this);
+        this.vista.portugueseField.setFont(fuente);
 
         this.vista.pack();
         this.vista.setLocationRelativeTo(null);
@@ -119,35 +136,60 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
 
             switch (boton.getActionCommand()) {
                 case "SEARCHWORD":
-                    if (this.vista.jsDicc.isVisible()) {
-                        this.vista.jsDicc.setVisible(false);
-                    }
-                    if (defaultTableModel.getRowCount() > 0) {
-                        defaultTableModel.setRowCount(0);
-                    }
-                    try {
-                        p = modelo.buscarPalabra(Integer.parseInt(this.vista.idWordField.getText()));
-                        defaultTableModel.addRow(
-                                new String[] {
-                                        p.getId_word()+"",
-                                        p.getEng(),
-                                        p.getEsp(),
-                                        p.getJpn(),
-                                        p.getKana(),
-                                        p.getDeu(),
-                                        p.getPtr()}
-                        );
-                        this.vista.dictionaryTable.setModel(defaultTableModel);
-                        this.vista.setVisible(false);
-                        this.vista.jsDicc.setVisible(true);
-                        this.vista.pack();
-                        this.vista.setLocationRelativeTo(null);
-                        this.vista.setVisible(true);
+                    if (this.vista.idWordField.getText().length() >= 1) {
+                        if (this.vista.jsDicc.isVisible()) {
+                            this.vista.jsDicc.setVisible(false);
+                        }
+                        if (defaultTableModel.getRowCount() > 0) {
+                            defaultTableModel.setRowCount(0);
+                        }
+                        try {
+                            p = modelo.buscarPalabra(Integer.parseInt(this.vista.idWordField.getText()));
+                            defaultTableModel.addRow(
+                                    new String[] {
+                                            p.getId_word()+"",
+                                            p.getEng(),
+                                            p.getEsp(),
+                                            p.getJpn(),
+                                            p.getKana(),
+                                            p.getDeu(),
+                                            p.getPtr()}
+                            );
+                            this.vista.dictionaryTable.setModel(defaultTableModel);
+                            this.vista.setVisible(false);
+                            this.vista.jsDicc.setVisible(true);
+                            this.vista.pack();
+                            this.vista.setLocationRelativeTo(null);
+                            this.vista.setVisible(true);
 
-                    } catch (NumberFormatException nfe) {
-                        JOptionPane.showMessageDialog(null, "Por favor, introduzca un ID numérico válido.", "Diccionario: NumberFormatException", JOptionPane.ERROR_MESSAGE);
-                    } catch (NullPointerException npe) {
-                        JOptionPane.showMessageDialog(null, "No se ha podido encontrar esa palabra.", "Diccionario: NullPointerException", JOptionPane.ERROR_MESSAGE);
+                        } catch (NumberFormatException nfe) {
+                            p = modelo.buscarPalabra(this.vista.idWordField.getText());
+                            defaultTableModel.addRow(
+                                    new String[] {
+                                            p.getId_word()+"",
+                                            p.getEng(),
+                                            p.getEsp(),
+                                            p.getJpn(),
+                                            p.getKana(),
+                                            p.getDeu(),
+                                            p.getPtr()}
+                            );
+                            this.vista.dictionaryTable.setModel(defaultTableModel);
+                            this.vista.setVisible(false);
+                            this.vista.jsDicc.setVisible(true);
+                            this.vista.pack();
+                            this.vista.setLocationRelativeTo(null);
+                            this.vista.setVisible(true);
+                        } catch (NullPointerException npe) {
+                            JOptionPane.showMessageDialog(null, "No se ha podido encontrar esa palabra.", "Diccionario: NullPointerException", JOptionPane.ERROR_MESSAGE);
+                            this.vista.setVisible(false);
+                            this.vista.jsDicc.setVisible(false);
+                            this.vista.pack();
+                            this.vista.setLocationRelativeTo(null);
+                            this.vista.setVisible(true);
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "No se ha introducido ID o palabra válida");
                     }
 
                     break;
@@ -193,7 +235,36 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                     break;
                 case "QUERY":
                     if(this.vista.insertButton.isSelected()) {
-                        int result = this.modelo.insertarPalabra(
+                        if (this.vista.englishField.getText().length()>1 || this.vista.spanishField.getText().length() > 1 || this.vista.japaneseField.getText().length() > 1 || this.vista.kanaField.getText().length() > 1 || this.vista.germanField.getText().length() > 1 || this.vista.portugueseField.getText().length() > 1) {
+                            int result = this.modelo.insertarPalabra(
+                                    this.vista.englishField.getText(),
+                                    this.vista.spanishField.getText(),
+                                    this.vista.japaneseField.getText(),
+                                    this.vista.kanaField.getText(),
+                                    this.vista.germanField.getText(),
+                                    this.vista.portugueseField.getText()
+                            );
+                            if(result==1) {
+                                this.vista.confirmLabel.setForeground(Color.GREEN);
+                                this.vista.confirmLabel.setText("Se ha insertado correctamente");
+                            } else {
+                                this.vista.confirmLabel.setForeground(Color.RED);
+                                this.vista.confirmLabel.setText("No se ha insertado la palabra");
+                            }
+                            this.vista.idWordField2.setText("");
+                            this.vista.englishField.setText("");
+                            this.vista.spanishField.setText("");
+                            this.vista.japaneseField.setText("");
+                            this.vista.kanaField.setText("");
+                            this.vista.germanField.setText("");
+                            this.vista.portugueseField.setText("");
+                        } else {
+                            this.vista.confirmLabel.setForeground(Color.RED);
+                            this.vista.confirmLabel.setText("No ha introducido ningún valor");
+                        }
+                    } else if(this.vista.updateButton.isSelected()) {
+                        int result = this.modelo.actualizarPalabra(
+                                Integer.parseInt(this.vista.idWordField2.getText()),
                                 this.vista.englishField.getText(),
                                 this.vista.spanishField.getText(),
                                 this.vista.japaneseField.getText(),
@@ -201,24 +272,20 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                                 this.vista.germanField.getText(),
                                 this.vista.portugueseField.getText()
                         );
-                        if(result==1) {
+
+                        if (result == 1) {
                             this.vista.confirmLabel.setForeground(Color.GREEN);
-                            this.vista.confirmLabel.setText("Se ha insertado correctamente");
-                        } else {
-                            this.vista.confirmLabel.setForeground(Color.RED);
-                            this.vista.confirmLabel.setText("No se ha insertado la palabra");
+                            this.vista.confirmLabel.setText("Se ha actualizado correctamente");
                         }
-                        this.vista.idWordField2.setText("");
-                        this.vista.englishField.setText("");
-                        this.vista.spanishField.setText("");
-                        this.vista.japaneseField.setText("");
-                        this.vista.kanaField.setText("");
-                        this.vista.germanField.setText("");
-                        this.vista.portugueseField.setText("");
-                    } else if(this.vista.updateButton.isSelected()) {
-                        // Si es un update
                     } else {
-                        // Si es un delete
+                        int opt = JOptionPane.showConfirmDialog(null, "¿Quieres eliminar esta palabra?", "Confirmar", JOptionPane.YES_NO_OPTION);
+                        if (opt == 0) {
+                            int result = this.modelo.eliminarPalabra(Integer.parseInt(this.vista.idWordField2.getText()));
+                            if (result == 1) {
+                                this.vista.confirmLabel.setForeground(Color.GREEN);
+                                this.vista.confirmLabel.setText("");
+                            }
+                        }
                     }
                     break;
                 case "CLEAN":
@@ -242,46 +309,31 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
             JRadioButton buton = (JRadioButton) e.getSource();
             switch (buton.getActionCommand()) {
                 case "INS":
+                    this.vista.confirmButton.setEnabled(false);
                     this.vista.idWordField2.setEditable(false);
                     break;
                 case "UPD":
+                    this.vista.confirmButton.setEnabled(false);
                     this.vista.idWordField2.setEditable(true);
                     break;
                 case "REM":
+                    this.vista.confirmButton.setEnabled(false);
                     this.vista.idWordField2.setEditable(true);
                     break;
             }
-        } else if (e.getSource() instanceof JTextField) {
-            JTextField field = (JTextField) e.getSource();
         }
     }
 
     @Override
     public void focusLost(FocusEvent e) {
-        if (this.vista.insertButton.isSelected()) {
-
-        } else if (this.vista.updateButton.isSelected()) {
-            try {
-                p = this.modelo.buscarPalabra(Integer.parseInt(this.vista.idWordField2.getText()));
-                if (p != null) {
-                    this.vista.englishField.setText(p.getEng());
-                    this.vista.spanishField.setText(p.getEsp());
-                    this.vista.japaneseField.setText(p.getJpn());
-                    this.vista.kanaField.setText(p.getKana());
-                    this.vista.germanField.setText(p.getDeu());
-                    this.vista.portugueseField.setText(p.getPtr());
-                    this.vista.confirmLabel.setForeground(Color.GREEN);
-                    this.vista.confirmLabel.setText("Palabra encontrada");
-                } else {
-                    this.vista.confirmLabel.setForeground(Color.RED);
-                    this.vista.confirmLabel.setText("Palabra no encontrada");
-                }
-            } catch (NumberFormatException nfe) {
-                this.vista.confirmLabel.setForeground(Color.RED);
-                this.vista.confirmLabel.setText("Id no válido");
+        if (e.getSource()==this.vista.englishField) {
+            if (this.vista.insertButton.isSelected()) {
+                this.vista.confirmButton.setEnabled(true);
+            } else if (this.vista.updateButton.isSelected()) {
+                this.vista.confirmButton.setEnabled(true);
+            } else if (this.vista.removeButton.isSelected()) {
+                this.vista.confirmButton.setEnabled(true);
             }
-        } else {
-
         }
     }
 

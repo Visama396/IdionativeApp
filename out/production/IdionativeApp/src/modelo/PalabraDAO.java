@@ -15,7 +15,39 @@ public class PalabraDAO {
         con = new Conexion();
     }
 
-    public void eliminarPalabra(int id) {
+    public Palabra buscarPalabra (String word) {
+        Palabra p = null;
+        Connection conn = con.createConnection();
+        ResultSet rs = null;
+
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM PALABRAS WHERE ENG = INITCAP(?) OR ESP = INITCAP(?) OR JPN = INITCAP(?) OR KANA = INITCAP(?) OR DEU = INITCAP(?) OR PTR = INITCAP(?)");
+            ps.setString(1, word);
+            ps.setString(2, word);
+            ps.setString(3, word);
+            ps.setString(4, word);
+            ps.setString(5, word);
+            ps.setString(6, word);
+
+            rs = ps.executeQuery();
+            rs.next();
+            p = new Palabra(
+                    rs.getInt(1),
+                    rs.getString(2),
+                    rs.getString(3),
+                    rs.getString(4),
+                    rs.getString(5),
+                    rs.getString(6),
+                    rs.getString(7)
+            );
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return p;
+    }
+
+    public int eliminarPalabra(int id) {
         Connection conn = con.createConnection();
         PreparedStatement ps = null;
         int result = 0;
@@ -24,16 +56,36 @@ public class PalabraDAO {
             ps = conn.prepareStatement("DELETE FROM PALABRAS WHERE ID_PALABRA = ?");
             ps.setInt(1, id);
 
-            ps.executeUpdate();
+            result = ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "PalabraDAO: SQLException", JOptionPane.ERROR_MESSAGE);
         } finally {
             con.closeConnection(conn);
         }
+
+        return result;
     }
 
-    public void actualizarPalabra(int id, String eng, String esp, String jpn, String kana, String deu, String ptr) {
+    public int actualizarPalabra(int id, String eng, String esp, String jpn, String kana, String deu, String ptr) {
+        Connection conn = con.createConnection();
+        PreparedStatement ps = null;
+        int result = 0;
 
+        try {
+            ps = conn.prepareStatement("UPDATE PALABRAS SET ENG = ?, ESP = ?, JPN = ?, KANA = ?, DEU = ?, PTR = ? WHERE ID_PALABRA = ?");
+            ps.setString(1, eng);
+            ps.setString(2, esp);
+            ps.setString(3, jpn);
+            ps.setString(4, kana);
+            ps.setString(5, deu);
+            ps.setString(6, ptr);
+            ps.setInt(7, id);
+            result = ps.executeUpdate();
+        } catch (SQLException e) {
+            con.closeConnection(conn);
+        }
+
+        return result;
     }
 
     public int insertarPalabra(String eng, String esp, String jpn, String kana, String deu, String ptr) {
