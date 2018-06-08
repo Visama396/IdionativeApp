@@ -9,7 +9,6 @@ public class Palabra {
     private String kana;
     private String deu;
     private String ptr;
-    private String kor;
     private Word_types wordType;
     public enum Word_types {
         NOUN, ADJECTIVE, NAADJECTIVE, IADJECTIVE, VERB, REGULARADVERB, IRREGULARVERB, GODANVERB, ICHIDANVERB, SPECIALVERB, PRONOUN, PARTICLE, PREPOSITION
@@ -79,5 +78,18 @@ public class Palabra {
 
     public void setPtr(String ptr) {
         this.ptr = ptr;
+    }
+
+    @Override
+    public String toString() {
+        return "Palabra{" +
+                "id_word=" + id_word +
+                ", eng='" + eng + '\'' +
+                ", esp='" + esp + '\'' +
+                ", jpn='" + jpn + '\'' +
+                ", kana='" + kana + '\'' +
+                ", deu='" + deu + '\'' +
+                ", ptr='" + ptr + '\'' +
+                '}';
     }
 }

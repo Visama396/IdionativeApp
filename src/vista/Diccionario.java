@@ -10,10 +10,8 @@ public class Diccionario extends JFrame {
         topPane = new JPanel();
         topLayout = new GroupLayout(topPane);
         topPane.setLayout(topLayout);
-        idWordLabel = new JLabel();
-        idWordField = new JTextField(10);
         wordLabel = new JLabel();
-        wordTextField = new JTextField(10);
+        wordField = new JTextField(10);
         searchWordButton = new JButton();
         loadDictionaryButton = new JButton();
         jsDicc = new JScrollPane();
@@ -154,17 +152,13 @@ public class Diccionario extends JFrame {
                                 .addGroup(GroupLayout.Alignment.LEADING, topLayout.createSequentialGroup()
                                         .addGroup(topLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                                 .addGroup(topLayout.createSequentialGroup()
-                                                        .addComponent(idWordLabel)
+                                                        .addComponent(wordLabel)
                                                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(idWordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(wordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                                         .addComponent(searchWordButton)
                                                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                                         .addComponent(loadDictionaryButton))
-                                                .addGroup(topLayout.createSequentialGroup()
-                                                        .addComponent(wordLabel)
-                                                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addComponent(wordTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                                                 .addComponent(moreActionsButton))
                                         .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
@@ -175,14 +169,11 @@ public class Diccionario extends JFrame {
                 .addGroup(topLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(topLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(idWordLabel)
-                                .addComponent(idWordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(wordLabel)
+                                .addComponent(wordField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                                 .addComponent(searchWordButton)
                                 .addComponent(loadDictionaryButton))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(topLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(wordLabel)
-                                .addComponent(wordTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jsDicc, GroupLayout.PREFERRED_SIZE, 140, Short.MAX_VALUE)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
@@ -222,10 +213,8 @@ public class Diccionario extends JFrame {
     private ButtonGroup actionsGroup;
     private JPanel topPane;
     private GroupLayout topLayout;
-    public JLabel idWordLabel;
-    public JTextField idWordField;
     public JLabel wordLabel;
-    public JTextField wordTextField;
+    public JTextField wordField;
     public JButton searchWordButton;
     public JButton loadDictionaryButton;
     public JScrollPane jsDicc;

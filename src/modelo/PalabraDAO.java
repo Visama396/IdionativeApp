@@ -15,6 +15,30 @@ public class PalabraDAO {
         con = new Conexion();
     }
 
+    public int siguientePalabra() {
+        Connection conn = con.createConnection();
+        ResultSet rs = null;
+        int max = 0;
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT MAX(ID_PALABRA) FROM PALABRAS");
+            rs = ps.executeQuery();
+            if(rs.next()) {
+                max = rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+
+            }
+            con.closeConnection(conn);
+        }
+
+        return max;
+    }
+
     public Palabra buscarPalabra (String word) {
         Palabra p = null;
         Connection conn = con.createConnection();
@@ -30,18 +54,24 @@ public class PalabraDAO {
             ps.setString(6, word);
 
             rs = ps.executeQuery();
-            rs.next();
-            p = new Palabra(
-                    rs.getInt(1),
-                    rs.getString(2),
-                    rs.getString(3),
-                    rs.getString(4),
-                    rs.getString(5),
-                    rs.getString(6),
-                    rs.getString(7)
-            );
+            if (rs.next())
+                p = new Palabra(
+                        rs.getInt(1),
+                        rs.getString(2),
+                        rs.getString(3),
+                        rs.getString(4),
+                        rs.getString(5),
+                        rs.getString(6),
+                        rs.getString(7));
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            con.closeConnection(conn);
         }
 
         return p;
@@ -72,7 +102,7 @@ public class PalabraDAO {
         int result = 0;
 
         try {
-            ps = conn.prepareStatement("UPDATE PALABRAS SET ENG = ?, ESP = ?, JPN = ?, KANA = ?, DEU = ?, PTR = ? WHERE ID_PALABRA = ?");
+            ps = conn.prepareStatement("UPDATE PALABRAS SET ENG = INITCAP(?), ESP = INITCAP(?), JPN = INITCAP(?), KANA = INITCAP(?), DEU = INITCAP(?), PTR = INITCAP(?) WHERE ID_PALABRA = ?");
             ps.setString(1, eng);
             ps.setString(2, esp);
             ps.setString(3, jpn);
@@ -95,8 +125,8 @@ public class PalabraDAO {
 
         try {
 
-            ps = conn.prepareStatement("INSERT INTO palabras (id_palabra, eng, esp, jpn, kana, deu, ptr) VALUES(?, ?, ?, ?, ?, ?, ?)");
-            ps.setInt(1, cargarDiccionario().size()+1);
+            ps = conn.prepareStatement("INSERT INTO palabras (id_palabra, eng, esp, jpn, kana, deu, ptr) VALUES(INITCAP(?), INITCAP(?), INITCAP(?), INITCAP(?), INITCAP(?), INITCAP(?), INITCAP(?))");
+            ps.setInt(1, siguientePalabra()+1);
             ps.setString(2, eng);
             ps.setString(3, esp);
             ps.setString(4, jpn);
