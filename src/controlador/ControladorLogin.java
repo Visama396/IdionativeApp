@@ -98,7 +98,7 @@ public class ControladorLogin implements ActionListener, WindowListener {
                     if (correcto) {
                         Diccionario view = new Diccionario(rb.getString("dict"));
                         PalabraDAO model = new PalabraDAO();
-                        ControladorDiccionario controller = new ControladorDiccionario(view, model, this.email, this.lang);
+                        ControladorDiccionario controller = new ControladorDiccionario(view, model, this.lang, this.email);
                         this.vista.dispose();
                         view.setVisible(true);
                     } else {

@@ -6,6 +6,23 @@ public class Diccionario extends JFrame {
 
     public Diccionario(String title) {
 
+        menuBar = new JMenuBar();
+        mainMenu = new JMenu();
+        languagesMenu = new JMenu();
+        spanishItem = new JMenuItem();
+        englishItem = new JMenuItem();
+        japaneseItem = new JMenuItem();
+        germanItem = new JMenuItem();
+        closeItem = new JMenuItem();
+
+        languagesMenu.add(spanishItem);
+        languagesMenu.add(englishItem);
+        languagesMenu.add(japaneseItem);
+        languagesMenu.add(germanItem);
+        mainMenu.add(languagesMenu);
+        mainMenu.add(closeItem);
+        menuBar.add(mainMenu);
+
         actionsGroup = new ButtonGroup();
         topPane = new JPanel();
         topLayout = new GroupLayout(topPane);
@@ -14,9 +31,16 @@ public class Diccionario extends JFrame {
         wordField = new JTextField(10);
         searchWordButton = new JButton();
         loadDictionaryButton = new JButton();
-        jsDicc = new JScrollPane();
-        dictionaryTable = new JTable();
-        jsDicc.setViewportView(dictionaryTable);
+        jsDictionary = new JScrollPane();
+        dictionaryTable = new JTable() {
+            private static final long serialVersionUID = 1L;
+
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        jsDictionary.setViewportView(dictionaryTable);
         moreActionsButton = new JButton();
         bottomPane = new JPanel();
         botLayout = new GroupLayout(bottomPane);
@@ -44,7 +68,9 @@ public class Diccionario extends JFrame {
         kanaField = new JTextField(10);
         germanField = new JTextField(10);
         portugueseField = new JTextField(10);
-        wordTypeField = new JTextField(10);
+        wordTypeList = new JList<>();
+        jsTypeList = new JScrollPane();
+        jsTypeList.add(wordTypeList);
         confirmButton = new JButton();
         cleanButton = new JButton();
         confirmLabel = new JLabel();
@@ -94,7 +120,7 @@ public class Diccionario extends JFrame {
                                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(botLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                                                 .addComponent(wordTypeLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(wordTypeField, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                                .addComponent(jsTypeList, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addContainerGap(23, Short.MAX_VALUE))
                 .addGroup(botLayout.createSequentialGroup()
                         .addComponent(confirmButton)
@@ -133,7 +159,7 @@ public class Diccionario extends JFrame {
                                 .addComponent(kanaField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE)
                                 .addComponent(germanField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE)
                                 .addComponent(portugueseField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE)
-                                .addComponent(wordTypeField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE))
+                                .addComponent(jsTypeList, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(botLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                 .addComponent(confirmButton)
@@ -148,7 +174,7 @@ public class Diccionario extends JFrame {
                         .addContainerGap()
                         .addGroup(topLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                 .addComponent(bottomPane, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jsDicc, GroupLayout.Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                .addComponent(jsDictionary, GroupLayout.Alignment.LEADING, GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                                 .addGroup(GroupLayout.Alignment.LEADING, topLayout.createSequentialGroup()
                                         .addGroup(topLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                                 .addGroup(topLayout.createSequentialGroup()
@@ -175,7 +201,7 @@ public class Diccionario extends JFrame {
                                 .addComponent(loadDictionaryButton))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jsDicc, GroupLayout.PREFERRED_SIZE, 140, Short.MAX_VALUE)
+                        .addComponent(jsDictionary, GroupLayout.PREFERRED_SIZE, 140, Short.MAX_VALUE)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(moreActionsButton)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
@@ -195,6 +221,7 @@ public class Diccionario extends JFrame {
                 mainLayout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(topPane, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        this.setJMenuBar(menuBar);
         this.add(mainPane);
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         this.setTitle(title);
@@ -217,7 +244,7 @@ public class Diccionario extends JFrame {
     public JTextField wordField;
     public JButton searchWordButton;
     public JButton loadDictionaryButton;
-    public JScrollPane jsDicc;
+    public JScrollPane jsDictionary;
     public JTable dictionaryTable;
     public JButton moreActionsButton;
     public JPanel bottomPane;
@@ -241,7 +268,8 @@ public class Diccionario extends JFrame {
     public JTextField kanaField;
     public JTextField germanField;
     public JTextField portugueseField;
-    private JTextField wordTypeField;
+    public JList<String> wordTypeList;
+    public JScrollPane jsTypeList;
     public JButton confirmButton;
     public JButton cleanButton;
     public JLabel confirmLabel;

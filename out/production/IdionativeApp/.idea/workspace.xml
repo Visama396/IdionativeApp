@@ -6,24 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff7b41bb-e1ad-459d-875e-d4f8ed016ec7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/IdionativeApp_jar/IdionativeApp.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/IdionativeApp_jar/IdionativeApp.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorDiccionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorDiccionario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/Palabra$Word_types.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/Palabra$Word_types.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/Palabra.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/Palabra.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/PalabraDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/PalabraDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorDiccionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorDiccionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/Palabra.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/Palabra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/PalabraDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/PalabraDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/vista/Diccionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/vista/Diccionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/vista/Diccionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/vista/Diccionario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlador/ControladorDiccionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/ControladorDiccionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelo/Palabra.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelo/Palabra.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelo/PalabraDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelo/PalabraDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vista/Diccionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/Diccionario.java" afterDir="false" />
-    </list>
+    <list default="true" id="ff7b41bb-e1ad-459d-875e-d4f8ed016ec7" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,15 +43,12 @@
     <favorites_list name="IdionativeApp" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="ControladorDiccionario.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controlador/ControladorDiccionario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
+            <state relative-caret-position="856">
               <caret line="311" column="63" selection-start-line="311" selection-start-column="63" selection-end-line="311" selection-end-column="63" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -136,7 +116,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,7 +181,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -320,12 +300,13 @@
       <workItem from="1528483670775" duration="3604000" />
       <workItem from="1528487338050" duration="5651000" />
       <workItem from="1528493258962" duration="1966000" />
-      <workItem from="1528495365501" duration="153000" />
+      <workItem from="1528495365501" duration="171000" />
+      <workItem from="1528530160591" duration="610000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149308000" />
+    <option name="totallyTimeSpent" value="149936000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -353,7 +334,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32897604" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49507734" visible="true" weight="0.1748401" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49507734" visible="true" weight="0.17643923" />
       <window_info anchor="right" id="Database" order="6" visible="true" weight="0.15351813" />
       <window_info id="Structure" order="1" sideWeight="0.5049226" side_tool="true" weight="0.15565032" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -679,11 +660,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controlador/ControladorDiccionario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
+        <state relative-caret-position="856">
           <caret line="311" column="63" selection-start-line="311" selection-start-column="63" selection-end-line="311" selection-end-column="63" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

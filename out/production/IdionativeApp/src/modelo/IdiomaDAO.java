@@ -12,6 +12,31 @@ public class IdiomaDAO {
         con = new Conexion();
     }
 
+    public static String indexToCode(int index) {
+
+        String lang="";
+
+        switch (index) {
+            case 0:
+                lang = "eng";
+                break;
+            case 1:
+                lang = "esp";
+                break;
+            case 2:
+                lang = "jpn";
+                break;
+            case 3:
+                lang = "deu";
+                break;
+            case 4:
+                lang = "ptr";
+        }
+
+        return lang;
+
+    }
+
     public ArrayList<String> obtenerIdiomas(String lang) {
         ArrayList<String> idiomas = new ArrayList<>();
         Connection conn = con.createConnection();

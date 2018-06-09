@@ -15,30 +15,6 @@ public class UsuarioDAO {
         con = new Conexion();
     }
 
-    private String indexToCode(int index) {
-
-        String lang="";
-
-        switch (index) {
-            case 0:
-                lang = "eng";
-                break;
-            case 1:
-                lang = "esp";
-                break;
-            case 2:
-                lang = "jpn";
-                break;
-            case 3:
-                lang = "deu";
-                break;
-            case 4:
-                lang = "ptr";
-        }
-
-        return lang;
-
-    }
 
     public int registrarUsuario(String email, String username, String password, String gender, int nativeL, int[] spokenLangs, int[] learnLangs) {
 
@@ -52,14 +28,14 @@ public class UsuarioDAO {
             ps.setString(2, username);
             ps.setString(3, password);
             ps.setString(4, gender);
-            ps.setString(5, indexToCode(nativeL));
+            ps.setString(5, IdiomaDAO.indexToCode(nativeL));
             resultado += ps.executeUpdate();
 
             PreparedStatement spokenps = conn.prepareStatement("INSERT INTO HABLA_IDIOMAS VALUES(?, ?)");
             for (int index:spokenLangs) {
                 spokenps.clearParameters();
                 spokenps.setString(1, email);
-                spokenps.setString(2, indexToCode(index));
+                spokenps.setString(2, IdiomaDAO.indexToCode(index));
                 resultado += spokenps.executeUpdate();
             }
 
@@ -67,7 +43,7 @@ public class UsuarioDAO {
             for (int index:learnLangs) {
                 learnps.clearParameters();
                 learnps.setString(1, email);
-                learnps.setString(2, indexToCode(index));
+                learnps.setString(2, IdiomaDAO.indexToCode(index));
                 resultado += learnps.executeUpdate();
             }
 
