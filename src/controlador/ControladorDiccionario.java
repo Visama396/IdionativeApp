@@ -2,7 +2,10 @@ package controlador;
 
 import modelo.Palabra;
 import modelo.PalabraDAO;
+import modelo.SignificadoEjemplo;
+import modelo.SignificadoEjemploDAO;
 import vista.Diccionario;
+import vista.PalabraSigEj;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -127,6 +130,9 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         this.vista.germanField.setFont(fuente);
         this.vista.portugueseField.addKeyListener(this);
         this.vista.portugueseField.setFont(fuente);
+        this.vista.wordTypeList.setVisibleRowCount(3);
+        this.vista.wordTypeList.setFont(fuente);
+        rellenarListaTipos();
 
         this.vista.mainMenu.setText(rb.getString("start"));
         this.vista.mainMenu.setFont(fuente);
@@ -157,7 +163,32 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         this.vista.setLocationRelativeTo(null);
     }
 
-    public void fillFields(Object o) {
+    private void rellenarListaTipos() {
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        listModel.addElement(rb.getString("noun"));
+        listModel.addElement(rb.getString("adjective"));
+        listModel.addElement(rb.getString("adverb"));
+        listModel.addElement(rb.getString("verb"));
+        listModel.addElement(rb.getString("pronoun"));
+        listModel.addElement(rb.getString("preposition"));
+        listModel.addElement(rb.getString("article"));
+        listModel.addElement(rb.getString("conjunction"));
+        listModel.addElement(rb.getString("interjection"));
+        listModel.addElement(rb.getString("nadjective"));
+        listModel.addElement(rb.getString("iadjective"));
+        listModel.addElement(rb.getString("regverb"));
+        listModel.addElement(rb.getString("irregverb"));
+        listModel.addElement(rb.getString("transverb"));
+        listModel.addElement(rb.getString("intransverb"));
+        listModel.addElement(rb.getString("godanverb"));
+        listModel.addElement(rb.getString("ichidanverb"));
+        listModel.addElement(rb.getString("speverb"));
+        listModel.addElement(rb.getString("particle"));
+        listModel.addElement(rb.getString("deter"));
+        this.vista.wordTypeList.setModel(listModel);
+    }
+
+    private void fillFields(Object o) {
         try {
             try {
                 p = this.modelo.buscarPalabra(Integer.parseInt(((JTextField) o).getText()));
@@ -499,6 +530,32 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
     public void mouseClicked(MouseEvent e) {
         if (e.getSource() instanceof JTable) {
             // Abrir ventana de significados y ejemplos de esa palabra
+            SignificadoEjemploDAO model = new SignificadoEjemploDAO();
+            SignificadoEjemplo sig = null;
+            int row = this.vista.dictionaryTable.getSelectedRow();
+            int column = this.vista.dictionaryTable.getSelectedColumn();
+            int id = Integer.parseInt(this.vista.dictionaryTable.getValueAt(row, 0)+"");
+            switch (column) {
+                case 1:
+                    sig = model.obtenerSignificado(id, "eng");
+                    break;
+                case 2:
+                    sig = model.obtenerSignificado(id, "esp");
+                    break;
+                case 3:
+                    // Hace lo mismo que el 4 ya que Japonés y Kana van juntos
+                case 4:
+                    sig = model.obtenerSignificado(id, "jpn");
+                    break;
+                case 5:
+                    sig = model.obtenerSignificado(id, "deu");
+                    break;
+                case 6:
+                    sig = model.obtenerSignificado(id, "ptr");
+                    break;
+            }
+
+            PalabraSigEj showMoreInfo = new PalabraSigEj("Datos adicionales: ");
         }
     }
 

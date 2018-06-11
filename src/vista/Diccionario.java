@@ -70,7 +70,7 @@ public class Diccionario extends JFrame {
         portugueseField = new JTextField(10);
         wordTypeList = new JList<>();
         jsTypeList = new JScrollPane();
-        jsTypeList.add(wordTypeList);
+        jsTypeList.setViewportView(wordTypeList);
         confirmButton = new JButton();
         cleanButton = new JButton();
         confirmLabel = new JLabel();
