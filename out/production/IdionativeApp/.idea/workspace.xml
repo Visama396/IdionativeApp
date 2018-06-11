@@ -6,9 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff7b41bb-e1ad-459d-875e-d4f8ed016ec7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/locales/diccionario/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/diccionario/locale_de.properties" afterDir="false" />
-    </list>
+    <list default="true" id="ff7b41bb-e1ad-459d-875e-d4f8ed016ec7" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,35 +48,23 @@
     <favorites_list name="IdionativeApp" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="locale.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/locales/diccionario/locale.properties">
+    <leaf>
+      <file leaf-file-name="ControladorDiccionario.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/controlador/ControladorDiccionario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-60">
-              <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="20" />
+            <state relative-caret-position="609">
+              <caret line="557" column="80" lean-forward="true" selection-start-line="557" selection-start-column="80" selection-end-line="557" selection-end-column="80" />
             </state>
           </provider>
-          <provider editor-type-id="ResourceBundle" />
         </entry>
       </file>
-      <file leaf-file-name="locale_de.properties" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/locales/diccionario/locale_de.properties">
+      <file leaf-file-name="PalabraSigEj.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vista/PalabraSigEj.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
+            <state relative-caret-position="198">
+              <caret line="75" column="24" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
             </state>
           </provider>
-          <provider editor-type-id="ResourceBundle" />
-        </entry>
-      </file>
-      <file leaf-file-name="locale_en.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/locales/diccionario/locale_en.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="51" selection-end-column="16" />
-            </state>
-          </provider>
-          <provider editor-type-id="ResourceBundle" />
         </entry>
       </file>
     </leaf>
@@ -159,6 +145,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -187,21 +175,6 @@
               <item name="IdionativeApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="IdionativeApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="locales" type="462c0819:PsiDirectoryNode" />
-              <item name="diccionario" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IdionativeApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IdionativeApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="locales" type="462c0819:PsiDirectoryNode" />
-              <item name="diccionario" type="462c0819:PsiDirectoryNode" />
-              <item name="Resource Bundle 'locale'" type="a6c14932:ResourceBundleNode" />
-            </path>
-            <path>
-              <item name="IdionativeApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IdionativeApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="modelo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -218,9 +191,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -345,12 +316,13 @@
       <workItem from="1528642157835" duration="19000" />
       <workItem from="1528658019689" duration="1084000" />
       <workItem from="1528720437340" duration="13314000" />
-      <workItem from="1528746239955" duration="48000" />
+      <workItem from="1528746239955" duration="65000" />
+      <workItem from="1528746354725" duration="336000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186560000" />
+    <option name="totallyTimeSpent" value="186913000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -378,7 +350,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32897604" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49507734" visible="true" weight="0.18710022" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49507734" visible="true" weight="0.18923241" />
       <window_info anchor="right" id="Database" order="6" visible="true" weight="0.15351813" />
       <window_info id="Structure" order="1" sideWeight="0.5049226" side_tool="true" weight="0.15565032" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -659,24 +631,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vista/PalabraSigEj.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="75" column="24" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TablasIdionative.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="49">
           <caret line="148" column="41" lean-forward="true" selection-start-line="148" selection-start-column="41" selection-end-line="148" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/ControladorDiccionario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="166" column="70" selection-start-line="166" selection-start-column="70" selection-end-line="166" selection-end-column="70" />
         </state>
       </provider>
     </entry>
@@ -696,14 +654,6 @@
       </provider>
       <provider editor-type-id="ResourceBundle" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/locales/diccionario/locale.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-60">
-          <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="20" />
-        </state>
-      </provider>
-      <provider editor-type-id="ResourceBundle" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/locales/diccionario/locale_en.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -719,6 +669,28 @@
         </state>
       </provider>
       <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/locales/diccionario/locale.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-60">
+          <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="20" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vista/PalabraSigEj.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="75" column="24" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/ControladorDiccionario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="557" column="80" lean-forward="true" selection-start-line="557" selection-start-column="80" selection-end-line="557" selection-end-column="80" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

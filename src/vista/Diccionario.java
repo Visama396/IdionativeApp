@@ -39,6 +39,7 @@ public class Diccionario extends JFrame {
             public boolean isCellEditable(int row, int column) {
                 return false;
             }
+
         };
         jsDictionary.setViewportView(dictionaryTable);
         moreActionsButton = new JButton();

@@ -9,6 +9,8 @@ import vista.PalabraSigEj;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
@@ -111,7 +113,7 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         this.vista.idWordField2.setEnabled(false);
         this.vista.dictionaryTable.setRowHeight(30);
         this.vista.dictionaryTable.setFont(fuente);
-        this.vista.dictionaryTable.setAutoCreateRowSorter(true);
+        this.vista.dictionaryTable.setAutoCreateRowSorter(false);
         this.vista.dictionaryTable.addMouseListener(this);
         this.vista.addWindowListener(this);
 
@@ -555,7 +557,12 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                     break;
             }
 
-            PalabraSigEj showMoreInfo = new PalabraSigEj("Datos adicionales: ");
+            PalabraSigEj showMoreInfo = new PalabraSigEj("Datos adicionales: "+this.vista.dictionaryTable.getValueAt(
+                    this.vista.dictionaryTable.getSelectedRow(),
+                    this.vista.dictionaryTable.getSelectedColumn()
+            ));
+            showMoreInfo.setResizable(false);
+            showMoreInfo.setVisible(true);
         }
     }
 
