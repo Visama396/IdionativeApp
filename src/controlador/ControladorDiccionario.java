@@ -536,61 +536,72 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getSource() instanceof JTable) {
-            // Abrir ventana de significados y ejemplos de esa palabra
-            SignificadoEjemploDAO model = new SignificadoEjemploDAO();
-            SignificadoEjemplo sig = new SignificadoEjemplo(0, null, null, null);
-            int row = this.vista.dictionaryTable.getSelectedRow();
-            int column = this.vista.dictionaryTable.getSelectedColumn();
-            int id = Integer.parseInt(this.vista.dictionaryTable.getValueAt(row, 0)+"");
-            switch (column) {
-                case 1:
-                    sig = model.obtenerSignificado(id, "eng");
-                    break;
-                case 2:
-                    sig = model.obtenerSignificado(id, "esp");
-                    break;
-                case 3:
-                    // Hace lo mismo que el 4 ya que Japonés y Kana van juntos
-                case 4:
-                    sig = model.obtenerSignificado(id, "jpn");
-                    break;
-                case 5:
-                    sig = model.obtenerSignificado(id, "deu");
-                    break;
-                case 6:
-                    sig = model.obtenerSignificado(id, "ptr");
-                    break;
+            try {
+
+                // Abrir ventana de significados y ejemplos de esa palabra
+                SignificadoEjemploDAO model = new SignificadoEjemploDAO();
+                SignificadoEjemplo sig = new SignificadoEjemplo(0, null, null, null);
+                int row = this.vista.dictionaryTable.getSelectedRow();
+                int column = this.vista.dictionaryTable.getSelectedColumn();
+                int id = Integer.parseInt(this.vista.dictionaryTable.getValueAt(row, 0)+"");
+                switch (column) {
+                    case 1:
+                        sig = model.obtenerSignificado(id, "eng");
+                        break;
+                    case 2:
+                        sig = model.obtenerSignificado(id, "esp");
+                        break;
+                    case 3:
+                        // Hace lo mismo que el 4 ya que Japonés y Kana van juntos
+                    case 4:
+                        sig = model.obtenerSignificado(id, "jpn");
+                        break;
+                    case 5:
+                        sig = model.obtenerSignificado(id, "deu");
+                        break;
+                    case 6:
+                        sig = model.obtenerSignificado(id, "ptr");
+                        break;
+                }
+
+                String palabra = this.vista.dictionaryTable.getValueAt(
+                        this.vista.dictionaryTable.getSelectedRow(),
+                        this.vista.dictionaryTable.getSelectedColumn()
+                ).toString();
+
+                String tipos = "";
+
+                this.vista.wordTypeList.setSelectedIndices(this.modelo.buscarTipos(id));
+                List<String> tiposLista = this.vista.wordTypeList.getSelectedValuesList();
+                for (String s: tiposLista) {
+                    tipos += s+", ";
+                }
+                this.vista.wordTypeList.clearSelection();
+
+                try {
+                    PalabraSigEj showMoreInfo = new PalabraSigEj("Datos adicionales: "+ palabra);
+                    showMoreInfo.wordLabel.setText(palabra);
+                    showMoreInfo.wordLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 18));
+                    showMoreInfo.typeWordLabel.setText(tipos.substring(0, tipos.length()-2)); // Para que no muestre la última coma
+                    showMoreInfo.typeWordLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 16));
+                    showMoreInfo.significado.setText("Significado");
+                    showMoreInfo.significado.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
+                    showMoreInfo.ejemplo.setText("Ejemplo");
+                    showMoreInfo.ejemplo.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
+                    showMoreInfo.significadoArea.append(sig.getSignificado());
+                    showMoreInfo.significadoArea.setFont(new Font("Arial Unicode MS", Font.PLAIN, 13));
+                    showMoreInfo.ejemploArea.append(sig.getEjemplo());
+                    showMoreInfo.ejemploArea.setFont(new Font("Arial Unicode MS", Font.PLAIN, 13));
+                    showMoreInfo.pack();
+                    showMoreInfo.setResizable(false);
+                    showMoreInfo.setVisible(true);
+                } catch (NullPointerException npe) {
+
+                }
+
+            } catch (NullPointerException npe) {
+
             }
-
-            String palabra = this.vista.dictionaryTable.getValueAt(
-                    this.vista.dictionaryTable.getSelectedRow(),
-                    this.vista.dictionaryTable.getSelectedColumn()
-            ).toString();
-
-            String tipos = "";
-
-            this.vista.wordTypeList.setSelectedIndices(this.modelo.buscarTipos(id));
-            List<String> tiposLista = this.vista.wordTypeList.getSelectedValuesList();
-            for (String s: tiposLista) {
-                tipos += s+", ";
-            }
-
-            PalabraSigEj showMoreInfo = new PalabraSigEj("Datos adicionales: "+ palabra);
-            showMoreInfo.wordLabel.setText(palabra);
-            showMoreInfo.wordLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 18));
-            showMoreInfo.typeWordLabel.setText(tipos.substring(0, tipos.length()-2)); // Para que no muestre la última coma
-            showMoreInfo.typeWordLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 16));
-            showMoreInfo.significado.setText("Significado");
-            showMoreInfo.significado.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
-            showMoreInfo.ejemplo.setText("Ejemplo");
-            showMoreInfo.ejemplo.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
-            showMoreInfo.significadoArea.append(sig.getSignificado());
-            showMoreInfo.significadoArea.setFont(new Font("Arial Unicode MS", Font.PLAIN, 13));
-            showMoreInfo.ejemploArea.append(sig.getEjemplo());
-            showMoreInfo.ejemploArea.setFont(new Font("Arial Unicode MS", Font.PLAIN, 13));
-            showMoreInfo.pack();
-            showMoreInfo.setResizable(false);
-            showMoreInfo.setVisible(true);
         }
     }
 

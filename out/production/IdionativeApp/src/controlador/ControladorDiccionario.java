@@ -14,6 +14,7 @@ import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -201,6 +202,7 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                 this.vista.kanaField.setText(p.getKana());
                 this.vista.germanField.setText(p.getDeu());
                 this.vista.portugueseField.setText(p.getPtr());
+                this.vista.wordTypeList.setSelectedIndices(this.modelo.buscarTipos(Integer.parseInt(((JTextField) o).getText())));
             } catch (NumberFormatException nfe) {
                 p = this.modelo.buscarPalabra(((JTextField) o).getText());
                 this.vista.idWordField2.setText(p.getId_word()+"");
@@ -210,6 +212,7 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                 this.vista.kanaField.setText(p.getKana());
                 this.vista.germanField.setText(p.getDeu());
                 this.vista.portugueseField.setText(p.getPtr());
+                this.vista.wordTypeList.setSelectedIndices(this.modelo.buscarTipos(Integer.parseInt(this.vista.idWordField2.getText())));
             }
         } catch (NullPointerException e) {
             this.vista.confirmLabel.setForeground(Color.RED);
@@ -324,7 +327,8 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                                     this.vista.japaneseField.getText(),
                                     this.vista.kanaField.getText(),
                                     this.vista.germanField.getText(),
-                                    this.vista.portugueseField.getText()
+                                    this.vista.portugueseField.getText(),
+                                    this.vista.wordTypeList.getSelectedIndices()
                             );
                             if(result==1) {
                                 this.vista.confirmLabel.setForeground(Color.GREEN);
@@ -353,7 +357,8 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                                     this.vista.japaneseField.getText(),
                                     this.vista.kanaField.getText(),
                                     this.vista.germanField.getText(),
-                                    this.vista.portugueseField.getText()
+                                    this.vista.portugueseField.getText(),
+                                    this.vista.wordTypeList.getSelectedIndices()
                             );
 
                             if (result == 1) {
@@ -533,7 +538,7 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         if (e.getSource() instanceof JTable) {
             // Abrir ventana de significados y ejemplos de esa palabra
             SignificadoEjemploDAO model = new SignificadoEjemploDAO();
-            SignificadoEjemplo sig = null;
+            SignificadoEjemplo sig = new SignificadoEjemplo(0, null, null, null);
             int row = this.vista.dictionaryTable.getSelectedRow();
             int column = this.vista.dictionaryTable.getSelectedColumn();
             int id = Integer.parseInt(this.vista.dictionaryTable.getValueAt(row, 0)+"");
@@ -557,12 +562,40 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                     break;
             }
 
-            PalabraSigEj showMoreInfo = new PalabraSigEj("Datos adicionales: "+this.vista.dictionaryTable.getValueAt(
+            String palabra = this.vista.dictionaryTable.getValueAt(
                     this.vista.dictionaryTable.getSelectedRow(),
                     this.vista.dictionaryTable.getSelectedColumn()
-            ));
-            showMoreInfo.setResizable(false);
-            showMoreInfo.setVisible(true);
+            ).toString();
+
+            String tipos = "";
+
+            this.vista.wordTypeList.setSelectedIndices(this.modelo.buscarTipos(id));
+            List<String> tiposLista = this.vista.wordTypeList.getSelectedValuesList();
+            for (String s: tiposLista) {
+                tipos += s+", ";
+            }
+            this.vista.wordTypeList.clearSelection();
+
+            try {
+                PalabraSigEj showMoreInfo = new PalabraSigEj("Datos adicionales: "+ palabra);
+                showMoreInfo.wordLabel.setText(palabra);
+                showMoreInfo.wordLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 18));
+                showMoreInfo.typeWordLabel.setText(tipos.substring(0, tipos.length()-2)); // Para que no muestre la última coma
+                showMoreInfo.typeWordLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 16));
+                showMoreInfo.significado.setText("Significado");
+                showMoreInfo.significado.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
+                showMoreInfo.ejemplo.setText("Ejemplo");
+                showMoreInfo.ejemplo.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
+                showMoreInfo.significadoArea.append(sig.getSignificado());
+                showMoreInfo.significadoArea.setFont(new Font("Arial Unicode MS", Font.PLAIN, 13));
+                showMoreInfo.ejemploArea.append(sig.getEjemplo());
+                showMoreInfo.ejemploArea.setFont(new Font("Arial Unicode MS", Font.PLAIN, 13));
+                showMoreInfo.pack();
+                showMoreInfo.setResizable(false);
+                showMoreInfo.setVisible(true);
+            } catch (NullPointerException npe) {
+
+            }
         }
     }
 
