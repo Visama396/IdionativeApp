@@ -9,10 +9,6 @@ public class Palabra {
     private String kana;
     private String deu;
     private String ptr;
-    private Word_types wordType;
-    public enum Word_types {
-        NOUN, ADJECTIVE, NAADJECTIVE, IADJECTIVE, VERB, REGULARADVERB, IRREGULARVERB, GODANVERB, ICHIDANVERB, SPECIALVERB, PRONOUN, PARTICLE, PREPOSITION
-    }
 
     public Palabra(int id_word, String eng, String esp, String jpn, String kana, String deu, String ptr) {
         this.id_word = id_word;

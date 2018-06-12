@@ -6,15 +6,19 @@ public class PalabraSigEj extends JFrame {
 
     public PalabraSigEj(String title) {
 
-        wordLabel = new JLabel("Palabra");
-        typeWordLabel = new JLabel("Sustantivo");
-        significado = new JLabel("Significado");
-        ejemplo = new JLabel("Ejemplo");
+        wordLabel = new JLabel();
+        typeWordLabel = new JLabel();
+        significado = new JLabel();
+        ejemplo = new JLabel();
         jsSignificado = new JScrollPane();
         jsEjemplo = new JScrollPane();
-        significadoArea = new JTextArea("Es la unidad mínima del texto", 5, 25);
+        significadoArea = new JTextArea(5, 25);
+        significadoArea.setLineWrap(true);
+        significadoArea.setWrapStyleWord(true);
         jsSignificado.setViewportView(significadoArea);
-        ejemploArea = new JTextArea("Esta palabra tiene muchas letras", 5, 25);
+        ejemploArea = new JTextArea(5, 25);
+        ejemploArea.setLineWrap(true);
+        ejemploArea.setWrapStyleWord(true);
         jsEjemplo.setViewportView(ejemploArea);
         mainPane = new JPanel();
         layout = new GroupLayout(mainPane);
@@ -72,14 +76,14 @@ public class PalabraSigEj extends JFrame {
         this.pack();
     }
 
-    private JLabel wordLabel;
-    private JLabel typeWordLabel;
-    private JLabel significado;
-    private JLabel ejemplo;
+    public JLabel wordLabel;
+    public JLabel typeWordLabel;
+    public JLabel significado;
+    public JLabel ejemplo;
     private JScrollPane jsSignificado;
     private JScrollPane jsEjemplo;
-    private JTextArea significadoArea;
-    private JTextArea ejemploArea;
+    public JTextArea significadoArea;
+    public JTextArea ejemploArea;
     private GroupLayout layout;
     private JPanel mainPane;
 }

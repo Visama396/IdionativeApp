@@ -15,6 +15,155 @@ public class PalabraDAO {
         con = new Conexion();
     }
 
+    private int typeToIndex(String tipo) {
+        int i = -1;
+
+        switch (tipo) {
+            case "N":
+                i = 0;
+                break;
+            case "A":
+                i = 1;
+                break;
+            case "Adv":
+                i = 2;
+                break;
+            case "V":
+                i = 3;
+                break;
+            case "Pron":
+                i = 4;
+                break;
+            case "Prep":
+                i = 5;
+                break;
+            case "Art":
+                i = 6;
+                break;
+            case "Conj":
+                i = 7;
+                break;
+            case "Interj":
+                i = 8;
+                break;
+            case "NaAdj":
+                i = 9;
+                break;
+            case "IAdj":
+                i = 10;
+                break;
+            case "RV":
+                i = 11;
+                break;
+            case "IV":
+                i = 12;
+                break;
+            case "VT":
+                i = 13;
+                break;
+            case "VI":
+                i = 14;
+                break;
+            case "GV":
+                i = 15;
+                break;
+            case "IcV":
+                i = 16;
+                break;
+            case "SpV":
+                i = 17;
+                break;
+            case "Part":
+                i = 18;
+                break;
+            case "Det":
+                i = 19;
+                break;
+        }
+
+        return i;
+    }
+
+    private String indexToType(int i) {
+        String tipo = "";
+
+        switch (i) {
+            case 0:
+                // Es sustantivo
+                tipo = "N";
+                break;
+            case 1:
+                // Es adjetivo
+                tipo = "A";
+                break;
+            case 2:
+                // Es adverbio
+                tipo = "Adv";
+                break;
+            case 3:
+                // Es verbo
+                tipo = "V";
+                break;
+            case 4:
+                // Es pronombre
+                tipo = "Pron";
+                break;
+            case 5:
+                // Es preposición
+                tipo = "Prep";
+                break;
+            case 6:
+                // Es artículo
+                tipo = "Art";
+                break;
+            case 7:
+                // Es conjunción
+                tipo = "Conj";
+                break;
+            case 8:
+                // Es interjección
+                tipo = "Interj";
+                break;
+            case 9:
+                // Es adjetivo-na
+                tipo = "NaAdj";
+                break;
+            case 10:
+                // Es adjetivo-i
+                tipo = "IAdj";
+                break;
+            case 11:
+                tipo = "RV";
+                break;
+            case 12:
+                tipo = "IV";
+                break;
+            case 13:
+                tipo = "VT";
+                break;
+            case 14:
+                tipo = "VI";
+                break;
+            case 15:
+                tipo = "GV";
+                break;
+            case 16:
+                tipo = "IcV";
+                break;
+            case 17:
+                tipo = "SpV";
+                break;
+            case 18:
+                tipo = "Part";
+                break;
+            case 19:
+                tipo = "Det";
+                break;
+        }
+
+        return tipo;
+    }
+
     public int siguientePalabra() {
         Connection conn = con.createConnection();
         ResultSet rs = null;
@@ -37,6 +186,31 @@ public class PalabraDAO {
         }
 
         return max;
+    }
+
+    public int[] buscarTipos (int id) {
+        Connection conn = con.createConnection();
+        ResultSet rs = null;
+        int[] indiceTipos = null;
+
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT tipo FROM tipos_palabras WHERE idtipo_palabra = ?");
+            ps.setInt(1, id);
+            ArrayList<Integer> indices = new ArrayList<Integer>();
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                indices.add(typeToIndex(rs.getString(1)));
+            }
+            int in = 0;
+            indiceTipos = new int[indices.size()];
+            for (int i: indices) {
+                indiceTipos[in] = i;
+            }
+        } catch (SQLException e) {
+
+        }
+
+        return indiceTipos;
     }
 
     public Palabra buscarPalabra (String word) {
@@ -96,7 +270,7 @@ public class PalabraDAO {
         return result;
     }
 
-    public int actualizarPalabra(int id, String eng, String esp, String jpn, String kana, String deu, String ptr) {
+    public int actualizarPalabra(int id, String eng, String esp, String jpn, String kana, String deu, String ptr, int[] tipo) {
         Connection conn = con.createConnection();
         PreparedStatement ps = null;
         int result = 0;
@@ -118,15 +292,16 @@ public class PalabraDAO {
         return result;
     }
 
-    public int insertarPalabra(String eng, String esp, String jpn, String kana, String deu, String ptr) {
+    public int insertarPalabra(String eng, String esp, String jpn, String kana, String deu, String ptr, int[] tipos) {
         Connection conn = con.createConnection();
         PreparedStatement ps=null;
         int result = 0;
+        int idnuevo = siguientePalabra()+1;
 
         try {
 
-            ps = conn.prepareStatement("INSERT INTO palabras (id_palabra, eng, esp, jpn, kana, deu, ptr) VALUES(INITCAP(?), INITCAP(?), INITCAP(?), INITCAP(?), INITCAP(?), INITCAP(?), INITCAP(?))");
-            ps.setInt(1, siguientePalabra()+1);
+            ps = conn.prepareStatement("INSERT INTO palabras (id_palabra, eng, esp, jpn, kana, deu, ptr) VALUES(?, INITCAP(?), INITCAP(?), INITCAP(?), INITCAP(?), INITCAP(?), INITCAP(?))");
+            ps.setInt(1, idnuevo);
             ps.setString(2, eng);
             ps.setString(3, esp);
             ps.setString(4, jpn);
@@ -135,6 +310,14 @@ public class PalabraDAO {
             ps.setString(7, ptr);
 
             result = ps.executeUpdate();
+
+            PreparedStatement pstipos = conn.prepareStatement("INSERT INTO tipos_palabras VALUES (?, ?)");
+            for (int i:tipos) {
+                pstipos.clearParameters();
+                pstipos.setInt(1, idnuevo);
+                pstipos.setString(2, indexToType(i));
+                pstipos.executeQuery();
+            }
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "PalabraDAO: SQLException", JOptionPane.ERROR_MESSAGE);
