@@ -4,7 +4,16 @@ import modelo.Idioma;
 
 import javax.swing.*;
 
+/**
+ * Vista de Registro de usuario y de Configuración
+ */
+
 public class Registro extends JFrame {
+
+    /**
+     * El constructor se encarga de colocar los componentes del Frame en el layout, luego desde el controlador se añade el texto a cada componente.
+     * @param title Al crear el Frame en los parámetros se pone el título de la ventana.
+     */
 
     public Registro(String title) {
 

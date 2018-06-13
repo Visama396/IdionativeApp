@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import java.io.*;
 import java.util.ResourceBundle;
 import java.util.Locale;
 
@@ -26,6 +27,10 @@ public class ControladorLogin implements ActionListener, WindowListener {
     private ResourceBundle rb;
     private String email;
 
+    private File file = new File("user.txt");
+    private FileWriter save;
+    private FileReader read;
+
     public ControladorLogin(InicioSesion vista, UsuarioDAO modelo, String lang, String email) {
         this.vista = vista;
         this.modelo = modelo;
@@ -34,6 +39,37 @@ public class ControladorLogin implements ActionListener, WindowListener {
 
         this.loc = new Locale(this.lang);
         this.rb = ResourceBundle.getBundle("locales.iniciosesion.locale", this.loc);
+
+        String checkremember = null;
+        String mail = null;
+        String pass = null;
+
+        if (file.exists()) {
+            try {
+                read = new FileReader(file);
+                BufferedReader br = new BufferedReader(read);
+                String s;
+                int casilla = 0;
+                while ((s = br.readLine()) != null) {
+                    if (casilla == 0) {
+                        checkremember = s;
+                    } else if(casilla == 1) {
+                        mail = s;
+                    } else {
+                        pass = s;
+                    }
+                    casilla++;
+                }
+                if (checkremember.equals("T")) {
+                    this.vista.rememberMeCheck.setSelected(true);
+                    this.vista.emailField.setText(mail);
+                    this.vista.passwordField.setText(pass);
+                }
+                read.close();
+            } catch (IOException io) {
+
+            }
+        }
 
         Font fuente = new Font("Arial Unicode MS", Font.PLAIN, 15);
 
@@ -65,12 +101,11 @@ public class ControladorLogin implements ActionListener, WindowListener {
 
         this.vista.emailLabel.setText(rb.getString("email"));
         this.vista.emailLabel.setFont(fuente);
-        this.vista.emailField.setText(this.email);
         this.vista.emailField.setFont(fuente);
         this.vista.passwordLabel.setText(rb.getString("password"));
         this.vista.passwordLabel.setFont(fuente);
-        this.vista.passwordField.setText("");
         this.vista.passwordField.setFont(fuente);
+        this.vista.rememberMeCheck.setText(rb.getString("remember"));
         this.vista.signinButton.setText(rb.getString("login"));
         this.vista.signinButton.setFont(fuente);
         this.vista.signinButton.addActionListener(this);
@@ -96,6 +131,32 @@ public class ControladorLogin implements ActionListener, WindowListener {
                 case "SIGNIN":
                     boolean correcto = this.modelo.comprobarUsuario(this.vista.emailField.getText(), new String(this.vista.passwordField.getPassword()));
                     if (correcto) {
+
+                        if (this.vista.rememberMeCheck.isSelected()) {
+                            try {
+                                save = new FileWriter(file);
+                                save.write("T");
+                                save.write("\r\n");
+                                save.write(this.vista.emailField.getText());
+                                save.write("\r\n");
+                                save.write(new String(this.vista.passwordField.getPassword()));
+                                save.write("\r\n");
+                                save.close();
+                            } catch (IOException io) {
+                                io.printStackTrace();
+                            }
+                        } else {
+                            if (file.exists()) {
+                                try {
+                                    save = new FileWriter(file);
+                                    save.write("F");
+                                    save.close();
+                                } catch (IOException io) {
+                                    io.printStackTrace();
+                                }
+                            }
+                        }
+
                         Diccionario view = new Diccionario(rb.getString("dict"));
                         PalabraDAO model = new PalabraDAO();
                         ControladorDiccionario controller = new ControladorDiccionario(view, model, this.lang, this.vista.emailField.getText());

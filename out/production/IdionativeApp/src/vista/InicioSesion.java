@@ -43,6 +43,7 @@ public class InicioSesion extends JFrame {
         signupButton = new JButton();
         noAccountButton = new JButton();
         goBackButton = new JButton();
+        rememberMeCheck = new JCheckBox();
 
         mainPane = new JPanel();
         layout = new GroupLayout(mainPane);
@@ -56,12 +57,13 @@ public class InicioSesion extends JFrame {
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                 .addComponent(emailLabel)
                                 .addComponent(passwordLabel)
-                                .addComponent(signinButton))
+                                .addComponent(noAccountButton))
                         .addGap(15, 20 , 30)
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                 .addComponent(emailField)
                                 .addComponent(passwordField)
-                                .addComponent(noAccountButton))
+                                .addComponent(rememberMeCheck)
+                                .addComponent(signinButton))
         );
 
         layout.setVerticalGroup(
@@ -73,8 +75,10 @@ public class InicioSesion extends JFrame {
                                 .addComponent(passwordLabel)
                                 .addComponent(passwordField))
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(signinButton)
-                                .addComponent(noAccountButton))
+                                .addComponent(rememberMeCheck))
+                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                .addComponent(noAccountButton)
+                                .addComponent(signinButton))
         );
 
         this.setJMenuBar(menuBar);
@@ -97,6 +101,7 @@ public class InicioSesion extends JFrame {
     public JTextField emailField;
     public JLabel passwordLabel;
     public JPasswordField passwordField;
+    public JCheckBox rememberMeCheck;
 
     public JButton signinButton;
     public JButton signupButton;

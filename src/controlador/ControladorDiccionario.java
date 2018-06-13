@@ -89,7 +89,7 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         this.vista.germanLabel.setFont(fuente);
         this.vista.portugueseLabel.setText(rb.getString("ptr"));
         this.vista.portugueseLabel.setFont(fuente);
-        this.vista.wordTypeLabel.setText("Tipo de palabra");
+        this.vista.wordTypeLabel.setText(rb.getString("type"));
         this.vista.wordTypeLabel.setFont(fuente);
         this.vista.insertButton.setText(rb.getString("insert"));
         this.vista.insertButton.setActionCommand("INS");
@@ -169,19 +169,19 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         this.vista.addMeaningItem.setFont(fuente);
         this.vista.addMeaningItem.addActionListener(this);
         this.vista.addMeaningItem.setActionCommand("MEANING");
-        this.vista.userMenu.setText("Bienvenido/a "+modeloUser.obtenerNombreUsuario(this.email));
+        this.vista.userMenu.setText(rb.getString("welcome") + " " + modeloUser.obtenerNombreUsuario(this.email));
         this.vista.userMenu.setFont(fuente);
-        this.vista.userSettingsItem.setText("Configuración");
+        this.vista.userSettingsItem.setText(rb.getString("conf"));
         this.vista.userSettingsItem.setFont(fuente);
         this.vista.userSettingsItem.addActionListener(this);
         this.vista.userSettingsItem.setActionCommand("SETTINGS");
-        this.vista.logoutItem.setText("Cerrar sesión");
+        this.vista.logoutItem.setText(rb.getString("logout"));
         this.vista.logoutItem.setFont(fuente);
         this.vista.logoutItem.addActionListener(this);
         this.vista.logoutItem.setActionCommand("LOGOUT");
-        this.vista.changePasswordItem.setText("Cambiar contraseña");
+        this.vista.changePasswordItem.setText(rb.getString("changpass"));
         this.vista.changePasswordItem.setFont(fuente);
-        this.vista.deleteUserItem.setText("Eliminar usuario");
+        this.vista.deleteUserItem.setText(rb.getString("deluser"));
         this.vista.deleteUserItem.setFont(fuente);
         this.vista.deleteUserItem.addActionListener(this);
         this.vista.deleteUserItem.setActionCommand("DELUSER");
@@ -497,6 +497,12 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                 case "MEANING":
                     PalabraSigEj significado = new PalabraSigEj("Añadir");
                     // Crear significado
+                    break;
+                case "LOGOUT":
+                    InicioSesion vistaInicio = new InicioSesion(rb.getString("login"));
+                    ControladorLogin controladorLogin = new ControladorLogin(vistaInicio, modeloUser, this.lang, "");
+                    this.vista.dispose();
+                    vistaInicio.setVisible(true);
                     break;
             }
         }
