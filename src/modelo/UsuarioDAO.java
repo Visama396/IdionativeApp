@@ -1,5 +1,6 @@
 package modelo;
 
+
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,6 +16,73 @@ public class UsuarioDAO {
         con = new Conexion();
     }
 
+    public void eliminarUsuario(String email) {
+        Connection conn = con.createConnection();
+
+        try {
+            PreparedStatement pshi = conn.prepareStatement("DELETE FROM HABLA_IDIOMAS WHERE USUARIO_HI = ?");
+            pshi.setString(1, email);
+            pshi.executeUpdate();
+
+            PreparedStatement psai = conn.prepareStatement("DELETE FROM APRENDE_IDIOMAS WHERE USUARIO_AI = ?");
+            psai.setString(1, email);
+            psai.executeUpdate();
+
+            PreparedStatement ps = conn.prepareStatement("DELETE FROM USUARIOS WHERE EMAIL = ?");
+            ps.setString(1, email);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public String obtenerNombreUsuario(String email) {
+        String user = "";
+        Connection conn = con.createConnection();
+        ResultSet rs = null;
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT USUARIO FROM USUARIOS WHERE EMAIL = ?");
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            if (rs.next()) user = rs.getString(1);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            con.closeConnection(conn);
+        }
+
+        return user;
+    }
+
+    public Usuario obtenerUsuario(String email) {
+        Usuario u = null;
+        Connection conn = con.createConnection();
+        ResultSet rsUser = null;
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM USUARIOS WHERE EMAIL = ?");
+            ps.setString(1, email);
+            rsUser = ps.executeQuery();
+            if (rsUser.next()) {
+                u = new Usuario(
+                        rsUser.getString(1),
+                        rsUser.getString(2),
+                        rsUser.getString(3),
+                        rsUser.getString(6),
+                        rsUser.getString(5),
+                        rsUser.getString(4)
+                );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return u;
+    }
 
     public int registrarUsuario(String email, String username, String password, String gender, int nativeL, int[] spokenLangs, int[] learnLangs) {
 

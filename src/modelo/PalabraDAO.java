@@ -164,7 +164,7 @@ public class PalabraDAO {
         return tipo;
     }
 
-    public int siguientePalabra() {
+    public int siguienteID() {
         Connection conn = con.createConnection();
         ResultSet rs = null;
         int max = 0;
@@ -185,7 +185,7 @@ public class PalabraDAO {
             con.closeConnection(conn);
         }
 
-        return max;
+        return max+1;
     }
 
     public int[] buscarTipos (int id) {
@@ -285,6 +285,18 @@ public class PalabraDAO {
             ps.setString(6, ptr);
             ps.setInt(7, id);
             result = ps.executeUpdate();
+
+            PreparedStatement pstipos1 = conn.prepareStatement("DELETE FROM TIPOS_PALABRAS WHERE IDTIPO_PALABRA = ?");
+            pstipos1.setInt(1, id);
+            pstipos1.executeUpdate();
+
+            PreparedStatement pstipos2 = conn.prepareStatement("INSERT INTO TIPOS_PALABRAS VALUES(?, ?)");
+            for (int i:tipo) {
+                pstipos2.clearParameters();
+                pstipos2.setInt(1, id);
+                pstipos2.setString(2, indexToType(i));
+                pstipos2.executeQuery();
+            }
         } catch (SQLException e) {
             con.closeConnection(conn);
         }
@@ -296,7 +308,7 @@ public class PalabraDAO {
         Connection conn = con.createConnection();
         PreparedStatement ps=null;
         int result = 0;
-        int idnuevo = siguientePalabra()+1;
+        int idnuevo = siguienteID();
 
         try {
 

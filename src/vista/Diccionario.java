@@ -14,14 +14,25 @@ public class Diccionario extends JFrame {
         japaneseItem = new JMenuItem();
         germanItem = new JMenuItem();
         closeItem = new JMenuItem();
+        userMenu = new JMenu();
+        userSettingsItem = new JMenuItem();
+        changePasswordItem = new JMenuItem();
+        deleteUserItem = new JMenuItem();
+        addMeaningItem = new JMenuItem();
 
         languagesMenu.add(spanishItem);
         languagesMenu.add(englishItem);
         languagesMenu.add(japaneseItem);
         languagesMenu.add(germanItem);
         mainMenu.add(languagesMenu);
+        mainMenu.add(addMeaningItem);
         mainMenu.add(closeItem);
         menuBar.add(mainMenu);
+
+        userMenu.add(userSettingsItem);
+        userMenu.add(changePasswordItem);
+        userMenu.add(deleteUserItem);
+        menuBar.add(userMenu);
 
         actionsGroup = new ButtonGroup();
         topPane = new JPanel();
@@ -237,6 +248,11 @@ public class Diccionario extends JFrame {
     public JMenuItem japaneseItem;
     public JMenuItem germanItem;
     public JMenuItem closeItem;
+    public JMenu userMenu;
+    public JMenuItem userSettingsItem;
+    public JMenuItem deleteUserItem;
+    public JMenuItem changePasswordItem;
+    public JMenuItem addMeaningItem;
 
     private ButtonGroup actionsGroup;
     private JPanel topPane;
