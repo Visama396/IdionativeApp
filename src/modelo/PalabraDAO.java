@@ -257,6 +257,14 @@ public class PalabraDAO {
         int result = 0;
 
         try {
+            PreparedStatement pstipos = conn.prepareStatement("DELETE FROM TIPOS_PALABRAS WHERE IDTIPO_PALABRA = ?");
+            pstipos.setInt(1, id);
+            pstipos.executeUpdate();
+
+            PreparedStatement pssig = conn.prepareStatement("DELETE FROM SIGNIFICADO_EJEMPLOS WHERE ID_SIG = ?");
+            pssig.setInt(1, id);
+            pssig.executeUpdate();
+
             ps = conn.prepareStatement("DELETE FROM PALABRAS WHERE ID_PALABRA = ?");
             ps.setInt(1, id);
 

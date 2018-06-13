@@ -1,5 +1,6 @@
 package controlador;
 
+import modelo.IdiomaDAO;
 import modelo.Usuario;
 import modelo.UsuarioDAO;
 import vista.Registro;
@@ -8,6 +9,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -77,6 +79,28 @@ public class ControladorConfiguracion implements ActionListener {
 
         this.vista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+    }
+
+    private void completarOpciones() {
+
+        ArrayList<String> idiomas = new IdiomaDAO().obtenerIdiomas(lang);
+        DefaultListModel<String> listModel = new DefaultListModel<>();
+        DefaultComboBoxModel<String> comboBoxModel = new DefaultComboBoxModel<>();
+
+        for (String idioma:idiomas) {
+            listModel.addElement(idioma);
+            comboBoxModel.addElement(idioma);
+        }
+
+        DefaultComboBoxModel<String> comboBoxModelGender = new DefaultComboBoxModel<>();
+        comboBoxModelGender.addElement(rb.getString("man"));
+        comboBoxModelGender.addElement(rb.getString("woman"));
+        comboBoxModelGender.addElement(rb.getString("none"));
+
+        this.vista.genderBox.setModel(comboBoxModelGender);
+        this.vista.nativeLangBox.setModel(comboBoxModel);
+        this.vista.spokenLangList.setModel(listModel);
+        this.vista.learnLangList.setModel(listModel);
     }
 
     @Override

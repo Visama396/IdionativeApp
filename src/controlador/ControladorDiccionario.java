@@ -478,7 +478,7 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                 case "SETTINGS":
                     Registro view = new Registro("Configuración");
                     ControladorConfiguracion configuracion = new ControladorConfiguracion(view, modeloUser, this.lang, this.email);
-                    view.setLocationRelativeTo(null);
+                    //view.setLocationRelativeTo(null);
                     view.pack();
                     view.setVisible(true);
                     this.vista.dispose();
