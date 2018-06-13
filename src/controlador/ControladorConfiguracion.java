@@ -1,5 +1,6 @@
 package controlador;
 
+import modelo.Idioma;
 import modelo.IdiomaDAO;
 import modelo.Usuario;
 import modelo.UsuarioDAO;
@@ -76,6 +77,18 @@ public class ControladorConfiguracion implements ActionListener {
         this.vista.nativeLangLabel.setFont(fuente);
         this.vista.genderLabel.setText("Sexo");
         this.vista.genderLabel.setFont(fuente);
+        this.vista.spokenLangLabel.setText("Idiomas que hablas:");
+        this.vista.learnLangLabel.setText("Idiomas que quieres aprender:");
+        this.vista.spokenLangList.setFont(fuente);
+        this.vista.spokenLangList.setLayoutOrientation(JList.VERTICAL_WRAP);
+        this.vista.spokenLangList.setVisibleRowCount(3);
+        this.vista.learnLangList.setFont(fuente);
+        this.vista.learnLangList.setLayoutOrientation(JList.VERTICAL_WRAP);
+        this.vista.learnLangList.setVisibleRowCount(3);
+        this.vista.signupButton.setText("Confirmar cambios");
+        this.vista.returnButton.setText("Volver");
+
+        completarOpciones();
 
         this.vista.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -101,6 +114,26 @@ public class ControladorConfiguracion implements ActionListener {
         this.vista.nativeLangBox.setModel(comboBoxModel);
         this.vista.spokenLangList.setModel(listModel);
         this.vista.learnLangList.setModel(listModel);
+
+        this.vista.nativeLangBox.setSelectedIndex(IdiomaDAO.codeToIndex(usuario.getNativeLang()));
+
+        int[] learnLangs = new int[usuario.getLearnLangs().size()];
+        int cont = 0;
+        for (Idioma idioma : usuario.getLearnLangs()) {
+            learnLangs[cont] = IdiomaDAO.codeToIndex(idioma.getCodigo());
+            System.out.println(idioma.getCodigo());
+            cont++;
+        }
+        int[] speakLangs = new int[usuario.getSpokenLangs().size()];
+        cont=0;
+        for(Idioma idioma : usuario.getSpokenLangs()) {
+            speakLangs[cont] = IdiomaDAO.codeToIndex(idioma.getCodigo());
+            System.out.println(idioma.getCodigo());
+            cont++;
+        }
+
+        this.vista.spokenLangList.setSelectedIndices(speakLangs);
+        this.vista.learnLangList.setSelectedIndices(learnLangs);
     }
 
     @Override

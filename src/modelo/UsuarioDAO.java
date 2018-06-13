@@ -117,7 +117,7 @@ public class UsuarioDAO {
         ResultSet rslearn = null;
         try {
             ArrayList<Idioma> spokenLangs = new ArrayList<>();
-            PreparedStatement psspoken = conn.prepareStatement("SELECT * FROM IDIOMAS WHERE CODIGO IN (SELECT IDIOMA_AI FROM APRENDE_IDIOMAS WHERE USUARIO_AI = ?)");
+            PreparedStatement psspoken = conn.prepareStatement("SELECT * FROM IDIOMAS WHERE CODIGO IN (SELECT IDIOMA_HI FROM HABLA_IDIOMAS WHERE USUARIO_HI = ?)");
             psspoken.setString(1, email);
             rsspoken = psspoken.executeQuery();
             while (rsspoken.next()) {
@@ -129,7 +129,7 @@ public class UsuarioDAO {
             }
 
             ArrayList<Idioma> learnLangs = new ArrayList<>();
-            PreparedStatement pslearn = conn.prepareStatement("SELECT * FROM IDIOMAS WHERE CODIGO IN (SELECT IDIOMA_HI FROM HABLA_IDIOMAS WHERE USUARIO_HI = ?)");
+            PreparedStatement pslearn = conn.prepareStatement("SELECT * FROM IDIOMAS WHERE CODIGO IN (SELECT IDIOMA_AI FROM APRENDE_IDIOMAS WHERE USUARIO_AI = ?)");
             pslearn.setString(1, email);
             rslearn = pslearn.executeQuery();
             while (rslearn.next()) {
