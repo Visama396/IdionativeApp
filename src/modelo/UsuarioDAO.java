@@ -1,6 +1,5 @@
 package modelo;
 
-
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,6 +10,57 @@ import java.util.ArrayList;
 public class UsuarioDAO {
 
     private Conexion con;
+
+    public boolean esProfesor(String email) {
+        boolean p = false;
+        Connection conn = con.createConnection();
+        ResultSet rs = null;
+
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT TIPO FROM USUARIOS WHERE EMAIL = ?");
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                if (rs.getString(1).equals("P")) {
+                    p = true;
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return p;
+    }
+
+    public boolean esAdmin(String email) {
+        boolean a = false;
+
+        Connection conn = con.createConnection();
+        ResultSet rs = null;
+
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT TIPO FROM USUARIOS WHERE EMAIL = ?");
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            if(rs.next()) {
+                if (rs.getString(1).equals("A")) {
+                    a = true;
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            con.closeConnection(conn);
+        }
+
+        return a;
+    }
 
     public UsuarioDAO() {
         con = new Conexion();
@@ -63,7 +113,33 @@ public class UsuarioDAO {
         Usuario u = null;
         Connection conn = con.createConnection();
         ResultSet rsUser = null;
+        ResultSet rsspoken = null;
+        ResultSet rslearn = null;
         try {
+            ArrayList<Idioma> spokenLangs = new ArrayList<>();
+            PreparedStatement psspoken = conn.prepareStatement("SELECT * FROM IDIOMAS WHERE CODIGO IN (SELECT IDIOMA_AI FROM APRENDE_IDIOMAS WHERE USUARIO_AI = ?)");
+            psspoken.setString(1, email);
+            rsspoken = psspoken.executeQuery();
+            while (rsspoken.next()) {
+                spokenLangs.add(new Idioma(
+                        rsspoken.getString(1),
+                        rsspoken.getString(2),
+                        rsspoken.getString(3)
+                ));
+            }
+
+            ArrayList<Idioma> learnLangs = new ArrayList<>();
+            PreparedStatement pslearn = conn.prepareStatement("SELECT * FROM IDIOMAS WHERE CODIGO IN (SELECT IDIOMA_HI FROM HABLA_IDIOMAS WHERE USUARIO_HI = ?)");
+            pslearn.setString(1, email);
+            rslearn = pslearn.executeQuery();
+            while (rslearn.next()) {
+                learnLangs.add(new Idioma(
+                        rslearn.getString(1),
+                        rslearn.getString(2),
+                        rslearn.getString(3)
+                ));
+            }
+
             PreparedStatement ps = conn.prepareStatement("SELECT * FROM USUARIOS WHERE EMAIL = ?");
             ps.setString(1, email);
             rsUser = ps.executeQuery();
@@ -74,7 +150,9 @@ public class UsuarioDAO {
                         rsUser.getString(3),
                         rsUser.getString(6),
                         rsUser.getString(5),
-                        rsUser.getString(4)
+                        rsUser.getString(4),
+                        spokenLangs,
+                        learnLangs
                 );
             }
         } catch (SQLException e) {

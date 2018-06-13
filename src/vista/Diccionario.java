@@ -16,6 +16,7 @@ public class Diccionario extends JFrame {
         closeItem = new JMenuItem();
         userMenu = new JMenu();
         userSettingsItem = new JMenuItem();
+        logoutItem = new JMenuItem();
         changePasswordItem = new JMenuItem();
         deleteUserItem = new JMenuItem();
         addMeaningItem = new JMenuItem();
@@ -25,13 +26,18 @@ public class Diccionario extends JFrame {
         languagesMenu.add(japaneseItem);
         languagesMenu.add(germanItem);
         mainMenu.add(languagesMenu);
+        mainMenu.addSeparator();
         mainMenu.add(addMeaningItem);
         mainMenu.add(closeItem);
         menuBar.add(mainMenu);
+        menuBar.add(Box.createHorizontalGlue());
 
         userMenu.add(userSettingsItem);
+        userMenu.addSeparator();
         userMenu.add(changePasswordItem);
         userMenu.add(deleteUserItem);
+        userMenu.addSeparator();
+        userMenu.add(logoutItem);
         menuBar.add(userMenu);
 
         actionsGroup = new ButtonGroup();
@@ -224,13 +230,17 @@ public class Diccionario extends JFrame {
         mainPane = new JPanel();
         mainLayout = new GroupLayout(mainPane);
         mainPane.setLayout(mainLayout);
+        mainLayout.setAutoCreateGaps(true);
+        mainLayout.setAutoCreateContainerGaps(true);
 
         mainLayout.setHorizontalGroup(
-                mainLayout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(topPane, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                mainLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(topPane, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         mainLayout.setVerticalGroup(
-                mainLayout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(topPane, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                mainLayout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                        .addComponent(topPane, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         this.setJMenuBar(menuBar);
@@ -250,6 +260,7 @@ public class Diccionario extends JFrame {
     public JMenuItem closeItem;
     public JMenu userMenu;
     public JMenuItem userSettingsItem;
+    public JMenuItem logoutItem;
     public JMenuItem deleteUserItem;
     public JMenuItem changePasswordItem;
     public JMenuItem addMeaningItem;

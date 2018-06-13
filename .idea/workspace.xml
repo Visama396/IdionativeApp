@@ -7,20 +7,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff7b41bb-e1ad-459d-875e-d4f8ed016ec7" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/locales/configuracion/locale.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/locales/configuracion/locale_de.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/locales/configuracion/locale_en.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/locales/configuracion/locale_es.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/locales/configuracion/locale_ja.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorDiccionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorDiccionario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/Palabra$Word_types.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/Palabra.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/Palabra.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorLogin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorRegistro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorRegistro.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/PalabraDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/PalabraDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/UsuarioDAO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorDiccionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorDiccionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/Palabra.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/Palabra.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorRegistro.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorRegistro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/PalabraDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/PalabraDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/vista/PalabraSigEj.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/vista/PalabraSigEj.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/vista/PalabraSigEj.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/vista/PalabraSigEj.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/UsuarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/vista/Diccionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/vista/Diccionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/vista/Diccionario$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/vista/Diccionario$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/vista/Diccionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/vista/Diccionario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlador/ControladorConfiguracion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/ControladorConfiguracion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controlador/ControladorDiccionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/ControladorDiccionario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlador/ControladorRegistro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/ControladorRegistro.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modelo/Conexion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelo/Conexion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vista/PalabraSigEj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/PalabraSigEj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modelo/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelo/UsuarioDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vista/Diccionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/Diccionario.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,6 +58,24 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="@192.168.1.143" type="feb32156:DbDataSourceImpl" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@192.168.1.143" type="feb32156:DbDataSourceImpl" />
+        <item name="HR: schema" type="ac44c5e0:OracleImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@192.168.1.143" type="feb32156:DbDataSourceImpl" />
+        <item name="HR: schema" type="ac44c5e0:OracleImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@192.168.1.143" type="feb32156:DbDataSourceImpl" />
+        <item name="HR: schema" type="ac44c5e0:OracleImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="IDIOMAS: table" type="be4db629:OracleImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -63,30 +93,34 @@
     <favorites_list name="IdionativeApp" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="ControladorDiccionario.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/controlador/ControladorDiccionario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="601" column="47" selection-start-line="601" selection-start-column="47" selection-end-line="601" selection-end-column="47" />
+            <state relative-caret-position="2142">
+              <caret line="483" column="41" lean-forward="true" selection-start-line="483" selection-start-column="41" selection-end-line="483" selection-end-column="41" />
+              <folding>
+                <element signature="method#rellenarListaTipos#0;class#ControladorDiccionario#0" />
+                <element signature="method#fillFields#0;class#ControladorDiccionario#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Conexion.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/modelo/Conexion.java">
+      <file leaf-file-name="Diccionario.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/vista/Diccionario.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+            <state relative-caret-position="-656">
+              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PalabraSigEj.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/vista/PalabraSigEj.java">
+      <file leaf-file-name="ControladorConfiguracion.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/controlador/ControladorConfiguracion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="502">
-              <caret line="64" column="83" selection-start-line="64" selection-start-column="83" selection-end-line="64" selection-end-column="83" />
+            <state relative-caret-position="504">
+              <caret line="75" column="47" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -122,7 +156,6 @@
         <option value="$PROJECT_DIR$/src/modelo/Idioma.java" />
         <option value="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/d53d8a90-3ad6-4f18-a571-e601ca1cab10/console.sql" />
-        <option value="$PROJECT_DIR$/src/controlador/ControladorRegistro.java" />
         <option value="$PROJECT_DIR$/src/locales/registro/locale.properties" />
         <option value="$PROJECT_DIR$/src/locales/registro/locale_es.properties" />
         <option value="$PROJECT_DIR$/src/locales/registro/locale_en.properties" />
@@ -130,7 +163,6 @@
         <option value="$PROJECT_DIR$/src/modelo/Palabra.java" />
         <option value="$PROJECT_DIR$/src/modelo/PalabraDAO.java" />
         <option value="$PROJECT_DIR$/src/modelo/IdiomaDAO.java" />
-        <option value="$PROJECT_DIR$/src/modelo/UsuarioDAO.java" />
         <option value="$PROJECT_DIR$/src/controlador/ControladorLogin.java" />
         <option value="$PROJECT_DIR$/src/locales/registro/locale_ja.properties" />
         <option value="$PROJECT_DIR$/src/modelo/SignificadoEjemploDAO.java" />
@@ -139,10 +171,14 @@
         <option value="$PROJECT_DIR$/src/locales/diccionario/locale_en.properties" />
         <option value="$PROJECT_DIR$/src/locales/diccionario/locale_ja.properties" />
         <option value="$PROJECT_DIR$/src/locales/diccionario/locale_de.properties" />
-        <option value="$PROJECT_DIR$/src/vista/Diccionario.java" />
-        <option value="$PROJECT_DIR$/src/modelo/Conexion.java" />
         <option value="$PROJECT_DIR$/src/vista/PalabraSigEj.java" />
+        <option value="$PROJECT_DIR$/src/modelo/Conexion.java" />
+        <option value="$PROJECT_DIR$/src/controlador/ControladorRegistro.java" />
         <option value="$PROJECT_DIR$/src/controlador/ControladorDiccionario.java" />
+        <option value="$PROJECT_DIR$/src/locales/configuracion/locale.properties" />
+        <option value="$PROJECT_DIR$/src/modelo/UsuarioDAO.java" />
+        <option value="$PROJECT_DIR$/src/controlador/ControladorConfiguracion.java" />
+        <option value="$PROJECT_DIR$/src/vista/Diccionario.java" />
       </list>
     </option>
   </component>
@@ -169,7 +205,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -187,12 +222,6 @@
               <item name="IdionativeApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="controlador" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IdionativeApp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IdionativeApp" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="locales" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IdionativeApp" type="b2602c69:ProjectViewProjectNode" />
@@ -216,6 +245,7 @@
       </pane>
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -344,11 +374,12 @@
       <workItem from="1528746354725" duration="3082000" />
       <workItem from="1528807283078" duration="276000" />
       <workItem from="1528807597503" duration="7910000" />
+      <workItem from="1528890216124" duration="10882000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197845000" />
+    <option name="totallyTimeSpent" value="208727000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -373,12 +404,13 @@
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32897604" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49946696" weight="0.14923747" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49946696" weight="0.13180828" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32897604" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49507734" visible="true" weight="0.19349681" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49507734" visible="true" weight="0.15191898" />
       <window_info anchor="right" id="Database" order="6" visible="true" weight="0.15351813" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32897604" />
       <window_info id="Structure" order="1" sideWeight="0.5049226" side_tool="true" weight="0.15565032" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -391,7 +423,6 @@
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32897604" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.32897604" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,16 +433,10 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/locales/locale.properties" />
-    <entry file="file://$PROJECT_DIR$/src/locales_es.properties" />
-    <entry file="file://$PROJECT_DIR$/src/locales.properties" />
-    <entry file="file://$PROJECT_DIR$/src/locales_ja.properties" />
-    <entry file="file://$PROJECT_DIR$/src/locales_en.properties" />
-    <entry file="file://$PROJECT_DIR$/src/locales_de.properties" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d53d8a90-3ad6-4f18-a571-e601ca1cab10/console_3.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -440,12 +465,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/locales/iniciosesion/locale_en.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="15" column="34" lean-forward="true" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/IniciarApp.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -457,13 +482,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/vista/Registro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="81" column="59" selection-start-line="81" selection-start-column="59" selection-end-line="81" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/d53d8a90-3ad6-4f18-a571-e601ca1cab10/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -471,60 +489,45 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/Usuario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/locales/iniciosesion/locale.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/locales/iniciosesion/locale_ja.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="15" column="12" lean-forward="true" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="22" />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/locales/registro/locale_es.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
           <caret line="36" column="29" selection-start-line="36" selection-start-column="29" selection-end-line="36" selection-end-column="29" />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/locales/registro/locale_en.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="22" selection-start-line="22" selection-end-line="36" selection-end-column="26" />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/locales/registro/locale_de.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="756">
           <caret line="36" column="26" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/locales/registro/locale.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="24" column="34" selection-start-line="24" selection-start-column="14" selection-end-line="24" selection-end-column="34" />
-        </state>
-      </provider>
-      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/META-INF/MANIFEST.MF">
       <provider selected="true" editor-type-id="text-editor">
@@ -537,31 +540,17 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/locales/iniciosesion/locale_es.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret lean-forward="true" selection-end-line="16" selection-end-column="15" />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modelo/Palabra.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/UsuarioDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="40" lean-forward="true" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/IdiomaDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-294">
-          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -580,39 +569,25 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/locales/registro/locale_ja.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/ControladorRegistro.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3507">
-          <caret line="167" selection-start-line="167" selection-end-line="167" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/locales/iniciosesion/locale_de.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="14" column="11" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="21" />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controlador/ControladorLogin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="41" column="55" selection-start-line="41" selection-start-column="55" selection-end-line="41" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/Idioma.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="725">
-          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -624,44 +599,44 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/locales/diccionario/locale_es.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="738">
           <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/locales/diccionario/locale_ja.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-8">
           <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/locales/diccionario/locale_en.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
           <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="51" selection-end-column="16" />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/locales/diccionario/locale_de.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="738">
           <caret line="51" column="16" selection-start-line="51" selection-start-column="16" selection-end-line="51" selection-end-column="16" />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/locales/diccionario/locale.properties">
+      <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-60">
           <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="20" />
         </state>
       </provider>
-      <provider editor-type-id="ResourceBundle" />
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/awt/AWTEventMulticaster.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -674,16 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="1089" selection-start-line="1089" selection-end-line="1089" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/vista/Diccionario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="40" column="13" selection-start-line="40" selection-start-column="13" selection-end-line="40" selection-end-column="13" />
-          <folding>
-            <element signature="e#1069#1287#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -720,7 +685,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/modelo/Conexion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
+        <state relative-caret-position="289">
           <caret line="18" column="12" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
         </state>
       </provider>
@@ -732,10 +697,111 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/locales/configuracion/locale_en.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/locales/configuracion/locale_ja.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/locales/configuracion/locale_de.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/locales/configuracion/locale_es.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/locales/registro/locale.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="42" lean-forward="true" selection-start-line="9" selection-end-line="15" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/locales/configuracion/locale.properties">
+      <provider editor-type-id="ResourceBundle" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="42" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/ControladorRegistro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="72" column="59" lean-forward="true" selection-start-line="72" selection-start-column="59" selection-end-line="72" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vista/Registro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="14" column="38" lean-forward="true" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/Usuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/Idioma.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="725">
+          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/IdiomaDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/UsuarioDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="111" column="48" selection-start-line="111" selection-start-column="48" selection-end-line="111" selection-end-column="48" />
+          <folding>
+            <element signature="method#esProfesor#0;class#UsuarioDAO#0" />
+            <element signature="method#esAdmin#0;class#UsuarioDAO#0" />
+            <element signature="method#eliminarUsuario#0;class#UsuarioDAO#0" />
+            <element signature="method#obtenerNombreUsuario#0;class#UsuarioDAO#0" />
+            <element signature="method#obtenerUsuario#0;class#UsuarioDAO#0" />
+            <element signature="method#registrarUsuario#0;class#UsuarioDAO#0" />
+            <element signature="method#comprobarUsuario#0;class#UsuarioDAO#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/ControladorConfiguracion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="75" column="47" selection-start-line="75" selection-start-column="47" selection-end-line="75" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/vista/Diccionario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-656">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/controlador/ControladorDiccionario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="601" column="47" selection-start-line="601" selection-start-column="47" selection-end-line="601" selection-end-column="47" />
+        <state relative-caret-position="2142">
+          <caret line="483" column="41" lean-forward="true" selection-start-line="483" selection-start-column="41" selection-end-line="483" selection-end-column="41" />
+          <folding>
+            <element signature="method#rellenarListaTipos#0;class#ControladorDiccionario#0" />
+            <element signature="method#fillFields#0;class#ControladorDiccionario#0" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -183,7 +183,7 @@ public class ControladorRegistro implements ActionListener, WindowListener {
                             JOptionPane.showMessageDialog(null, rb.getString("usercreated"));
                             Diccionario view = new Diccionario(rb.getString("dictionary"));
                             PalabraDAO model = new PalabraDAO();
-                            ControladorDiccionario controller = new ControladorDiccionario(view, model, email, this.lang);
+                            ControladorDiccionario controller = new ControladorDiccionario(view, model, this.lang, this.vista.emailField.getText());
                             this.vista.dispose();
                             view.setVisible(true);
                         } else {

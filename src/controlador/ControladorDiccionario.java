@@ -70,6 +70,11 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         this.vista.moreActionsButton.addActionListener(this);
         this.vista.moreActionsLabel.setText(rb.getString("actions"));
         this.vista.moreActionsLabel.setFont(fuente);
+        if (modeloUser.esAdmin(this.email) || modeloUser.esProfesor(this.email)) {
+            this.vista.moreActionsButton.setVisible(true);
+        } else {
+            this.vista.moreActionsButton.setVisible(false);
+        }
         this.vista.idWordLabel2.setText("ID");
         this.vista.idWordLabel2.setFont(fuente);
         this.vista.englishLabel.setText(rb.getString("eng"));
@@ -164,12 +169,16 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         this.vista.addMeaningItem.setFont(fuente);
         this.vista.addMeaningItem.addActionListener(this);
         this.vista.addMeaningItem.setActionCommand("MEANING");
-        this.vista.userMenu.setText("Bienvenido/a, "+modeloUser.obtenerNombreUsuario(this.email));
+        this.vista.userMenu.setText("Bienvenido/a "+modeloUser.obtenerNombreUsuario(this.email));
         this.vista.userMenu.setFont(fuente);
         this.vista.userSettingsItem.setText("Configuración");
         this.vista.userSettingsItem.setFont(fuente);
         this.vista.userSettingsItem.addActionListener(this);
         this.vista.userSettingsItem.setActionCommand("SETTINGS");
+        this.vista.logoutItem.setText("Cerrar sesión");
+        this.vista.logoutItem.setFont(fuente);
+        this.vista.logoutItem.addActionListener(this);
+        this.vista.logoutItem.setActionCommand("LOGOUT");
         this.vista.changePasswordItem.setText("Cambiar contraseña");
         this.vista.changePasswordItem.setFont(fuente);
         this.vista.deleteUserItem.setText("Eliminar usuario");
@@ -468,7 +477,9 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                     break;
                 case "SETTINGS":
                     Registro view = new Registro("Configuración");
-                    ControladorConfiguracion configuracion = new ControladorConfiguracion(view, modeloUser);
+                    ControladorConfiguracion configuracion = new ControladorConfiguracion(view, modeloUser, this.lang, this.email);
+                    view.setLocationRelativeTo(null);
+                    view.pack();
                     view.setVisible(true);
                     this.vista.dispose();
                     break;
@@ -482,6 +493,10 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                         this.vista.dispose();
                         inicioSesion.setVisible(true);
                     }
+                    break;
+                case "MEANING":
+                    PalabraSigEj significado = new PalabraSigEj("Añadir");
+                    // Crear significado
                     break;
             }
         }
@@ -576,7 +591,7 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
 
                 // Abrir ventana de significados y ejemplos de esa palabra
                 SignificadoEjemploDAO model = new SignificadoEjemploDAO();
-                SignificadoEjemplo sig = new SignificadoEjemplo(0, null, null, null);
+                SignificadoEjemplo sig = null;
                 int row = this.vista.dictionaryTable.getSelectedRow();
                 int column = this.vista.dictionaryTable.getSelectedColumn();
                 int id = Integer.parseInt(this.vista.dictionaryTable.getValueAt(row, 0)+"");
@@ -615,30 +630,31 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                 this.vista.wordTypeList.clearSelection();
                 PalabraSigEj showMoreInfo = new PalabraSigEj("Datos adicionales: "+ palabra);
                 try {
-
-                    showMoreInfo.wordLabel.setText(palabra);
-                    showMoreInfo.wordLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 18));
-                    showMoreInfo.typeWordLabel.setText(tipos.substring(0, tipos.length()-2)); // Para que no muestre la última coma
-                    showMoreInfo.typeWordLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 16));
-                    showMoreInfo.significado.setText("Significado");
-                    showMoreInfo.significado.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
-                    showMoreInfo.ejemplo.setText("Ejemplo");
-                    showMoreInfo.ejemplo.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
-                    showMoreInfo.significadoArea.append(sig.getSignificado());
-                    showMoreInfo.significadoArea.setFont(new Font("Arial Unicode MS", Font.PLAIN, 13));
-                    showMoreInfo.ejemploArea.append(sig.getEjemplo());
-                    showMoreInfo.ejemploArea.setFont(new Font("Arial Unicode MS", Font.PLAIN, 13));
-
+                    try {
+                        showMoreInfo.significadoArea.append(sig.getSignificado());
+                        showMoreInfo.significadoArea.setFont(new Font("Arial Unicode MS", Font.PLAIN, 13));
+                        showMoreInfo.ejemploArea.append(sig.getEjemplo());
+                        showMoreInfo.ejemploArea.setFont(new Font("Arial Unicode MS", Font.PLAIN, 13));
+                        showMoreInfo.wordLabel.setText(palabra);
+                        showMoreInfo.wordLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 18));
+                        showMoreInfo.typeWordLabel.setText(tipos.substring(0, tipos.length()-2)); // Para que no muestre la última coma
+                        showMoreInfo.typeWordLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 16));
+                        showMoreInfo.significado.setText("Significado");
+                        showMoreInfo.significado.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
+                        showMoreInfo.ejemplo.setText("Ejemplo");
+                        showMoreInfo.ejemplo.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
+                        showMoreInfo.pack();
+                        showMoreInfo.setResizable(false);
+                        showMoreInfo.setVisible(true);
+                    } catch (NullPointerException npe) {
+                        JOptionPane.showMessageDialog(null, "No hay ninguna entrada sobre su significado o ejemplo de esta palabra.", "", JOptionPane.WARNING_MESSAGE);
+                    }
                 } catch(StringIndexOutOfBoundsException siobe) {
                     showMoreInfo.typeWordLabel.setText("");
-                } catch (NullPointerException npe) {
-                    JOptionPane.showMessageDialog(null, "No hay ninguna entrada sobre su significado o ejemplo de esta palabra.", "", JOptionPane.WARNING_MESSAGE);
+                    showMoreInfo.pack();
+                    showMoreInfo.setResizable(false);
+                    showMoreInfo.setVisible(true);
                 }
-
-                showMoreInfo.pack();
-                showMoreInfo.setResizable(false);
-                showMoreInfo.setVisible(true);
-
             } catch (NullPointerException npe) {
                 JOptionPane.showMessageDialog(null, "Esta palabra aún no está en este idioma.", "", JOptionPane.WARNING_MESSAGE);
             }
