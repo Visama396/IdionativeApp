@@ -478,10 +478,10 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                 case "SETTINGS":
                     Registro view = new Registro("Configuración");
                     ControladorConfiguracion configuracion = new ControladorConfiguracion(view, modeloUser, this.lang, this.email);
-                    //view.setLocationRelativeTo(null);
-                    view.pack();
-                    view.setVisible(true);
                     this.vista.dispose();
+                    view.pack();
+                    view.setLocationRelativeTo(null);
+                    view.setVisible(true);
                     break;
                 case "DELUSER":
                     opt = JOptionPane.showConfirmDialog(null, "¿Quieres eliminar este usuario?", rb.getString("confirm"), JOptionPane.YES_NO_OPTION);
