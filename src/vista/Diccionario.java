@@ -17,9 +17,8 @@ public class Diccionario extends JFrame {
         userMenu = new JMenu();
         userSettingsItem = new JMenuItem();
         logoutItem = new JMenuItem();
-        changePasswordItem = new JMenuItem();
         deleteUserItem = new JMenuItem();
-        addMeaningItem = new JMenuItem();
+        cursos = new JMenuItem();
 
         languagesMenu.add(spanishItem);
         languagesMenu.add(englishItem);
@@ -27,14 +26,12 @@ public class Diccionario extends JFrame {
         languagesMenu.add(germanItem);
         mainMenu.add(languagesMenu);
         mainMenu.addSeparator();
-        mainMenu.add(addMeaningItem);
+        mainMenu.add(cursos);
         mainMenu.add(closeItem);
         menuBar.add(mainMenu);
         menuBar.add(Box.createHorizontalGlue());
 
         userMenu.add(userSettingsItem);
-        userMenu.addSeparator();
-        userMenu.add(changePasswordItem);
         userMenu.add(deleteUserItem);
         userMenu.addSeparator();
         userMenu.add(logoutItem);
@@ -246,6 +243,7 @@ public class Diccionario extends JFrame {
         this.setJMenuBar(menuBar);
         this.add(mainPane);
         this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        //this.setSize(1280, 768);
         this.setTitle(title);
 
     }
@@ -262,8 +260,7 @@ public class Diccionario extends JFrame {
     public JMenuItem userSettingsItem;
     public JMenuItem logoutItem;
     public JMenuItem deleteUserItem;
-    public JMenuItem changePasswordItem;
-    public JMenuItem addMeaningItem;
+    public JMenuItem cursos;
 
     private ButtonGroup actionsGroup;
     private JPanel topPane;

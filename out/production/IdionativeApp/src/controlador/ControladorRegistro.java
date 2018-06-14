@@ -143,7 +143,7 @@ public class ControladorRegistro implements ActionListener, WindowListener {
             switch (boton.getActionCommand()) {
                 case "SIGNUP":
                     if (modelo.comprobarUsuario(this.vista.emailField.getText(), null)) {
-                        JOptionPane.showMessageDialog(null, rb.getString("accountexist"), rb.getString("emailfound"), JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, rb.getString("accountexist"), rb.getString("emailfound"), JOptionPane.WARNING_MESSAGE);
                     } else {
                         int resultado = 0;
                         String user = this.vista.userField.getText();
@@ -198,7 +198,7 @@ public class ControladorRegistro implements ActionListener, WindowListener {
                                 error+="- "+rb.getString("passnovalid")+"<br>";
                             }
                             error+="</html>";
-                            JOptionPane.showMessageDialog(null, error, rb.getString("invaliddata"), JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(null, error, rb.getString("invaliddata"), JOptionPane.WARNING_MESSAGE);
                         }
                     }
                     break;

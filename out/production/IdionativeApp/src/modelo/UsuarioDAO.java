@@ -1,5 +1,7 @@
 package modelo;
 
+import oracle.jdbc.proxy.annotation.Pre;
+
 import javax.swing.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -64,6 +66,51 @@ public class UsuarioDAO {
 
     public UsuarioDAO() {
         con = new Conexion();
+    }
+
+    public int actualizarUsuario(String email, String username, String password, String gender, int nativeL, int[] spokenLangs, int[] learnLangs) {
+        Connection conn = con.createConnection();
+        int result = 0;
+
+        try {
+            PreparedStatement psspoken1 = conn.prepareStatement("DELETE FROM HABLA_IDIOMAS WHERE USUARIO_HI = ?");
+            psspoken1.setString(1, email);
+            psspoken1.executeUpdate();
+
+            PreparedStatement pslearn1 = conn.prepareStatement("DELETE FROM APRENDE_IDIOMAS WHERE USUARIO_AI = ?");
+            pslearn1.setString(1, email);
+            pslearn1.executeUpdate();
+
+            PreparedStatement ps = conn.prepareStatement("UPDATE USUARIOS SET USUARIO = ?, PASSWD = ?, GENERO = ?, NATIVO = ? WHERE EMAIL = ?");
+            ps.setString(1, username);
+            ps.setString(2, password);
+            ps.setString(3, gender);
+            System.out.println(gender);
+            ps.setString(4, IdiomaDAO.indexToCode(nativeL));
+            ps.setString(5, email);
+            ps.executeUpdate();
+
+            PreparedStatement psspoken2 = conn.prepareStatement("INSERT INTO HABLA_IDIOMAS VALUES(?, ?)");
+            for (int index:spokenLangs) {
+                psspoken2.clearParameters();
+                psspoken2.setString(1, email);
+                psspoken2.setString(2, IdiomaDAO.indexToCode(index));
+                psspoken2.executeUpdate();
+            }
+
+            PreparedStatement pslearn2 = conn.prepareStatement("INSERT INTO APRENDE_IDIOMAS VALUES(?, ?)");
+            for (int index:learnLangs) {
+                pslearn2.clearParameters();
+                pslearn2.setString(1, email);
+                pslearn2.setString(2, IdiomaDAO.indexToCode(index));
+                pslearn2.executeUpdate();
+            }
+            result = 1;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return result;
     }
 
     public void eliminarUsuario(String email) {

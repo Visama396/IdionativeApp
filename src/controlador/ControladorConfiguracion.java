@@ -155,6 +155,14 @@ public class ControladorConfiguracion implements ActionListener {
         this.vista.learnLangList.setSelectedIndices(learnLangs);
     }
 
+    private void volver() {
+        Diccionario dict = new Diccionario(rb.getString("dictionary"));
+        PalabraDAO model = new PalabraDAO();
+        ControladorDiccionario cont = new ControladorDiccionario(dict, model, this.lang, this.vista.emailField.getText());
+        this.vista.dispose();
+        dict.setVisible(true);
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() instanceof JButton) {
@@ -168,7 +176,7 @@ public class ControladorConfiguracion implements ActionListener {
                     } else if (gende == 1) {
                         gender = "M";
                     }
-                    if (this.vista.emailField.getText().length() > 1 && this.vista.userField.getText().length() > 1 && new String(this.vista.passwordField.getPassword()).length() > 1) {
+                    if (this.vista.userField.getText().length() > 1 && new String(this.vista.passwordField.getPassword()).length() > 1) {
                         int result = modelo.actualizarUsuario(
                                 this.vista.emailField.getText(),
                                 this.vista.userField.getText(),
@@ -179,23 +187,24 @@ public class ControladorConfiguracion implements ActionListener {
                                 this.vista.learnLangList.getSelectedIndices()
                         );
                         if (result == 1) {
-                            Diccionario dict = new Diccionario(rb.getString("dictionary"));
-                            PalabraDAO model = new PalabraDAO();
-                            ControladorDiccionario cont = new ControladorDiccionario(dict, model, this.lang, this.vista.emailField.getText());
-                            this.vista.dispose();
-                            dict.setVisible(true);
+                            volver();
                         }
                     } else {
                         // Error datos
+                        String errores = "<html>";
+                        if (this.vista.userField.getText().length() < 5 || this.vista.userField.getText().length() > 25) {
+                            errores += "- " + rb.getString("usernovalid") + "<br>";
+                        }
+                        if (new String(this.vista.passwordField.getPassword()).length() < 5 || new String(this.vista.passwordField.getPassword()).length() > 25) {
+                            errores += "- " + rb.getString("passnovalid") + "<br>";
+                        }
+                        errores += "</html>";
+                        JOptionPane.showMessageDialog(null, errores, rb.getString("invaliddata"), JOptionPane.ERROR_MESSAGE);
                     }
                     break;
                 case "RETURN":
                     if (JOptionPane.showConfirmDialog(null, rb.getString("returnquest"), rb.getString("closequest"), JOptionPane.YES_NO_OPTION) == 0) {
-                        Diccionario dict = new Diccionario(rb.getString("dictionary"));
-                        PalabraDAO model = new PalabraDAO();
-                        ControladorDiccionario cont = new ControladorDiccionario(dict, model, this.lang, this.vista.emailField.getText());
-                        this.vista.dispose();
-                        dict.setVisible(true);
+                        volver();
                     }
                     break;
             }

@@ -1,10 +1,7 @@
 package controlador;
 
 import modelo.*;
-import vista.Diccionario;
-import vista.InicioSesion;
-import vista.PalabraSigEj;
-import vista.Registro;
+import vista.*;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -165,10 +162,10 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         this.vista.closeItem.setFont(fuente);
         this.vista.closeItem.addActionListener(this);
         this.vista.closeItem.setActionCommand("CLOSE");
-        this.vista.addMeaningItem.setText("Añadir significado");
-        this.vista.addMeaningItem.setFont(fuente);
-        this.vista.addMeaningItem.addActionListener(this);
-        this.vista.addMeaningItem.setActionCommand("MEANING");
+        this.vista.cursos.setText("Cursos");
+        this.vista.cursos.setFont(fuente);
+        this.vista.cursos.addActionListener(this);
+        this.vista.cursos.setActionCommand("COURSES");
         this.vista.userMenu.setText(rb.getString("welcome") + " " + modeloUser.obtenerNombreUsuario(this.email));
         this.vista.userMenu.setFont(fuente);
         this.vista.userSettingsItem.setText(rb.getString("conf"));
@@ -179,8 +176,6 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         this.vista.logoutItem.setFont(fuente);
         this.vista.logoutItem.addActionListener(this);
         this.vista.logoutItem.setActionCommand("LOGOUT");
-        this.vista.changePasswordItem.setText(rb.getString("changpass"));
-        this.vista.changePasswordItem.setFont(fuente);
         this.vista.deleteUserItem.setText(rb.getString("deluser"));
         this.vista.deleteUserItem.setFont(fuente);
         this.vista.deleteUserItem.addActionListener(this);
@@ -289,7 +284,7 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                                 this.vista.setVisible(true);
                             }
                         }  catch (NullPointerException npe) {
-                            JOptionPane.showMessageDialog(null, rb.getString("wordnotfound"), "Diccionario: NullPointerException", JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(null, rb.getString("wordnotfound"), "Diccionario: NullPointerException", JOptionPane.WARNING_MESSAGE);
                             this.vista.setVisible(false);
                             this.vista.jsDictionary.setVisible(false);
                             this.vista.pack();
@@ -478,25 +473,27 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                 case "SETTINGS":
                     Registro view = new Registro("Configuración");
                     ControladorConfiguracion configuracion = new ControladorConfiguracion(view, modeloUser, this.lang, this.email);
-                    //view.setLocationRelativeTo(null);
-                    view.pack();
-                    view.setVisible(true);
                     this.vista.dispose();
+                    view.pack();
+                    view.setLocationRelativeTo(null);
+                    view.setVisible(true);
                     break;
                 case "DELUSER":
-                    opt = JOptionPane.showConfirmDialog(null, "¿Quieres eliminar este usuario?", rb.getString("confirm"), JOptionPane.YES_NO_OPTION);
+                    opt = JOptionPane.showConfirmDialog(null, rb.getString("delquest"), rb.getString("confirm"), JOptionPane.YES_NO_OPTION);
                     if (opt == 0) {
                         modeloUser.eliminarUsuario(this.email);
-                        InicioSesion inicioSesion = new InicioSesion("Inicio sesión");
+                        InicioSesion inicioSesion = new InicioSesion(rb.getString("login"));
                         UsuarioDAO model = new UsuarioDAO();
                         ControladorLogin controller = new ControladorLogin(inicioSesion, model, this.lang, "");
                         this.vista.dispose();
                         inicioSesion.setVisible(true);
                     }
                     break;
-                case "MEANING":
-                    PalabraSigEj significado = new PalabraSigEj("Añadir");
-                    // Crear significado
+                case "COURSES":
+                    Cursos cursos = new Cursos("Cursos");
+                    CursoDAO cursoDAO = new CursoDAO();
+                    ControladorCurso controladorCurso = new ControladorCurso(cursos, cursoDAO, this.lang, this.email);
+                    cursos.setVisible(true);
                     break;
                 case "LOGOUT":
                     InicioSesion vistaInicio = new InicioSesion(rb.getString("login"));

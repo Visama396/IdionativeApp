@@ -163,7 +163,7 @@ public class ControladorLogin implements ActionListener, WindowListener {
                         this.vista.dispose();
                         view.setVisible(true);
                     } else {
-                        JOptionPane.showMessageDialog(null, rb.getString("badlogin1") + "\n" + rb.getString("badlogin2"), "Error al iniciar sesión", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, rb.getString("badlogin1") + "\n" + rb.getString("badlogin2"), "Error al iniciar sesión", JOptionPane.WARNING_MESSAGE);
                     }
                     break;
                 case "CREATEACCOUNT":
