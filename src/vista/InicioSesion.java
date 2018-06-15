@@ -24,6 +24,7 @@ public class InicioSesion extends JFrame {
         japaneseItem = new JMenuItem();
         germanItem = new JMenuItem();
         closeItem = new JMenuItem();
+        passForgotItem = new JMenuItem();
 
         languagesMenu.add(spanishItem);
         languagesMenu.add(englishItem);
@@ -31,6 +32,7 @@ public class InicioSesion extends JFrame {
         languagesMenu.add(germanItem);
 
         mainMenu.add(languagesMenu);
+        mainMenu.add(passForgotItem);
         mainMenu.add(closeItem);
 
         menuBar.add(mainMenu);
@@ -96,6 +98,7 @@ public class InicioSesion extends JFrame {
     public JMenuItem japaneseItem;
     public JMenuItem germanItem;
     public JMenuItem closeItem;
+    public JMenuItem passForgotItem;
 
     public JLabel emailLabel;
     public JTextField emailField;

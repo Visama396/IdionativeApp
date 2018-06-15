@@ -98,6 +98,10 @@ public class ControladorLogin implements ActionListener, WindowListener {
         this.vista.closeItem.setFont(fuente);
         this.vista.closeItem.addActionListener(this);
         this.vista.closeItem.setActionCommand("CLOSE");
+        this.vista.passForgotItem.setText(rb.getString("forgot"));
+        this.vista.passForgotItem.setFont(fuente);
+        this.vista.passForgotItem.addActionListener(this);
+        this.vista.passForgotItem.setActionCommand("FORGOT");
 
         this.vista.emailLabel.setText(rb.getString("email"));
         this.vista.emailLabel.setFont(fuente);
@@ -212,6 +216,28 @@ public class ControladorLogin implements ActionListener, WindowListener {
                     if (opcion == 0) {
                         System.exit(0);
                     }
+                    break;
+                case "FORGOT":
+                    JFrame forgotFrame = new JFrame("Recordar contraseña");
+                    JTextField mailField = new JTextField(15);
+                    JTextField userField = new JTextField(15);
+
+                    Object[] fields = {"Email", mailField, "User", userField};
+
+                    int option = JOptionPane.showConfirmDialog(forgotFrame, fields, rb.getString("rememberpass"), JOptionPane.OK_CANCEL_OPTION,  JOptionPane.INFORMATION_MESSAGE);
+
+                    if (option == JOptionPane.OK_OPTION) {
+                        String mail = mailField.getText();
+                        String user = userField.getText();
+                        String pass = this.modelo.recuperarPassword(mail, user);
+                        if (pass != null) {
+                            JOptionPane.showMessageDialog(null, rb.getString("urpass") + pass, null, JOptionPane.PLAIN_MESSAGE);
+                        } else {
+                            JOptionPane.showMessageDialog(null, rb.getString("useremail"), null, JOptionPane.WARNING_MESSAGE);
+                        }
+
+                    }
+
                     break;
             }
         }

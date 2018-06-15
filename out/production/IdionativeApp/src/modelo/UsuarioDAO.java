@@ -13,6 +13,29 @@ public class UsuarioDAO {
 
     private Conexion con;
 
+    public UsuarioDAO() {
+        con = new Conexion();
+    }
+
+    public ArrayList<String> idiomasAprender(String email) {
+        ArrayList<String> resultado = new ArrayList<>();
+        Connection conn = con.createConnection();
+        ResultSet rs = null;
+
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT IDIOMA_AI FROM APRENDE_IDIOMAS WHERE USUARIO_AI = ?");
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                resultado.add(rs.getString(1));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return resultado;
+    }
+
     public boolean esProfesor(String email) {
         boolean p = false;
         Connection conn = con.createConnection();
@@ -64,8 +87,23 @@ public class UsuarioDAO {
         return a;
     }
 
-    public UsuarioDAO() {
-        con = new Conexion();
+    public String recuperarPassword(String email, String user) {
+        Connection conn = con.createConnection();
+        ResultSet rs = null;
+        String pass = null;
+        try {
+            PreparedStatement ps = conn.prepareStatement("SELECT PASSWD FROM USUARIOS WHERE EMAIL = ? AND USUARIO = ?");
+            ps.setString(1, email);
+            ps.setString(2, user);
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                pass = rs.getString(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return pass;
     }
 
     public int actualizarUsuario(String email, String username, String password, String gender, int nativeL, int[] spokenLangs, int[] learnLangs) {
@@ -85,7 +123,6 @@ public class UsuarioDAO {
             ps.setString(1, username);
             ps.setString(2, password);
             ps.setString(3, gender);
-            System.out.println(gender);
             ps.setString(4, IdiomaDAO.indexToCode(nativeL));
             ps.setString(5, email);
             ps.executeUpdate();
