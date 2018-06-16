@@ -6,9 +6,9 @@
     </root>
     <schema id="2" parent="1" name="HR">
       <ObjectId>43</ObjectId>
-      <IntrospectionTimestamp>2018-06-15.20:34:54</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-06-16.18:49:48</IntrospectionTimestamp>
       <CreatedTimestamp>2011-08-27.10:55:20</CreatedTimestamp>
-      <ModifiedTimestamp>2018-06-15.20:34:35</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-06-16.18:49:46</ModifiedTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -108,7 +108,7 @@
     <table id="24" parent="2" name="SIGNIFICADO_EJEMPLOS">
       <ObjectId>20078</ObjectId>
       <CreatedTimestamp>2018-06-06.21:53:57</CreatedTimestamp>
-      <ModifiedTimestamp>2018-06-12.12:32:38</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-06-16.18:49:46</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <table id="25" parent="2" name="TIPOS_PALABRAS">
@@ -459,22 +459,24 @@ IDIOMA_LECC</ColNames>
       <NotNull>1</NotNull>
     </column>
     <index id="81" parent="24" name="SIGNIFICADO_PK">
-      <ObjectId>20079</ObjectId>
-      <CreatedTimestamp>2018-06-06.21:53:57</CreatedTimestamp>
-      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
+      <ObjectId>20424</ObjectId>
+      <CreatedTimestamp>2018-06-16.18:49:46</CreatedTimestamp>
+      <ModifiedTimestamp>2018-06-16.18:49:46</ModifiedTimestamp>
       <TablespaceName>USERS</TablespaceName>
-      <ColNames>ID_SIG</ColNames>
+      <ColNames>ID_SIG
+IDIOMA_SIG</ColNames>
       <Unique>1</Unique>
     </index>
     <key id="82" parent="24" name="SIGNIFICADO_PK">
-      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
-      <ColNames>ID_SIG</ColNames>
+      <ModifiedTimestamp>2018-06-16.18:49:46</ModifiedTimestamp>
+      <ColNames>ID_SIG
+IDIOMA_SIG</ColNames>
       <InitiallyDeferred>1</InitiallyDeferred>
       <UnderlyingIndexName>SIGNIFICADO_PK</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <foreign-key id="83" parent="24" name="PALABRA_FK">
-      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-06-16.18:49:45</ModifiedTimestamp>
       <ColNames>ID_SIG</ColNames>
       <RefSchemaName>HR</RefSchemaName>
       <RefTableName>PALABRAS</RefTableName>
@@ -482,7 +484,7 @@ IDIOMA_LECC</ColNames>
       <OnDelete>restrict</OnDelete>
     </foreign-key>
     <foreign-key id="84" parent="24" name="IDIOMA_SIGNIFICADO_FK">
-      <ModifiedTimestamp>2018-06-06.21:53:57</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-06-16.18:49:45</ModifiedTimestamp>
       <ColNames>IDIOMA_SIG</ColNames>
       <RefSchemaName>HR</RefSchemaName>
       <RefTableName>IDIOMAS</RefTableName>
