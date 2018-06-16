@@ -24,6 +24,7 @@ public class PalabraSigEj extends JFrame {
         ejemploArea.setLineWrap(true);
         ejemploArea.setWrapStyleWord(true);
         jsEjemplo.setViewportView(ejemploArea);
+        continueButton = new JButton();
         mainPane = new JPanel();
         layout = new GroupLayout(mainPane);
         mainPane.setLayout(layout);
@@ -36,6 +37,7 @@ public class PalabraSigEj extends JFrame {
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                        .addComponent(continueButton)
                                         .addComponent(jsSignificado, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
                                         .addComponent(jsEjemplo)
                                         .addComponent(typeWordLabel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -62,6 +64,8 @@ public class PalabraSigEj extends JFrame {
                         .addComponent(ejemplo)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jsEjemplo, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(continueButton)
                         .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -79,6 +83,7 @@ public class PalabraSigEj extends JFrame {
     private JScrollPane jsEjemplo;
     public JTextArea significadoArea;
     public JTextArea ejemploArea;
+    public JButton continueButton;
     private GroupLayout layout;
     private JPanel mainPane;
 }

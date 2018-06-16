@@ -39,4 +39,36 @@ public class SignificadoEjemploDAO {
 
     }
 
+    public int actualizarSignificado(int idsig, String sig, String ej, String lang) {
+        int result = 0;
+        Connection conn = con.createConnection();
+        try {
+            PreparedStatement ps = conn.prepareStatement("UPDATE SIGNIFICADO_EJEMPLOS SET SIGNIFICADO = ?, EJEMPLO = ? WHERE ID_SIG = ? AND IDIOMA_SIG = ?");
+            ps.setString(1, sig);
+            ps.setString(2, ej);
+            ps.setInt(3, idsig);
+            ps.setString(4, lang);
+            result += ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public int addSignificado(int id, String sig, String ej, String lang) {
+        int result = 0;
+        Connection conn = con.createConnection();
+        try {
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO SIGNIFICADO_EJEMPLOS VALUES(?, ?, ?, ?)");
+            ps.setInt(1, id);
+            ps.setString(2, sig);
+            ps.setString(3, ej);
+            ps.setString(4, lang);
+            result += ps.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
 }

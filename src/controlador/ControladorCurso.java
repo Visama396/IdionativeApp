@@ -105,7 +105,7 @@ public class ControladorCurso implements ActionListener {
         } else if (e.getSource() == this.vista.leccionesComboBox) {
             JTextPane contenido = new JTextPane();
             contenido.setContentType("text/html");
-            contenido.setText(((Leccion) this.vista.leccionesComboBox.getSelectedItem()).getContentlec());
+            contenido.setText("<html>"+((Leccion) this.vista.leccionesComboBox.getSelectedItem()).getContentlec()+"</html>");
             this.vista.jsContenido.setViewportView(contenido);
             this.vista.jsContenido.setVisible(true);
             this.vista.editButton.setVisible(true);

@@ -143,7 +143,7 @@ public class ControladorRegistro implements ActionListener, WindowListener {
             switch (boton.getActionCommand()) {
                 case "SIGNUP":
                     if (modelo.comprobarUsuario(this.vista.emailField.getText(), null)) {
-                        JOptionPane.showMessageDialog(null, rb.getString("accountexist"), rb.getString("emailfound"), JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null, rb.getString("emailfound"), rb.getString("accountexist"), JOptionPane.WARNING_MESSAGE);
                     } else {
                         int resultado = 0;
                         String user = this.vista.userField.getText();
@@ -180,7 +180,7 @@ public class ControladorRegistro implements ActionListener, WindowListener {
 
                         if (emailbool && userbool && passbool) {
                             resultado = this.modelo.registrarUsuario(email, user, pass, gender, nativeLang, spokenLangs, learnLangs);
-                            JOptionPane.showMessageDialog(null, rb.getString("usercreated"));
+                            JOptionPane.showMessageDialog(null, rb.getString("usercreated"), "", JOptionPane.INFORMATION_MESSAGE);
                             Diccionario view = new Diccionario(rb.getString("dictionary"));
                             PalabraDAO model = new PalabraDAO();
                             ControladorDiccionario controller = new ControladorDiccionario(view, model, this.lang, this.vista.emailField.getText());
