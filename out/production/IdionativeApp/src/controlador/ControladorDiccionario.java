@@ -407,7 +407,7 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                                 int result = this.modelo.eliminarPalabra(Integer.parseInt(this.vista.idWordField2.getText()));
                                 if (result == 1) {
                                     this.vista.confirmLabel.setForeground(Color.GREEN);
-                                    this.vista.confirmLabel.setText("Se ha eliminado correctamente");
+                                    this.vista.confirmLabel.setText(rb.getString("delcorrect"));
                                 }
                             }
                         } else {
@@ -629,7 +629,7 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                     tipos += s+", ";
                 }
                 this.vista.wordTypeList.clearSelection();
-                PalabraSigEj showMoreInfo = new PalabraSigEj("Datos adicionales: "+ palabra);
+                PalabraSigEj showMoreInfo = new PalabraSigEj(rb.getString("moreinfo") + " " + palabra);
                 try {
                     try {
                         showMoreInfo.significadoArea.append(sig.getSignificado());
@@ -640,15 +640,15 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                         showMoreInfo.wordLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 18));
                         showMoreInfo.typeWordLabel.setText(tipos.substring(0, tipos.length()-2)); // Para que no muestre la última coma
                         showMoreInfo.typeWordLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 16));
-                        showMoreInfo.significado.setText("Significado");
+                        showMoreInfo.significado.setText(rb.getString("meaning"));
                         showMoreInfo.significado.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
-                        showMoreInfo.ejemplo.setText("Ejemplo");
+                        showMoreInfo.ejemplo.setText(rb.getString("example"));
                         showMoreInfo.ejemplo.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
                         showMoreInfo.pack();
                         showMoreInfo.setResizable(false);
                         showMoreInfo.setVisible(true);
                     } catch (NullPointerException npe) {
-                        JOptionPane.showMessageDialog(null, "No hay ninguna entrada sobre su significado o ejemplo de esta palabra.", "", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null, rb.getString("nomeanexam"), "", JOptionPane.WARNING_MESSAGE);
                     }
                 } catch(StringIndexOutOfBoundsException siobe) {
                     showMoreInfo.typeWordLabel.setText("");
@@ -657,7 +657,7 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                     showMoreInfo.setVisible(true);
                 }
             } catch (NullPointerException npe) {
-                JOptionPane.showMessageDialog(null, "Esta palabra aún no está en este idioma.", "", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, rb.getString("noword"), "", JOptionPane.WARNING_MESSAGE);
             }
         }
     }

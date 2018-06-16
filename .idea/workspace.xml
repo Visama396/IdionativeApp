@@ -7,38 +7,57 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff7b41bb-e1ad-459d-875e-d4f8ed016ec7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/modelo/Leccion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/vista/Usuarios.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4520de59-f4b9-4a3b-ae50-47d49c3f063b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4520de59-f4b9-4a3b-ae50-47d49c3f063b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4520de59-f4b9-4a3b-ae50-47d49c3f063b/storage_v2/_src_/schema/HR.CgkAAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4520de59-f4b9-4a3b-ae50-47d49c3f063b/storage_v2/_src_/schema/HR.CgkAAA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/IdionativeApp_jar/IdionativeApp.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/IdionativeApp_jar/IdionativeApp.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/.idea/dataSources/4520de59-f4b9-4a3b-ae50-47d49c3f063b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/.idea/dataSources/4520de59-f4b9-4a3b-ae50-47d49c3f063b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/.idea/dataSources/4520de59-f4b9-4a3b-ae50-47d49c3f063b/storage_v2/_src_/schema/HR.CgkAAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/.idea/dataSources/4520de59-f4b9-4a3b-ae50-47d49c3f063b/storage_v2/_src_/schema/HR.CgkAAA.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorCurso.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorCurso.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorDiccionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorDiccionario.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/CursoDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/CursoDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/UsuarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorCurso.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorCurso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/configuracion/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/configuracion/locale_de.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale_de.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale_es.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale_es.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale_ja.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale_ja.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/iniciosesion/locale.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/iniciosesion/locale.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/iniciosesion/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/iniciosesion/locale_de.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/iniciosesion/locale_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/iniciosesion/locale_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/iniciosesion/locale_es.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/iniciosesion/locale_es.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/iniciosesion/locale_ja.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/iniciosesion/locale_ja.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/registro/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/registro/locale_de.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorDiccionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorDiccionario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/CursoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/CursoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/UsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/vista/Cursos.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/vista/Cursos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/vista/InicioSesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/vista/InicioSesion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/vista/Cursos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/vista/Cursos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/vista/InicioSesion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/vista/InicioSesion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlador/ControladorCurso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/ControladorCurso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/configuracion/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/configuracion/locale_de.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale_de.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale_es.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale_es.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale_ja.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale_ja.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/iniciosesion/locale.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/iniciosesion/locale.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/iniciosesion/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/iniciosesion/locale_de.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/iniciosesion/locale_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/iniciosesion/locale_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/iniciosesion/locale_es.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/iniciosesion/locale_es.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/iniciosesion/locale_ja.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/iniciosesion/locale_ja.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/registro/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/registro/locale_de.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controlador/ControladorDiccionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/ControladorDiccionario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controlador/ControladorLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/ControladorLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/configuracion/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/configuracion/locale_de.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/diccionario/locale.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/diccionario/locale.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/diccionario/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/diccionario/locale_de.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/diccionario/locale_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/diccionario/locale_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/diccionario/locale_es.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/diccionario/locale_es.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/diccionario/locale_ja.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/diccionario/locale_ja.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/locales/iniciosesion/locale.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/iniciosesion/locale.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/locales/iniciosesion/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/iniciosesion/locale_de.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/locales/iniciosesion/locale_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/iniciosesion/locale_en.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/locales/iniciosesion/locale_es.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/iniciosesion/locale_es.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/locales/iniciosesion/locale_ja.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/iniciosesion/locale_ja.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelo/CursoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelo/CursoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelo/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelo/UsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vista/Cursos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/Cursos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vista/InicioSesion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/InicioSesion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/registro/locale.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/registro/locale.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/registro/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/registro/locale_de.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/registro/locale_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/registro/locale_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/registro/locale_es.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/registro/locale_es.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/registro/locale_ja.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/registro/locale_ja.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,7 +118,7 @@
     <favorites_list name="IdionativeApp" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -130,7 +149,6 @@
         <option value="$PROJECT_DIR$/src/locales/registro/locale_ja.properties" />
         <option value="$PROJECT_DIR$/src/locales/iniciosesion/locale_es.properties" />
         <option value="$PROJECT_DIR$/src/locales/iniciosesion/locale_ja.properties" />
-        <option value="$PROJECT_DIR$/src/locales/iniciosesion/locale_de.properties" />
         <option value="$PROJECT_DIR$/src/locales/diccionario/locale_es.properties" />
         <option value="$PROJECT_DIR$/src/locales/diccionario/locale_en.properties" />
         <option value="$PROJECT_DIR$/src/locales/diccionario/locale_de.properties" />
@@ -140,15 +158,12 @@
         <option value="$PROJECT_DIR$/src/modelo/Conexion.java" />
         <option value="$PROJECT_DIR$/src/modelo/Curso.java" />
         <option value="$PROJECT_DIR$/src/vista/Diccionario.java" />
-        <option value="$PROJECT_DIR$/src/locales/registro/locale.properties" />
         <option value="$PROJECT_DIR$/src/locales/registro/locale_de.properties" />
         <option value="$PROJECT_DIR$/src/locales/registro/locale_en.properties" />
         <option value="$PROJECT_DIR$/src/locales/registro/locale_es.properties" />
         <option value="$PROJECT_DIR$/src/locales/configuracion/locale.properties" />
         <option value="$PROJECT_DIR$/src/controlador/ControladorConfiguracion.java" />
-        <option value="$PROJECT_DIR$/src/locales/diccionario/locale.properties" />
         <option value="$PROJECT_DIR$/src/controlador/ControladorRegistro.java" />
-        <option value="$PROJECT_DIR$/src/controlador/ControladorDiccionario.java" />
         <option value="$PROJECT_DIR$/src/vista/InicioSesion.java" />
         <option value="$PROJECT_DIR$/src/vista/Usuarios.java" />
         <option value="$PROJECT_DIR$/src/modelo/UsuarioDAO.java" />
@@ -158,7 +173,11 @@
         <option value="$PROJECT_DIR$/src/controlador/ControladorCurso.java" />
         <option value="$PROJECT_DIR$/src/locales/iniciosesion/locale_en.properties" />
         <option value="$PROJECT_DIR$/src/locales/iniciosesion/locale.properties" />
+        <option value="$PROJECT_DIR$/src/locales/diccionario/locale.properties" />
+        <option value="$PROJECT_DIR$/src/controlador/ControladorDiccionario.java" />
+        <option value="$PROJECT_DIR$/src/locales/iniciosesion/locale_de.properties" />
         <option value="$PROJECT_DIR$/src/controlador/ControladorLogin.java" />
+        <option value="$PROJECT_DIR$/src/locales/registro/locale.properties" />
       </list>
     </option>
   </component>
@@ -199,15 +218,51 @@
             </path>
             <path>
               <item name="IdionativeApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdionativeApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="locales" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IdionativeApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdionativeApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="locales" type="462c0819:PsiDirectoryNode" />
+              <item name="diccionario" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IdionativeApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdionativeApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="locales" type="462c0819:PsiDirectoryNode" />
+              <item name="diccionario" type="462c0819:PsiDirectoryNode" />
+              <item name="Resource Bundle 'locale'" type="a6c14932:ResourceBundleNode" />
+            </path>
+            <path>
+              <item name="IdionativeApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdionativeApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="locales" type="462c0819:PsiDirectoryNode" />
+              <item name="registro" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IdionativeApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdionativeApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="locales" type="462c0819:PsiDirectoryNode" />
+              <item name="registro" type="462c0819:PsiDirectoryNode" />
+              <item name="Resource Bundle 'locale'" type="a6c14932:ResourceBundleNode" />
+            </path>
+            <path>
+              <item name="IdionativeApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -347,11 +402,14 @@
       <workItem from="1529000108287" duration="20000" />
       <workItem from="1529000586311" duration="5752000" />
       <workItem from="1529055981129" duration="31828000" />
+      <workItem from="1529133740568" duration="3781000" />
+      <workItem from="1529137547572" duration="13000" />
+      <workItem from="1529137780185" duration="357000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="284026000" />
+    <option name="totallyTimeSpent" value="288177000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -379,9 +437,8 @@
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32897604" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49507734" visible="true" weight="0.16791044" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49507734" visible="true" weight="0.17270789" />
       <window_info anchor="right" id="Database" order="6" weight="0.17217484" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.32897604" />
       <window_info id="Structure" order="1" sideWeight="0.5049226" side_tool="true" weight="0.15565032" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -394,6 +451,7 @@
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32897604" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32897604" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -469,10 +527,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/locales/configuracion/locale_ja.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/locales/configuracion/locale_de.properties">
       <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -592,22 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/locales/registro/locale_de.properties">
-      <provider editor-type-id="ResourceBundle" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="675">
-          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/locales/registro/locale.properties">
-      <provider selected="true" editor-type-id="ResourceBundle" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controlador/ControladorRegistro.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-998">
@@ -628,22 +666,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1966">
           <caret line="15" column="7" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/locales/configuracion/locale.properties">
-      <provider selected="true" editor-type-id="ResourceBundle" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/locales/diccionario/locale.properties">
-      <provider selected="true" editor-type-id="ResourceBundle" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="54" column="22" lean-forward="true" selection-start-line="54" selection-start-column="22" selection-end-line="55" />
         </state>
       </provider>
     </entry>
@@ -677,16 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" column="61" selection-start-line="8" selection-start-column="61" selection-end-line="8" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/ControladorConfiguracion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="717">
-          <caret line="201" column="94" selection-start-line="201" selection-start-column="94" selection-end-line="201" selection-end-column="94" />
-          <folding>
-            <element signature="method#completarOpciones#0;class#ControladorConfiguracion#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -733,9 +745,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1187">
           <caret line="117" column="60" selection-start-line="117" selection-start-column="60" selection-end-line="117" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -743,9 +752,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-94">
           <caret line="38" column="19" lean-forward="true" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -753,30 +759,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="924">
           <caret line="59" column="27" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
-          <folding>
-            <element signature="e#484#485#0" expanded="true" />
-            <element signature="e#512#513#0" expanded="true" />
-            <element signature="e#551#552#0" expanded="true" />
-            <element signature="e#585#586#0" expanded="true" />
-            <element signature="e#616#617#0" expanded="true" />
-            <element signature="e#646#647#0" expanded="true" />
-            <element signature="e#689#690#0" expanded="true" />
-            <element signature="e#727#728#0" expanded="true" />
-            <element signature="e#763#764#0" expanded="true" />
-            <element signature="e#795#796#0" expanded="true" />
-            <element signature="e#845#846#0" expanded="true" />
-            <element signature="e#887#888#0" expanded="true" />
-            <element signature="e#924#925#0" expanded="true" />
-            <element signature="e#957#958#0" expanded="true" />
-            <element signature="e#1009#1010#0" expanded="true" />
-            <element signature="e#1053#1054#0" expanded="true" />
-            <element signature="e#1089#1090#0" expanded="true" />
-            <element signature="e#1121#1122#0" expanded="true" />
-            <element signature="e#1171#1172#0" expanded="true" />
-            <element signature="e#1213#1214#0" expanded="true" />
-            <element signature="e#1245#1246#0" expanded="true" />
-            <element signature="e#1291#1292#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -784,19 +766,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/ControladorDiccionario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="492" selection-start-line="492" selection-end-line="492" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -816,21 +785,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/locales/iniciosesion/locale_de.properties">
-      <provider editor-type-id="ResourceBundle" />
+    <entry file="file://$PROJECT_DIR$/src/controlador/ControladorConfiguracion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/ControladorLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2769">
-          <caret line="236" column="25" lean-forward="true" selection-start-line="236" selection-start-column="25" selection-end-line="236" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="1473">
+          <caret line="201" column="94" selection-start-line="201" selection-start-column="94" selection-end-line="201" selection-end-column="94" />
         </state>
       </provider>
     </entry>
@@ -839,6 +797,71 @@
       <provider editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/locales/configuracion/locale.properties">
+      <provider selected="true" editor-type-id="ResourceBundle" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/locales/registro/locale_de.properties">
+      <provider selected="true" editor-type-id="ResourceBundle" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/locales/configuracion/locale_de.properties">
+      <provider selected="true" editor-type-id="ResourceBundle" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/ControladorDiccionario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-717">
+          <caret line="649" column="56" lean-forward="true" selection-start-line="649" selection-start-column="56" selection-end-line="649" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/ControladorLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-717">
+          <caret line="220" column="54" lean-forward="true" selection-start-line="220" selection-start-column="54" selection-end-line="220" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/locales/iniciosesion/locale_de.properties">
+      <provider selected="true" editor-type-id="ResourceBundle" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/locales/diccionario/locale.properties">
+      <provider selected="true" editor-type-id="ResourceBundle" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="1155">
+          <caret line="55" column="22" lean-forward="true" selection-start-line="55" selection-start-column="22" selection-end-line="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/locales/registro/locale.properties">
+      <provider selected="true" editor-type-id="ResourceBundle" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="33" column="29" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
         </state>
       </provider>
     </entry>

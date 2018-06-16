@@ -167,7 +167,7 @@ public class ControladorLogin implements ActionListener, WindowListener {
                         this.vista.dispose();
                         view.setVisible(true);
                     } else {
-                        JOptionPane.showMessageDialog(null, rb.getString("badlogin1") + "\n" + rb.getString("badlogin2"), "Error al iniciar sesión", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null, rb.getString("badlogin1") + "\n" + rb.getString("badlogin2"), rb.getString("badloginmes"), JOptionPane.WARNING_MESSAGE);
                     }
                     break;
                 case "CREATEACCOUNT":
@@ -218,7 +218,7 @@ public class ControladorLogin implements ActionListener, WindowListener {
                     }
                     break;
                 case "FORGOT":
-                    JFrame forgotFrame = new JFrame("Recordar contraseña");
+                    JFrame forgotFrame = new JFrame();
                     JTextField mailField = new JTextField(15);
                     JTextField userField = new JTextField(15);
 
