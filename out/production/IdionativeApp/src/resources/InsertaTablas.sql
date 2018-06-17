@@ -22,7 +22,7 @@ INSERT INTO HABLA_IDIOMAS VALUES('visama@gmail.com', 'esp');
 INSERT INTO APRENDE_IDIOMAS VALUES('admin@idionative.es', 'eng');
 INSERT INTO APRENDE_IDIOMAS VALUES('visama@gmail.com', 'jpn');
 
-INSERT INTO SIGNIFICADO_EJEMPLO VALUES(1, 'English is a germanic language used in United Kingdom, America and Australia among other countries. It\'s the language most used for business.', 'Tom\'s mother can\'t speak English at all.', 'eng');
+INSERT INTO SIGNIFICADO_EJEMPLO VALUES(1, 'English is a germanic language used in United Kingdom, America and Australia among other countries. It''s the language most used for business.', 'Tom''s mother can''t speak English at all.', 'eng');
 INSERT INTO SIGNIFICADO_EJEMPLO VALUES(1, 'El inglés es una lengua germánica usada en países como Reino Unido, América y Oceanía entre otros países. Es la lengua más hablada a nivel empresarial del mundo.', 'El inglés es cada vez más requerido a nivel mundial.', 'esp');
 INSERT INTO SIGNIFICADO_EJEMPLO VALUES(1, '英語（えいご）とはイギリスとアメリカの国語です。世界中とビジネスでよく使う言語です。', '英語を少し話せます。', 'jpn');
 

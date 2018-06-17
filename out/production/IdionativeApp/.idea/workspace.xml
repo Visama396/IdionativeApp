@@ -7,66 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff7b41bb-e1ad-459d-875e-d4f8ed016ec7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4520de59-f4b9-4a3b-ae50-47d49c3f063b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4520de59-f4b9-4a3b-ae50-47d49c3f063b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4520de59-f4b9-4a3b-ae50-47d49c3f063b/storage_v2/_src_/schema/HR.CgkAAA.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4520de59-f4b9-4a3b-ae50-47d49c3f063b/storage_v2/_src_/schema/HR.CgkAAA.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TablasIdionative.sql" beforeDir="false" afterPath="$PROJECT_DIR$/TablasIdionative.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/TablasIdionative.sql" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/TablasIdionative.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorConfiguracion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorConfiguracion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorCurso.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorCurso.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorDiccionario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorDiccionario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorLogin.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorLogin.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorRegistro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/controlador/ControladorRegistro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale_de.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale_es.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale_es.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale_ja.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/diccionario/locale_ja.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/registro/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/registro/locale_de.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/locales/registro/locale_ja.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/locales/registro/locale_ja.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/IdiomaDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/IdiomaDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/PalabraDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/PalabraDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/SignificadoEjemploDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/SignificadoEjemploDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/modelo/UsuarioDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorConfiguracion.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorConfiguracion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorCurso.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorCurso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorDiccionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorDiccionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorRegistro.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/controlador/ControladorRegistro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale_de.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale_es.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale_es.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale_ja.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/diccionario/locale_ja.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/registro/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/registro/locale_de.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/registro/locale_ja.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/locales/registro/locale_ja.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/IdiomaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/IdiomaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/PalabraDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/PalabraDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/SignificadoEjemploDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/SignificadoEjemploDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/modelo/UsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/vista/Cursos.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/vista/Cursos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/src/vista/Registro.java" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/src/vista/Registro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/vista/Cursos.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/vista/Cursos.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IdionativeApp/vista/Registro.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IdionativeApp/vista/Registro.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlador/ControladorConfiguracion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/ControladorConfiguracion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlador/ControladorCurso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/ControladorCurso.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlador/ControladorDiccionario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/ControladorDiccionario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlador/ControladorLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/ControladorLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlador/ControladorRegistro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlador/ControladorRegistro.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/diccionario/locale.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/diccionario/locale.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/diccionario/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/diccionario/locale_de.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/diccionario/locale_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/diccionario/locale_en.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/diccionario/locale_es.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/diccionario/locale_es.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/diccionario/locale_ja.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/diccionario/locale_ja.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/registro/locale_de.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/registro/locale_de.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/locales/registro/locale_ja.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/registro/locale_ja.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelo/IdiomaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelo/IdiomaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelo/PalabraDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelo/PalabraDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelo/SignificadoEjemploDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelo/SignificadoEjemploDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modelo/UsuarioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modelo/UsuarioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vista/Cursos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/Cursos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/vista/Registro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/vista/Registro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/InsertaTablas.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/InsertaTablas.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/resources/TablasIdionative.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/resources/TablasIdionative.sql" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -120,7 +64,17 @@
     <favorites_list name="IdionativeApp" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="TablasIdionative.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/resources/TablasIdionative.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="399">
+              <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -180,6 +134,8 @@
         <option value="$PROJECT_DIR$/src/vista/Cursos.java" />
         <option value="$PROJECT_DIR$/src/controlador/ControladorCurso.java" />
         <option value="$PROJECT_DIR$/TablasIdionative.sql" />
+        <option value="$PROJECT_DIR$/src/resources/InsertaTablas.sql" />
+        <option value="$PROJECT_DIR$/src/resources/TablasIdionative.sql" />
       </list>
     </option>
   </component>
@@ -206,7 +162,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
@@ -216,10 +171,34 @@
               <item name="IdionativeApp" type="b2602c69:ProjectViewProjectNode" />
               <item name="IdionativeApp" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="IdionativeApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdionativeApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IdionativeApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdionativeApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="controlador" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IdionativeApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdionativeApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="modelo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IdionativeApp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IdionativeApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -369,11 +348,15 @@
       <workItem from="1529175869463" duration="5551000" />
       <workItem from="1529219912495" duration="18862000" />
       <workItem from="1529246855693" duration="49000" />
+      <workItem from="1529246922470" duration="24000" />
+      <workItem from="1529247832702" duration="144000" />
+      <workItem from="1529247996505" duration="4000" />
+      <workItem from="1529248020360" duration="56000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="338254000" />
+    <option name="totallyTimeSpent" value="338482000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -386,10 +369,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32897604" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32897604" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
@@ -401,7 +384,7 @@
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32897604" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49507734" visible="true" weight="0.17910448" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49507734" visible="true" weight="0.18656716" />
       <window_info anchor="right" id="Database" order="6" weight="0.1709531" />
       <window_info id="Structure" order="1" sideWeight="0.5049226" side_tool="true" weight="0.15565032" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -411,6 +394,7 @@
       <window_info anchor="bottom" id="Debug" order="4" weight="0.39978212" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32897604" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
@@ -419,18 +403,18 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32897604" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.4989339" visible="true" weight="0.13507625" />
+      <window_info anchor="right" id="Database" order="6" weight="0.17217484" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32897604" />
       <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32897604" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49507734" visible="true" weight="0.17750533" />
       <window_info id="Structure" order="1" sideWeight="0.5049226" side_tool="true" weight="0.15565032" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32897604" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.4989339" visible="true" weight="0.13507625" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="Capture Tool" order="6" />
@@ -440,11 +424,11 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32897604" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5010661" side_tool="true" weight="0.1459695" />
-      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.32897604" />
       <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="right" id="Database" order="6" weight="0.17217484" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32897604" />
       <window_info anchor="right" id="Maven Projects" order="7" />
       <window_info id="Favorites" order="5" sideWeight="0.50108933" side_tool="true" weight="0.25586355" />
     </layout-to-restore>
@@ -461,20 +445,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/awt/AWTEventMulticaster.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="269" selection-start-line="269" selection-end-line="269" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/javax/swing/GroupLayout.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="1089" selection-start-line="1089" selection-end-line="1089" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/modelo/SignificadoEjemplo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -501,9 +471,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/user.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/user.txt" />
     <entry file="file://$PROJECT_DIR$/src/locales/iniciosesion/locale_es.properties">
       <provider editor-type-id="ResourceBundle" />
       <provider selected="true" editor-type-id="text-editor">
@@ -724,13 +692,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/modelo/PalabraDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="253" column="39" selection-start-line="253" selection-start-column="39" selection-end-line="253" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/locales/diccionario/locale.properties">
       <provider selected="true" editor-type-id="ResourceBundle" />
       <provider editor-type-id="text-editor">
@@ -776,13 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controlador/ControladorDiccionario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="533" column="141" selection-start-line="533" selection-start-column="141" selection-end-line="533" selection-end-column="141" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/controlador/ControladorCurso.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -822,6 +776,34 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="651">
           <caret line="58" column="89" selection-start-line="58" selection-start-column="89" selection-end-line="58" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/InsertaTablas.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="58" selection-start-line="9" selection-start-column="58" selection-end-line="9" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modelo/PalabraDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="253" column="39" selection-start-line="253" selection-start-column="39" selection-end-line="253" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/controlador/ControladorDiccionario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="533" column="141" selection-start-line="533" selection-start-column="141" selection-end-line="533" selection-end-column="141" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/resources/TablasIdionative.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="30" lean-forward="true" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
         </state>
       </provider>
     </entry>
