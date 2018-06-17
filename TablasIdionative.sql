@@ -150,6 +150,7 @@ CREATE TABLE significado_ejemplos (
     CONSTRAINT significado_PK PRIMARY KEY (id_sig),
     CONSTRAINT idioma_significado_FK FOREIGN KEY (idioma_sig) REFERENCES idiomas (codigo)
 );
+
 /*
  * Tipos de palabras:
  * Noun -> N

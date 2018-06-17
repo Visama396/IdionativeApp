@@ -36,8 +36,7 @@ public class ControladorRegistro implements ActionListener, WindowListener {
         this.loc = new Locale(this.lang);
         this.rb = ResourceBundle.getBundle("locales.registro.locale", this.loc);
 
-        // Fuente en Linux "Noto Serif CJK JP"
-        Font fuente = new Font("Arial Unicode MS", Font.PLAIN, 15);
+        Font fuente = new Font("Arial Unicode MS", Font.PLAIN, 15);  // Fuente en Linux "Noto Serif CJK JP"
 
         this.vista.mainMenu.setText(rb.getString("options"));
         this.vista.mainMenu.setFont(fuente);
@@ -69,6 +68,9 @@ public class ControladorRegistro implements ActionListener, WindowListener {
         this.vista.emailLabel.setFont(fuente);
         this.vista.emailField.setText(email);
         this.vista.emailField.setFont(fuente);
+        /**
+         * Aquí uso etiquetas HTML ya que el salto de línea \n no funciona dentro de tooltiptext.
+         */
         this.vista.emailField.setToolTipText("<html>- "+rb.getString("emailtooltip1")+"<br>- "+rb.getString("emailtooltip2")+"<br>- "+rb.getString("emailtooltip3")+"</html>");
         this.vista.userLabel.setText(rb.getString("user"));
         this.vista.userLabel.setFont(fuente);
@@ -113,6 +115,9 @@ public class ControladorRegistro implements ActionListener, WindowListener {
 
     }
 
+    /**
+     * Este método se encarga de rellenar los JComboBox y JList de la vista de acuerdo al idioma en el que está la aplicación.
+     */
     private void completarOpciones() {
 
         ArrayList<String> idiomas = new IdiomaDAO().obtenerIdiomas(lang);
@@ -203,6 +208,9 @@ public class ControladorRegistro implements ActionListener, WindowListener {
                     }
                     break;
                 case "RETURN":
+                    /**
+                     * Devuelve a la ventana de inicio de sesión.
+                     */
                     InicioSesion view = new InicioSesion(rb.getString("login"));
                     UsuarioDAO model = new UsuarioDAO();
                     ControladorLogin controller = new ControladorLogin(view, model, this.lang, this.vista.emailField.getText());

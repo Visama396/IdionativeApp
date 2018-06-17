@@ -176,7 +176,7 @@ public class ControladorConfiguracion implements ActionListener {
                     } else if (gende == 1) {
                         gender = "M";
                     }
-                    if (this.vista.userField.getText().length() > 1 && new String(this.vista.passwordField.getPassword()).length() > 1) {
+                    if ((this.vista.userField.getText().length() >= 5 && this.vista.userField.getText().length() <= 25) && (this.vista.passwordField.getPassword().length >= 5 && this.vista.passwordField.getPassword().length <= 25)) {
                         int result = modelo.actualizarUsuario(
                                 this.vista.emailField.getText(),
                                 this.vista.userField.getText(),
@@ -199,7 +199,7 @@ public class ControladorConfiguracion implements ActionListener {
                             errores += "- " + rb.getString("passnovalid") + "<br>";
                         }
                         errores += "</html>";
-                        JOptionPane.showMessageDialog(null, errores, rb.getString("invaliddata"), JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, errores, rb.getString("invaliddata"), JOptionPane.WARNING_MESSAGE);
                     }
                     break;
                 case "RETURN":

@@ -37,6 +37,9 @@ public class ControladorLogin implements ActionListener, WindowListener {
         this.lang = lang;
         this.email = email;
 
+        /**
+         * ResourceBundle para coger el locale adecuado al idioma que se haya pasado por parámetro.
+         */
         this.loc = new Locale(this.lang);
         this.rb = ResourceBundle.getBundle("locales.iniciosesion.locale", this.loc);
 
@@ -44,6 +47,10 @@ public class ControladorLogin implements ActionListener, WindowListener {
         String mail = null;
         String pass = null;
 
+        /**
+         * Comprueba que esté creado el archivo de user.txt con los datos del usuario.
+         * La primera línea será T o F dependiendo de como quedará el checkbox la última vez que se inició sesión.
+         */
         if (file.exists()) {
             try {
                 read = new FileReader(file);
@@ -71,6 +78,9 @@ public class ControladorLogin implements ActionListener, WindowListener {
             }
         }
 
+        /**
+         * La fuente utilizada es Arial Unicode MS porque soporta carácteres del idioma japonés.
+         */
         Font fuente = new Font("Arial Unicode MS", Font.PLAIN, 15);
 
         this.vista.mainMenu.setText(rb.getString("options"));
@@ -129,10 +139,16 @@ public class ControladorLogin implements ActionListener, WindowListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() instanceof JButton) {
+            /**
+             * Entra aquí si se ha pulsado un JButton.
+             */
             JButton boton = (JButton) e.getSource();
 
             switch (boton.getActionCommand()) {
                 case "SIGNIN":
+                    /**
+                     * Entra aquí se ha hecho clic en el botón de Iniciar sesión.
+                     */
                     boolean correcto = this.modelo.comprobarUsuario(this.vista.emailField.getText(), new String(this.vista.passwordField.getPassword()));
                     if (correcto) {
 
@@ -171,6 +187,9 @@ public class ControladorLogin implements ActionListener, WindowListener {
                     }
                     break;
                 case "CREATEACCOUNT":
+                    /**
+                     * Entra aquí si se ha hecho clic en el botón de Crear cuenta.
+                     */
                     Registro view = new Registro(rb.getString("signup"));
                     UsuarioDAO model = new UsuarioDAO();
                     ControladorRegistro controller = new ControladorRegistro(view, model, this.lang, this.vista.emailField.getText());
@@ -180,10 +199,16 @@ public class ControladorLogin implements ActionListener, WindowListener {
             }
             
         } else if (e.getSource() instanceof JMenuItem) {
+            /**
+             * Entra aquí si se ha pulsado un JMenuItem.
+             */
             JMenuItem item = (JMenuItem) e.getSource();
 
             switch (item.getActionCommand()) {
                 case "ESP":
+                    /**
+                     * Para cambiar el idioma a Español.
+                     */
                     InicioSesion viewes = new InicioSesion("Iniciar sesión");
                     UsuarioDAO modeles = new UsuarioDAO();
                     ControladorLogin controlleres = new ControladorLogin(viewes, modeles,"es", this.vista.emailField.getText());
@@ -191,6 +216,9 @@ public class ControladorLogin implements ActionListener, WindowListener {
                     viewes.setVisible(true);
                     break;
                 case "ENG":
+                    /**
+                     * Cambiar el idioma a Inglés.
+                     */
                     InicioSesion viewen = new InicioSesion("Sign in");
                     UsuarioDAO modelen = new UsuarioDAO();
                     ControladorLogin controlleren = new ControladorLogin(viewen, modelen, "en", this.vista.emailField.getText());
@@ -198,6 +226,9 @@ public class ControladorLogin implements ActionListener, WindowListener {
                     viewen.setVisible(true);
                     break;
                 case "JPN":
+                    /**
+                     * Cambiar el idioma a Japonés.
+                     */
                     InicioSesion viewjp = new InicioSesion("サインイン");
                     UsuarioDAO modeljp = new UsuarioDAO();
                     ControladorLogin controllerjp = new ControladorLogin(viewjp, modeljp, "ja", this.vista.emailField.getText());
@@ -205,6 +236,9 @@ public class ControladorLogin implements ActionListener, WindowListener {
                     viewjp.setVisible(true);
                     break;
                 case "DEU":
+                    /**
+                     * Cambiar el idioma a Alemán.
+                     */
                     InicioSesion viewde = new InicioSesion("Anmelden");
                     UsuarioDAO modelde = new UsuarioDAO();
                     ControladorLogin controllerde = new ControladorLogin(viewde, modelde, "de", this.vista.emailField.getText());
@@ -212,12 +246,18 @@ public class ControladorLogin implements ActionListener, WindowListener {
                     viewde.setVisible(true);
                     break;
                 case "CLOSE":
+                    /**
+                     * Para cerrar la aplicación desde la barra de menú.
+                     */
                     int opcion = JOptionPane.showConfirmDialog(null, rb.getString("closequest2"), rb.getString("closequest"), JOptionPane.YES_NO_OPTION);
                     if (opcion == 0) {
                         System.exit(0);
                     }
                     break;
                 case "FORGOT":
+                    /**
+                     * Para recuperar la contraseña.
+                     */
                     JFrame forgotFrame = new JFrame();
                     JTextField mailField = new JTextField(15);
                     JTextField userField = new JTextField(15);
@@ -250,6 +290,9 @@ public class ControladorLogin implements ActionListener, WindowListener {
 
     @Override
     public void windowClosing(WindowEvent e) {
+        /**
+         * Para cerrar la aplicación desde el icono de la X.
+         */
         int option = JOptionPane.showConfirmDialog(null, rb.getString("closequest2"), rb.getString("closequest"), JOptionPane.YES_NO_OPTION);
         if (option == 0) {
             System.exit(0);

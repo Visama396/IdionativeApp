@@ -349,8 +349,8 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                     int id = Integer.parseInt(this.vista.dictionaryTable.getValueAt(this.vista.dictionaryTable.getSelectedRow(), 0)+"");
                     String sig = this.showMoreInfo.significadoArea.getText();
                     String ej = this.showMoreInfo.ejemploArea.getText();
-                    if (this.sigmodel.actualizarSignificado(id, sig, ej, columnToCode(this.vista.dictionaryTable.getSelectedColumn())) == 1) {
-                        JOptionPane.showMessageDialog(null, rb.getString("modifiedcorrect"));
+                    if (this.sigmodel.actualizarSignificado(id, sig, ej, columnToCode()) == 1) {
+                        JOptionPane.showMessageDialog(null, rb.getString("modifiedcorrect"), "", JOptionPane.INFORMATION_MESSAGE);
                         showMoreInfo.dispose();
                     } else {
                         JOptionPane.showMessageDialog(null, rb.getString("modifiederror"), "", JOptionPane.WARNING_MESSAGE);
@@ -361,11 +361,11 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                     String sig2 = this.showMoreInfo.significadoArea.getText();
                     String ej2 = this.showMoreInfo.ejemploArea.getText();
 
-                    if (this.sigmodel.addSignificado(id2, sig2, ej2, columnToCode(this.vista.dictionaryTable.getSelectedColumn())) == 1) {
-                        JOptionPane.showMessageDialog(null, rb.getString("modifiedcorrect"));
+                    if (this.sigmodel.addSignificado(id2, sig2, ej2, columnToCode()) == 1) {
+                        JOptionPane.showMessageDialog(null, rb.getString("addedcorrect"), "", JOptionPane.INFORMATION_MESSAGE);
                         showMoreInfo.dispose();
                     } else {
-                        JOptionPane.showMessageDialog(null, rb.getString("modifiederror"), "", JOptionPane.WARNING_MESSAGE);
+                        JOptionPane.showMessageDialog(null, rb.getString("addederror"), "", JOptionPane.WARNING_MESSAGE);
                     }
                     break;
                 case "QUERY":
@@ -519,10 +519,21 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
                     }
                     break;
                 case "COURSES":
-                    Cursos cursos = new Cursos("Cursos");
                     CursoDAO cursoDAO = new CursoDAO();
-                    ControladorCurso controladorCurso = new ControladorCurso(cursos, cursoDAO, this.lang, this.email);
-                    cursos.setVisible(true);
+                    String l = IdiomaDAO.appToCode(this.lang);
+                    ArrayList<String> aiList = modeloUser.idiomasAprender(this.email);
+                    try {
+                        if (cursoDAO.buscarCursos(l, aiList).size() > 0) {
+                            Cursos cursos = new Cursos("Cursos");
+                            ControladorCurso controladorCurso = new ControladorCurso(cursos, cursoDAO, this.lang, this.email);
+                            cursos.setVisible(true);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "No hay cursos disponibles", "", JOptionPane.WARNING_MESSAGE);
+                        }
+                    } catch (StringIndexOutOfBoundsException siob) {
+                        JOptionPane.showMessageDialog(null, "No ha seleccionado idiomas que quiera aprender", "", JOptionPane.WARNING_MESSAGE);
+                    }
+
                     break;
                 case "LOGOUT":
                     InicioSesion vistaInicio = new InicioSesion(rb.getString("login"));
@@ -534,8 +545,12 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
         }
     }
 
-    private String columnToCode(int col) {
-        String l = null;
+    /**
+     * Este método solo se usará cuando se vaya a abrir la vista del significado de una palabra.
+     * @return Un String del código del idioma seleccionado
+     */
+    private String columnToCode() {
+        String l = "";
         switch (this.vista.dictionaryTable.getSelectedColumn()) {
             case 1:
                 l = "eng";
@@ -642,100 +657,94 @@ public class ControladorDiccionario implements ActionListener, FocusListener, Wi
     @Override
     public void mouseClicked(MouseEvent e) {
         if (e.getSource() instanceof JTable) {
-            try {
-                if (this.vista.dictionaryTable.getSelectedColumn() != 0) {
-                    SignificadoEjemplo sig = null;
+
+            if (this.vista.dictionaryTable.getSelectedColumn() != 0) {
+                showMoreInfo = new PalabraSigEj(rb.getString("moreinfo"));
+                // Mostrar palabra
+                String palabra;
+                String tipo = "";
+
+                try {
+
+                    /**
+                     * Buscar la fila y columna seleccionadas para conseguir la palabra de la cual se quiere saber significado o ver ejemplo.
+                     */
                     int row = this.vista.dictionaryTable.getSelectedRow();
-                    int column = this.vista.dictionaryTable.getSelectedColumn();
+                    int col = this.vista.dictionaryTable.getSelectedColumn();
+                    palabra = this.vista.dictionaryTable.getValueAt(row, col).toString();
+                    this.showMoreInfo.wordLabel.setText(palabra);
+                    this.showMoreInfo.wordLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 20));
+
+                    /**
+                     * Buscar el id de la palabra seleccionada para ver que tipo de palabra es.
+                     */
                     int id = Integer.parseInt(this.vista.dictionaryTable.getValueAt(row, 0)+"");
-                    String l = null;
-                    switch (column) {
-                        case 1:
-                            sig = sigmodel.obtenerSignificado(id, "eng");
-                            break;
-                        case 2:
-                            sig = sigmodel.obtenerSignificado(id, "esp");
-                            break;
-                        case 3:
-                            // Hace lo mismo que el 4 ya que Japonés y Kana van juntos
-                        case 4:
-                            sig = sigmodel.obtenerSignificado(id, "jpn");
-                            break;
-                        case 5:
-                            sig = sigmodel.obtenerSignificado(id, "deu");
-                            break;
-                        case 6:
-                            sig = sigmodel.obtenerSignificado(id, "ptr");
-                            break;
-                    }
-
-                    String palabra = this.vista.dictionaryTable.getValueAt(
-                            this.vista.dictionaryTable.getSelectedRow(),
-                            this.vista.dictionaryTable.getSelectedColumn()
-                    ).toString();
-
-                    String tipos = "";
-
                     this.vista.wordTypeList.setSelectedIndices(this.modelo.buscarTipos(id));
-                    List<String> tiposLista = this.vista.wordTypeList.getSelectedValuesList();
-                    for (String s: tiposLista) {
-                        tipos += s+", ";
+                    List<String> tipos = this.vista.wordTypeList.getSelectedValuesList();
+                    for (String s:tipos) {
+                        tipo += s + ", ";
                     }
                     this.vista.wordTypeList.clearSelection();
-                    showMoreInfo = new PalabraSigEj(rb.getString("moreinfo") + " " + palabra);
                     try {
-                        try {
-                            if (sig.getSignificado() != null) {
-                                showMoreInfo.wordLabel.setText(palabra);
-                                showMoreInfo.wordLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 18));
-                                showMoreInfo.typeWordLabel.setText(tipos.substring(0, tipos.length()-2)); // Para que no muestre la última coma
-                                showMoreInfo.typeWordLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 16));
-                                showMoreInfo.significado.setText(rb.getString("meaning"));
-                                showMoreInfo.significado.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
-                                showMoreInfo.ejemplo.setText(rb.getString("example"));
-                                showMoreInfo.ejemplo.setFont(new Font("Arial Unicode MS", Font.PLAIN, 14));
-                                showMoreInfo.significadoArea.append(sig.getSignificado());
-                                showMoreInfo.significadoArea.setFont(new Font("Arial Unicode MS", Font.PLAIN, 13));
-                                showMoreInfo.significadoArea.setEditable(false);
-                                showMoreInfo.ejemploArea.append(sig.getEjemplo());
-                                showMoreInfo.ejemploArea.setFont(new Font("Arial Unicode MS", Font.PLAIN, 13));
-                                showMoreInfo.ejemploArea.setEditable(false);
+                        tipo = tipo.substring(0, tipo.length()-2);
+                        showMoreInfo.typeWordLabel.setText(tipo);
+                    } catch (StringIndexOutOfBoundsException siob) {
+                        showMoreInfo.typeWordLabel.setText("");
+                    }
+                    showMoreInfo.typeWordLabel.setFont(new Font("Arial Unicode MS", Font.PLAIN, 16));
+
+                    showMoreInfo.significado.setText(rb.getString("meaning"));
+                    showMoreInfo.significado.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+                    showMoreInfo.ejemplo.setText(rb.getString("example"));
+                    showMoreInfo.ejemplo.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+
+                    SignificadoEjemplo sig = sigmodel.obtenerSignificado(id, columnToCode());
+                    try {
+                        /**
+                         * Aquí se comprueba que exista una entrada del significado o ejemplo de la palabra seleccionada.
+                         */
+                        showMoreInfo.significadoArea.setText(sig.getSignificado());
+                        showMoreInfo.significadoArea.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+
+                        showMoreInfo.ejemploArea.setText(sig.getEjemplo());
+                        showMoreInfo.ejemploArea.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+
+                        showMoreInfo.significadoArea.setEditable(false);
+                        showMoreInfo.ejemploArea.setEditable(false);
+
+                        if (this.modeloUser.esAdmin(this.email) || this.modeloUser.esProfesor(this.email)) {
+                            showMoreInfo.continueButton.setText(rb.getString("edit"));
+                            showMoreInfo.continueButton.setFont(new Font("Arial Unicode MS", Font.PLAIN, 15));
+                            showMoreInfo.continueButton.setActionCommand("EDIT");
+                            showMoreInfo.continueButton.addActionListener(this);
+                        } else {
+                            showMoreInfo.continueButton.setVisible(false);
+                        }
+
+                        showMoreInfo.pack();
+                        showMoreInfo.setLocationRelativeTo(null);
+                        showMoreInfo.setVisible(true);
+                    } catch (NullPointerException npe) {
+                        if (this.modeloUser.esProfesor(this.email) || this.modeloUser.esAdmin(this.email)) {
+                            int opt = JOptionPane.showConfirmDialog(null, rb.getString("nomeanexam1"), "", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+                            if (opt == 0) {
+                                showMoreInfo.continueButton.setText(rb.getString("add"));
+                                showMoreInfo.continueButton.setActionCommand("ADD");
                                 showMoreInfo.continueButton.addActionListener(this);
-                                if (this.modeloUser.esAdmin(this.email) || this.modeloUser.esProfesor(this.email)) {
-                                    showMoreInfo.continueButton.setText(rb.getString("edit"));
-                                    showMoreInfo.continueButton.setActionCommand("EDIT");
-                                } else {
-                                    showMoreInfo.continueButton.setVisible(false);
-                                }
                                 showMoreInfo.pack();
-                                showMoreInfo.setResizable(false);
+                                showMoreInfo.setLocationRelativeTo(null);
                                 showMoreInfo.setVisible(true);
                             }
-                        } catch (NullPointerException npe) {
-                            if (this.modeloUser.esProfesor(this.email) || this.modeloUser.esAdmin(this.email)) {
-                                int opt = JOptionPane.showConfirmDialog(null, rb.getString("nomeanexam1"), "", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
-                                if (opt == 0) {
-                                    showMoreInfo.continueButton.setText(rb.getString("add"));
-                                    showMoreInfo.continueButton.setActionCommand("ADD");
-                                    showMoreInfo.continueButton.addActionListener(this);
-                                    showMoreInfo.pack();
-                                    showMoreInfo.setResizable(false);
-                                    showMoreInfo.setVisible(true);
-                                }
-                            } else {
-                                JOptionPane.showMessageDialog(null, rb.getString("nomeanexam2"), "", JOptionPane.WARNING_MESSAGE);
-                            }
+                        } else {
+                            JOptionPane.showMessageDialog(null, rb.getString("nomeanexam2"), "", JOptionPane.WARNING_MESSAGE);
                         }
-                    } catch(StringIndexOutOfBoundsException siobe) {
-                        showMoreInfo.typeWordLabel.setText("");
-                        showMoreInfo.pack();
-                        showMoreInfo.setResizable(false);
-                        showMoreInfo.setVisible(true);
                     }
+                } catch (NullPointerException npe) {
+                    JOptionPane.showMessageDialog(null, rb.getString("noword"), "", JOptionPane.WARNING_MESSAGE);
                 }
-            } catch (NullPointerException npe) {
-                JOptionPane.showMessageDialog(null, rb.getString("noword"), "", JOptionPane.WARNING_MESSAGE);
+
             }
+
         }
     }
 

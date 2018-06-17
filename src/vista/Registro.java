@@ -77,7 +77,7 @@ public class Registro extends JFrame {
                                 .addComponent(nativeLangLabel)
                                 .addComponent(spokenLangLabel)
                                 .addComponent(learnLangLabel)
-                                .addComponent(signupButton))
+                                .addComponent(returnButton))
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                 .addComponent(jspSpoken)
                                 .addComponent(jspLearn)
@@ -88,7 +88,7 @@ public class Registro extends JFrame {
                                 .addComponent(passwordField)
                                 .addComponent(genderBox)
                                 .addComponent(nativeLangBox)
-                                .addComponent(returnButton))
+                                .addComponent(signupButton))
         );
 
         layout.setVerticalGroup(
@@ -116,8 +116,8 @@ public class Registro extends JFrame {
                                 .addComponent(learnLangLabel)
                                 .addComponent(jspLearn))
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                                .addComponent(signupButton)
-                                .addComponent(returnButton))
+                                .addComponent(returnButton)
+                                .addComponent(signupButton))
         );
 
         this.setJMenuBar(menuBar);

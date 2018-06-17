@@ -12,6 +12,24 @@ public class IdiomaDAO {
         con = new Conexion();
     }
 
+    public static String appToCode(String l) {
+        switch (l) {
+            case "es":
+                l = "esp";
+                break;
+            case "en":
+                l = "eng";
+                break;
+            case "ja":
+                l = "jpn";
+                break;
+            case "de":
+                l = "deu";
+                break;
+        }
+        return l;
+    }
+
     public static int codeToIndex(String code) {
         int ind = 0;
 

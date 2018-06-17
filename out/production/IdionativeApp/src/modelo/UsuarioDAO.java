@@ -266,7 +266,7 @@ public class UsuarioDAO {
                 spokenps.clearParameters();
                 spokenps.setString(1, email);
                 spokenps.setString(2, IdiomaDAO.indexToCode(index));
-                resultado += spokenps.executeUpdate();
+                spokenps.executeUpdate();
             }
 
             PreparedStatement learnps = conn.prepareStatement("INSERT INTO APRENDE_IDIOMAS VALUES(?, ?)");
@@ -274,7 +274,7 @@ public class UsuarioDAO {
                 learnps.clearParameters();
                 learnps.setString(1, email);
                 learnps.setString(2, IdiomaDAO.indexToCode(index));
-                resultado += learnps.executeUpdate();
+                learnps.executeUpdate();
             }
 
         } catch (SQLException e) {

@@ -19,7 +19,7 @@ public class SignificadoEjemploDAO {
         ResultSet rs = null;
 
         try {
-            PreparedStatement ps = conn.prepareStatement("SELECT * FROM SIGNIFICADO_EJEMPLOS WHERE ID_SIG = ? AND IDIOMA_SIG = ?");
+            PreparedStatement ps = conn.prepareStatement("SELECT * FROM SIGNIFICADO_EJEMPLO WHERE ID_SIG = ? AND IDIOMA_SIG = ?");
             ps.setInt(1, id);
             ps.setString(2, lang);
             rs = ps.executeQuery();
@@ -43,7 +43,7 @@ public class SignificadoEjemploDAO {
         int result = 0;
         Connection conn = con.createConnection();
         try {
-            PreparedStatement ps = conn.prepareStatement("UPDATE SIGNIFICADO_EJEMPLOS SET SIGNIFICADO = ?, EJEMPLO = ? WHERE ID_SIG = ? AND IDIOMA_SIG = ?");
+            PreparedStatement ps = conn.prepareStatement("UPDATE SIGNIFICADO_EJEMPLO SET SIGNIFICADO = ?, EJEMPLO = ? WHERE ID_SIG = ? AND IDIOMA_SIG = ?");
             ps.setString(1, sig);
             ps.setString(2, ej);
             ps.setInt(3, idsig);
@@ -59,7 +59,7 @@ public class SignificadoEjemploDAO {
         int result = 0;
         Connection conn = con.createConnection();
         try {
-            PreparedStatement ps = conn.prepareStatement("INSERT INTO SIGNIFICADO_EJEMPLOS VALUES(?, ?, ?, ?)");
+            PreparedStatement ps = conn.prepareStatement("INSERT INTO SIGNIFICADO_EJEMPLO VALUES(?, ?, ?, ?)");
             ps.setInt(1, id);
             ps.setString(2, sig);
             ps.setString(3, ej);

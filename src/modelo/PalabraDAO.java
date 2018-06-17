@@ -194,7 +194,7 @@ public class PalabraDAO {
         int[] indiceTipos = null;
 
         try {
-            PreparedStatement ps = conn.prepareStatement("SELECT tipo FROM tipos_palabras WHERE idtipo_palabra = ?");
+            PreparedStatement ps = conn.prepareStatement("SELECT tipo FROM tipos_palabras WHERE IDTIPO = ?");
             ps.setInt(1, id);
             ArrayList<Integer> indices = new ArrayList<Integer>();
             rs = ps.executeQuery();
@@ -257,18 +257,18 @@ public class PalabraDAO {
         int result = 0;
 
         try {
-            PreparedStatement pstipos = conn.prepareStatement("DELETE FROM TIPOS_PALABRAS WHERE IDTIPO_PALABRA = ?");
+            PreparedStatement pstipos = conn.prepareStatement("DELETE FROM TIPOS_PALABRAS WHERE IDTIPO = ?");
             pstipos.setInt(1, id);
             pstipos.executeUpdate();
 
-            PreparedStatement pssig = conn.prepareStatement("DELETE FROM SIGNIFICADO_EJEMPLOS WHERE ID_SIG = ?");
+            PreparedStatement pssig = conn.prepareStatement("DELETE FROM SIGNIFICADO_EJEMPLO WHERE ID_SIG = ?");
             pssig.setInt(1, id);
             pssig.executeUpdate();
 
             ps = conn.prepareStatement("DELETE FROM PALABRAS WHERE ID_PALABRA = ?");
             ps.setInt(1, id);
 
-            result = ps.executeUpdate();
+            result += ps.executeUpdate();
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e.getMessage(), "PalabraDAO: SQLException", JOptionPane.ERROR_MESSAGE);
         } finally {
@@ -294,7 +294,7 @@ public class PalabraDAO {
             ps.setInt(7, id);
             result = ps.executeUpdate();
 
-            PreparedStatement pstipos1 = conn.prepareStatement("DELETE FROM TIPOS_PALABRAS WHERE IDTIPO_PALABRA = ?");
+            PreparedStatement pstipos1 = conn.prepareStatement("DELETE FROM TIPOS_PALABRAS WHERE IDTIPO = ?");
             pstipos1.setInt(1, id);
             pstipos1.executeUpdate();
 
